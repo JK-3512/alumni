@@ -9,6 +9,10 @@ import java.util.Date;
 @SpringBootTest
 class AlumniApplicationTests {
 
+    /**
+     * 测试Git推送
+     */
+
     @Test
     void contextLoads() {
         String format = DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss");
