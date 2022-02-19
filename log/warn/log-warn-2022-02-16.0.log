@@ -1,0 +1,2 @@
+2022-02-16 08:40:35,823 WARN [http-nio-8080-exec-7] c.z.h.p.PoolBase [PoolBase.java:472] HikariPool-1 - Default transaction isolation level detection failed (No operations allowed after connection closed.).
+2022-02-16 08:41:07,509 WARN [http-nio-8080-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingRequestCookieException: Missing cookie 'kaptchaOwner' for method parameter of type String]

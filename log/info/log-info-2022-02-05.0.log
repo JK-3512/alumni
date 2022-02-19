@@ -1,0 +1,311 @@
+2022-02-05 11:40:42,061 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 6316 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:40:42,092 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:40:42,122 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:40:42,122 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:40:43,070 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:40:43,070 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:40:43,097 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:40:43,775 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:40:43,790 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:40:43,790 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:40:43,790 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:40:43,853 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:40:43,853 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1731 ms
+2022-02-05 11:40:44,876 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:40:44,918 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:40:44,934 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:40:44,950 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 3.621 seconds (JVM running for 6.57)
+2022-02-05 11:42:08,135 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:42:08,136 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:42:08,136 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2022-02-05 11:48:41,709 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 4512 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:48:41,709 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:48:41,740 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:48:41,740 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:48:42,177 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:48:42,177 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:48:42,209 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:48:42,599 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:48:42,615 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:48:42,615 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:48:42,615 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:48:42,662 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:48:42,662 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 922 ms
+2022-02-05 11:48:43,276 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:48:43,291 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:48:43,307 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:48:43,307 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.903 seconds (JVM running for 2.574)
+2022-02-05 11:48:50,911 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:48:50,911 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:48:50,912 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2022-02-05 11:50:24,259 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 14472 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:50:24,259 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:50:24,290 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:50:24,290 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:50:24,759 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:50:24,759 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:50:24,774 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:50:25,181 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:50:25,181 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:50:25,181 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:50:25,181 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:50:25,243 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:50:25,243 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 953 ms
+2022-02-05 11:50:25,885 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:50:25,900 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:50:25,916 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:50:25,931 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.974 seconds (JVM running for 2.658)
+2022-02-05 11:50:33,121 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:50:33,122 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:50:33,123 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2022-02-05 11:50:50,746 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 4188 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:50:50,746 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:50:50,761 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:50:50,777 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:50:51,199 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:50:51,214 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:50:51,230 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:50:51,605 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:50:51,605 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:50:51,605 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:50:51,605 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:50:51,667 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:50:51,667 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 890 ms
+2022-02-05 11:50:52,289 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:50:52,304 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:50:52,320 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:50:52,320 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.878 seconds (JVM running for 2.517)
+2022-02-05 11:50:57,204 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:50:57,204 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:50:57,205 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 11:51:25,276 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 9828 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:51:25,276 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:51:25,307 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:51:25,307 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:51:25,760 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:51:25,760 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:51:25,776 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:51:26,151 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:51:26,167 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:51:26,167 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:51:26,167 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:51:26,213 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:51:26,213 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 906 ms
+2022-02-05 11:51:26,842 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:51:26,857 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:51:26,873 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:51:26,873 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.903 seconds (JVM running for 2.573)
+2022-02-05 11:51:30,738 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:51:30,738 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:51:30,739 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2022-02-05 11:51:59,726 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 7396 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 11:51:59,726 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 11:51:59,757 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 11:51:59,757 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 11:52:00,225 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 11:52:00,225 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 11:52:00,241 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 11:52:00,647 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 11:52:00,647 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:52:00,647 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 11:52:00,647 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 11:52:00,710 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 11:52:00,710 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 953 ms
+2022-02-05 11:52:01,355 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 11:52:01,370 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 11:52:01,386 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 11:52:01,402 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.99 seconds (JVM running for 2.668)
+2022-02-05 11:52:05,616 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 11:52:05,616 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 11:52:05,617 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 14:46:23,611 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 32 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 14:46:23,611 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 14:46:23,643 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 14:46:23,643 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 14:46:24,080 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 14:46:24,080 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 14:46:24,111 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-02-05 14:46:24,486 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 14:46:24,486 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:46:24,486 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 14:46:24,486 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 14:46:24,549 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 14:46:24,549 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 906 ms
+2022-02-05 14:46:25,174 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 14:46:25,189 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:46:25,205 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 14:46:25,220 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.91 seconds (JVM running for 2.548)
+2022-02-05 14:47:53,644 INFO [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 14:47:53,644 INFO [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 14:47:53,645 INFO [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 14:49:39,973 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 4996 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 14:49:39,973 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 14:49:40,004 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 14:49:40,004 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 14:49:40,457 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 14:49:40,457 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 14:49:40,488 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 14:49:40,863 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 14:49:40,879 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:49:40,879 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 14:49:40,879 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 14:49:40,925 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 14:49:40,925 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 921 ms
+2022-02-05 14:49:41,545 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 14:49:41,561 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:49:41,577 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 14:49:41,577 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.9 seconds (JVM running for 2.517)
+2022-02-05 14:49:46,964 INFO [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 14:49:46,964 INFO [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 14:49:46,965 INFO [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 14:50:43,288 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 8316 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 14:50:43,288 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 14:50:43,325 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 14:50:43,325 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 14:50:43,762 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 14:50:43,762 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 14:50:43,778 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 14:50:44,153 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 14:50:44,153 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:50:44,153 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 14:50:44,153 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 14:50:44,215 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 14:50:44,215 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 890 ms
+2022-02-05 14:50:44,865 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 14:50:44,865 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 14:50:44,899 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 14:50:44,900 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.903 seconds (JVM running for 2.572)
+2022-02-05 14:50:47,956 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 14:50:47,956 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 14:50:47,957 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 17:15:10,758 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 6288 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:15:10,758 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:15:10,789 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:15:10,789 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:15:11,354 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:15:11,356 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:15:11,367 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:15:11,726 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:15:11,742 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:15:11,742 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:15:11,742 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:15:11,789 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:15:11,789 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1000 ms
+2022-02-05 17:15:12,316 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2022-02-05 17:15:12,331 INFO [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java:136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-02-05 17:15:44,872 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 12856 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:15:44,872 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:15:44,903 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:15:44,903 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:15:45,341 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:15:45,356 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:15:45,372 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:15:45,762 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:15:45,762 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:15:45,762 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:15:45,762 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:15:45,825 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:15:45,825 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 922 ms
+2022-02-05 17:15:46,479 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:15:46,495 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:15:46,511 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:15:46,511 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.944 seconds (JVM running for 2.566)
+2022-02-05 17:15:57,915 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 17:15:57,915 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 17:15:57,916 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 17:17:31,284 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 4988 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:17:31,284 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:17:31,316 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:17:31,316 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:17:31,753 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:17:31,753 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:17:31,769 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:17:32,150 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:17:32,165 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:17:32,165 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:17:32,165 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:17:32,212 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:17:32,212 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 896 ms
+2022-02-05 17:17:32,849 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:17:32,865 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:17:32,881 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:17:32,881 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.899 seconds (JVM running for 2.506)
+2022-02-05 17:17:57,463 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 4164 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:17:57,463 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:17:57,494 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:17:57,494 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:17:57,932 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:17:57,932 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:17:57,963 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:17:58,354 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:17:58,354 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:17:58,354 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:17:58,354 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:17:58,416 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:17:58,416 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 922 ms
+2022-02-05 17:17:59,056 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:17:59,072 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:17:59,087 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:17:59,103 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.974 seconds (JVM running for 2.694)
+2022-02-05 17:18:12,370 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 17:18:12,370 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 17:18:12,371 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 17:19:24,466 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 14148 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:19:24,466 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:19:24,513 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:19:24,513 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:19:24,966 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:19:24,966 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:19:24,981 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:19:25,356 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:19:25,356 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:19:25,356 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:19:25,356 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:19:25,419 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:19:25,419 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 906 ms
+2022-02-05 17:19:26,064 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:19:26,079 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:19:26,095 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:19:26,095 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 1.992 seconds (JVM running for 2.652)
+2022-02-05 17:19:29,922 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 17:19:29,922 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 17:19:29,923 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2022-02-05 17:22:14,458 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 296 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:22:14,458 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:22:14,490 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:22:14,490 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:22:14,974 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:22:14,974 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:22:14,990 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:22:15,380 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:22:15,396 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:22:15,396 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:22:15,396 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:22:15,443 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:22:15,443 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 953 ms
+2022-02-05 17:22:16,114 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:22:16,114 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:22:16,146 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:22:16,146 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 2.02 seconds (JVM running for 2.708)
+2022-02-05 17:22:56,969 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:55] Starting AlumniApplication using Java 1.8.0_101 on DESKTOP-MS39Q40 with PID 7624 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-05 17:22:56,985 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2022-02-05 17:22:57,016 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-05 17:22:57,016 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-05 17:22:57,485 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:262] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-05 17:22:57,485 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:132] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-05 17:22:57,507 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:201] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-02-05 17:22:57,944 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-05 17:22:57,944 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:22:57,944 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-05 17:22:57,960 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-05 17:22:58,007 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-05 17:22:58,007 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 991 ms
+2022-02-05 17:22:58,665 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2022-02-05 17:22:58,681 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-05 17:22:58,696 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-05 17:22:58,712 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:61] Started AlumniApplication in 2.076 seconds (JVM running for 2.709)
+2022-02-05 17:23:01,966 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-05 17:23:01,966 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2022-02-05 17:23:01,967 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms

@@ -1,0 +1,1047 @@
+2022-02-14 11:29:13,898 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 2468 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 11:29:13,913 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 11:29:13,991 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 11:29:13,991 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 11:29:15,054 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 11:29:15,054 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 11:29:15,085 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 11:29:15,382 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1e4d8295] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 11:29:15,647 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 11:29:15,647 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:29:15,663 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 11:29:15,663 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 11:29:15,741 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 11:29:15,741 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1750 ms
+2022-02-14 11:29:16,475 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: c137ab79-da72-4efa-9719-f4bbaca7ec2c
+
+2022-02-14 11:29:16,538 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 11:29:16,553 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2080ff80, org.springframework.security.web.context.SecurityContextPersistenceFilter@248d9d4a, org.springframework.security.web.header.HeaderWriterFilter@7cab8b98, org.springframework.security.web.authentication.logout.LogoutFilter@f3fd473, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@704e8ed0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@665d4773, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29e7ccae, org.springframework.security.web.session.SessionManagementFilter@246e355f, org.springframework.security.web.access.ExceptionTranslationFilter@420819a1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8743e3d]
+2022-02-14 11:29:16,647 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 11:29:16,730 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 11:29:17,106 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 11:29:17,137 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:29:17,152 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 11:29:17,152 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 3.723 seconds (JVM running for 4.686)
+2022-02-14 11:29:31,990 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 11:29:31,990 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 11:29:31,999 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 9 ms
+2022-02-14 11:29:58,494 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 11:29:58,962 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 11:32:27,200 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 11480 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 11:32:27,216 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 11:32:27,231 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 11:32:27,231 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 11:32:27,747 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 11:32:27,747 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 11:32:27,778 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 11:32:27,997 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1b699f01] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 11:32:28,200 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 11:32:28,215 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:32:28,215 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 11:32:28,215 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 11:32:28,309 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 11:32:28,309 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1078 ms
+2022-02-14 11:32:28,793 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: ab5f7ceb-4db8-4f12-a977-13b33faf982b
+
+2022-02-14 11:32:28,824 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 11:32:28,840 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29d8135e, org.springframework.security.web.context.SecurityContextPersistenceFilter@131aed92, org.springframework.security.web.header.HeaderWriterFilter@5a8890f3, org.springframework.security.web.authentication.logout.LogoutFilter@6e54f551, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bd89d1a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@705eecca, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@425e6bdb, org.springframework.security.web.session.SessionManagementFilter@62e3fb04, org.springframework.security.web.access.ExceptionTranslationFilter@543ebe73, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5375a858]
+2022-02-14 11:32:28,934 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 11:32:28,996 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 11:32:29,168 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 11:32:29,184 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:32:29,199 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 11:32:29,199 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.249 seconds (JVM running for 2.853)
+2022-02-14 11:32:39,916 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 11:32:39,916 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 11:32:39,920 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 11:32:45,531 INFO [http-nio-8080-exec-2] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 11:32:45,532 INFO [http-nio-8080-exec-2] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 11:33:26,075 INFO [http-nio-8080-exec-4] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 11:33:26,543 INFO [http-nio-8080-exec-4] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 11:38:11,851 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 11732 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 11:38:11,851 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 11:38:11,882 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 11:38:11,882 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 11:38:12,419 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 11:38:12,435 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 11:38:12,450 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 11:38:12,700 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5390c0ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 11:38:12,950 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 11:38:12,950 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:38:12,966 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 11:38:12,966 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 11:38:13,060 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 11:38:13,060 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1178 ms
+2022-02-14 11:38:13,591 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: be214000-043f-4bbe-b7d1-9a4911ee56d9
+
+2022-02-14 11:38:13,622 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 11:38:13,653 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@635c3a97, org.springframework.security.web.context.SecurityContextPersistenceFilter@28c1517d, org.springframework.security.web.header.HeaderWriterFilter@3bb65d8e, org.springframework.security.web.authentication.logout.LogoutFilter@66e6a510, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e1cc292, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e6b2689, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73a2f203, org.springframework.security.web.session.SessionManagementFilter@39ca2d40, org.springframework.security.web.access.ExceptionTranslationFilter@1afcfd2d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1751eb39]
+2022-02-14 11:38:13,747 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 11:38:13,809 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 11:38:13,981 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 11:38:14,013 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:38:14,028 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 11:38:14,028 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.615 seconds (JVM running for 3.351)
+2022-02-14 11:38:18,772 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 11:38:18,773 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 11:38:18,777 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 11:38:18,862 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 11:38:18,863 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 11:38:19,447 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 11:38:19,904 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 11:43:08,132 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 14440 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 11:43:08,132 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 11:43:08,179 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 11:43:08,179 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 11:43:08,710 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 11:43:08,710 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 11:43:08,742 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 11:43:08,976 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf55c32c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 11:43:09,179 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 11:43:09,179 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:43:09,195 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 11:43:09,289 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 11:43:09,382 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 11:43:09,382 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1203 ms
+2022-02-14 11:43:09,898 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 076a6b95-7a6a-46c0-93b1-eba0bdbaef18
+
+2022-02-14 11:43:09,929 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 11:43:09,960 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22d66f1c, org.springframework.security.web.context.SecurityContextPersistenceFilter@71a6e416, org.springframework.security.web.header.HeaderWriterFilter@4aba9e66, org.springframework.security.web.authentication.logout.LogoutFilter@71e558d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32e5cc8a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@726045fc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11577c06, org.springframework.security.web.session.SessionManagementFilter@474094b, org.springframework.security.web.access.ExceptionTranslationFilter@7eb0a871, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e8911f2]
+2022-02-14 11:43:10,038 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 11:43:10,101 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 11:43:10,273 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 11:43:10,288 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 11:43:10,304 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 11:43:10,304 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.615 seconds (JVM running for 3.373)
+2022-02-14 11:43:14,544 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 11:43:14,545 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 11:43:14,549 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 11:43:14,633 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 11:43:14,634 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 11:43:15,258 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 11:43:15,764 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 14:04:44,907 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 13976 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 14:04:44,907 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 14:04:44,938 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 14:04:44,938 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 14:04:45,501 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 14:04:45,501 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 14:04:45,516 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 14:04:45,766 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1d1bf0c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 14:04:45,969 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 14:04:45,985 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:04:45,985 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 14:04:45,985 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 14:04:46,063 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 14:04:46,063 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1125 ms
+2022-02-14 14:04:46,625 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: a589bf4f-d29c-4a77-b1d3-57055699dbc0
+
+2022-02-14 14:04:46,657 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 14:04:46,688 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1786befd, org.springframework.security.web.context.SecurityContextPersistenceFilter@10fc38f, org.springframework.security.web.header.HeaderWriterFilter@790cbb30, org.springframework.security.web.authentication.logout.LogoutFilter@7363c78a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62ac9443, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c55601c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@108fcec, org.springframework.security.web.session.SessionManagementFilter@26e0416c, org.springframework.security.web.access.ExceptionTranslationFilter@543742b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d645910]
+2022-02-14 14:04:46,797 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 14:04:46,875 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 14:04:47,047 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 14:04:47,063 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:04:47,078 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 14:04:47,078 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.437 seconds (JVM running for 3.037)
+2022-02-14 14:04:55,946 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 14:04:55,947 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 14:04:55,951 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 14:04:56,033 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 14:04:56,034 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 14:04:57,074 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 14:04:57,447 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 14:06:35,198 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 1528 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 14:06:35,198 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 14:06:35,230 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 14:06:35,230 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 14:06:35,730 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 14:06:35,745 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 14:06:35,761 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 14:06:36,011 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$499c59df] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 14:06:36,198 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 14:06:36,214 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:06:36,214 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 14:06:36,214 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 14:06:36,292 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 14:06:36,292 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1062 ms
+2022-02-14 14:06:36,807 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 4b505816-6bfd-413f-ac72-e3ec70d798a4
+
+2022-02-14 14:06:36,839 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 14:06:36,854 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e2f8471, org.springframework.security.web.context.SecurityContextPersistenceFilter@10eb20a6, org.springframework.security.web.header.HeaderWriterFilter@37ffbb3, org.springframework.security.web.authentication.logout.LogoutFilter@218cd9c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28a690b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18b7a093, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6056c12d, org.springframework.security.web.session.SessionManagementFilter@2fbbf35b, org.springframework.security.web.access.ExceptionTranslationFilter@5053a735, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23f43209]
+2022-02-14 14:06:36,948 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 14:06:37,010 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 14:06:37,182 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 14:06:37,198 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:06:37,214 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 14:06:37,214 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.281 seconds (JVM running for 2.883)
+2022-02-14 14:06:40,511 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 14:06:40,511 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 14:06:40,515 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 14:06:40,598 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 14:06:40,599 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 14:06:41,177 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 14:06:41,531 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 14:08:46,290 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 7504 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 14:08:46,290 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 14:08:46,321 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 14:08:46,321 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 14:08:46,821 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 14:08:46,821 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 14:08:46,837 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 14:08:47,071 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5361402d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 14:08:47,258 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 14:08:47,274 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:08:47,274 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 14:08:47,274 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 14:08:47,352 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 14:08:47,352 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1031 ms
+2022-02-14 14:08:47,842 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: f625390a-3e4b-4238-9804-9ba7832a0594
+
+2022-02-14 14:08:47,874 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 14:08:47,889 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@608f43bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a356728, org.springframework.security.web.header.HeaderWriterFilter@5f41387d, org.springframework.security.web.authentication.logout.LogoutFilter@28a690b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ab51538, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37ffbb3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b76a3ae, org.springframework.security.web.session.SessionManagementFilter@3077bf76, org.springframework.security.web.access.ExceptionTranslationFilter@2cd52e63, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6cd1d045]
+2022-02-14 14:08:47,983 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 14:08:48,045 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 14:08:48,217 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 14:08:48,233 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:08:48,249 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 14:08:48,264 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.24 seconds (JVM running for 2.813)
+2022-02-14 14:08:54,195 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 14:08:54,195 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 14:08:54,199 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 14:08:54,284 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 14:08:54,285 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 14:08:54,879 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 14:08:55,322 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 14:11:24,733 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 15536 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 14:11:24,733 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 14:11:24,764 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 14:11:24,764 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 14:11:25,264 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 14:11:25,264 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 14:11:25,279 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 14:11:25,514 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1fd22842] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 14:11:25,717 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 14:11:25,717 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:11:25,732 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 14:11:25,732 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 14:11:25,795 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 14:11:25,795 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1031 ms
+2022-02-14 14:11:26,295 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: aba97506-7fbd-40e4-a410-d2efb9b3cc90
+
+2022-02-14 14:11:26,326 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 14:11:26,357 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e8911f2, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b41aa23, org.springframework.security.web.header.HeaderWriterFilter@4cd734b5, org.springframework.security.web.authentication.logout.LogoutFilter@34d4c55f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ad1feff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@156702d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f54468f, org.springframework.security.web.session.SessionManagementFilter@46951d02, org.springframework.security.web.access.ExceptionTranslationFilter@1a32b945, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ac0354f]
+2022-02-14 14:11:26,451 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 14:11:26,529 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 14:11:26,701 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 14:11:26,717 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 14:11:26,732 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 14:11:26,748 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.265 seconds (JVM running for 2.853)
+2022-02-14 14:11:30,937 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 14:11:30,937 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 14:11:30,941 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 14:11:31,024 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 14:11:31,025 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 14:11:31,621 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 14:11:31,987 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 15:35:17,907 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 13552 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 15:35:17,907 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 15:35:17,922 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 15:35:17,922 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 15:35:18,438 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 15:35:18,438 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 15:35:18,453 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 15:35:18,688 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2734b8d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 15:35:18,891 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 15:35:18,906 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:35:18,906 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 15:35:18,906 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 15:35:18,985 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 15:35:18,985 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1063 ms
+2022-02-14 15:35:19,500 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 8d59982d-cc14-4f12-bb59-5bb316f59e15
+
+2022-02-14 15:35:19,531 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 15:35:19,547 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8ce2f6a, org.springframework.security.web.context.SecurityContextPersistenceFilter@73b38023, org.springframework.security.web.header.HeaderWriterFilter@7fa62a71, org.springframework.security.web.authentication.logout.LogoutFilter@39ca2d40, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a256a22, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56e02aec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@774e158, org.springframework.security.web.session.SessionManagementFilter@48f85a73, org.springframework.security.web.access.ExceptionTranslationFilter@d1386f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@348d3b1f]
+2022-02-14 15:35:19,641 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 15:35:19,709 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 15:35:19,881 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 15:35:19,897 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:35:19,928 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 15:35:19,928 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.303 seconds (JVM running for 2.877)
+2022-02-14 15:35:41,165 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 15:35:41,166 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 15:35:41,173 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 7 ms
+2022-02-14 15:35:41,260 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 15:35:41,261 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 15:35:41,879 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 15:35:42,498 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 15:40:24,796 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 14560 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 15:40:24,796 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 15:40:24,812 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 15:40:24,812 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 15:40:25,349 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 15:40:25,349 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 15:40:25,380 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 15:40:25,615 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ce6a2a66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 15:40:25,833 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 15:40:25,849 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:40:25,849 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 15:40:25,849 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 15:40:25,927 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 15:40:25,927 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1099 ms
+2022-02-14 15:40:26,427 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 1577f53b-2f2b-495f-b430-8ca7ef34146a
+
+2022-02-14 15:40:26,458 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 15:40:26,474 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69c7da0e, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ca83b9a, org.springframework.security.web.header.HeaderWriterFilter@1f1574ea, org.springframework.security.web.authentication.logout.LogoutFilter@4ab7eb2e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a99725c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ca9749f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5969f81b, org.springframework.security.web.session.SessionManagementFilter@4dab4f8b, org.springframework.security.web.access.ExceptionTranslationFilter@2b942db1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56c33b17]
+2022-02-14 15:40:26,568 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 15:40:26,630 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 15:40:26,802 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 15:40:26,818 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:40:26,833 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 15:40:26,833 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.302 seconds (JVM running for 2.918)
+2022-02-14 15:40:33,510 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 15:40:33,510 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 15:40:33,516 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 15:40:33,604 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 15:40:33,605 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 15:40:34,221 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 15:40:35,854 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 15:41:41,643 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 2284 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 15:41:41,643 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 15:41:41,675 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 15:41:41,675 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 15:41:42,190 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 15:41:42,190 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 15:41:42,206 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 15:41:42,440 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b6d7e1c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 15:41:42,643 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 15:41:42,659 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:41:42,659 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 15:41:42,659 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 15:41:42,721 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 15:41:42,737 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1062 ms
+2022-02-14 15:41:43,237 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: dc9a79f8-78cb-411f-a581-bf4d6294c481
+
+2022-02-14 15:41:43,268 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 15:41:43,299 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fe31345, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d5bfb07, org.springframework.security.web.header.HeaderWriterFilter@18669825, org.springframework.security.web.authentication.logout.LogoutFilter@7eb0a871, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f239a85, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4eb295e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cbdb6e7, org.springframework.security.web.session.SessionManagementFilter@769519d5, org.springframework.security.web.access.ExceptionTranslationFilter@47c773e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@880dd0a]
+2022-02-14 15:41:43,377 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 15:41:43,456 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 15:41:43,627 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 15:41:43,643 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 15:41:43,659 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 15:41:43,659 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.265 seconds (JVM running for 2.891)
+2022-02-14 15:41:49,920 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 15:41:49,920 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 15:41:49,924 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 15:41:50,007 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 15:41:50,008 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 15:41:50,860 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 15:41:51,336 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:01:21,479 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 4840 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:01:21,479 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:01:21,510 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:01:21,510 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:01:22,032 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:01:22,032 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:01:22,063 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 16:01:22,297 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bba06d79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:01:22,500 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:01:22,500 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:01:22,500 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:01:22,500 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:01:22,578 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:01:22,578 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1068 ms
+2022-02-14 16:01:23,110 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: eff9a260-20fc-494f-bbc1-9221bbe9bc5f
+
+2022-02-14 16:01:23,156 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:01:23,172 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21ba9e8d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4530c03c, org.springframework.security.web.header.HeaderWriterFilter@680fb5db, org.springframework.security.web.authentication.logout.LogoutFilter@64639bbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52f5ce8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4da4c232, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f529d70, org.springframework.security.web.session.SessionManagementFilter@160e6d7d, org.springframework.security.web.access.ExceptionTranslationFilter@57c71aa7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75f40d44]
+2022-02-14 16:01:23,266 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:01:23,328 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:01:23,516 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:01:23,531 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:01:23,547 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:01:23,547 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.334 seconds (JVM running for 2.946)
+2022-02-14 16:01:32,919 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:01:32,919 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:01:32,922 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 3 ms
+2022-02-14 16:01:33,008 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:01:33,009 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:01:33,602 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:01:34,058 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:05:42,007 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 15124 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:05:42,007 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:05:42,039 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:05:42,039 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:05:42,632 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:05:42,632 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:05:42,648 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 16:05:42,929 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e21f1594] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:05:43,163 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:05:43,163 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:05:43,179 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:05:43,179 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:05:43,241 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:05:43,241 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1202 ms
+2022-02-14 16:05:43,788 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 9c42af34-77fd-46fc-af4d-a4c446407134
+
+2022-02-14 16:05:43,819 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:05:43,835 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cb1444a, org.springframework.security.web.context.SecurityContextPersistenceFilter@348b2038, org.springframework.security.web.header.HeaderWriterFilter@67ead118, org.springframework.security.web.authentication.logout.LogoutFilter@2b3434dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f982803, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2728f382, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f4568c9, org.springframework.security.web.session.SessionManagementFilter@28b811b8, org.springframework.security.web.access.ExceptionTranslationFilter@5be4e115, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67641450]
+2022-02-14 16:05:43,944 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:05:44,007 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:05:44,179 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:05:44,210 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:05:44,226 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:05:44,226 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.554 seconds (JVM running for 3.194)
+2022-02-14 16:05:50,886 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:05:50,887 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:05:50,892 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 16:05:50,976 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:05:50,977 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:05:51,606 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:05:52,734 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:10:57,115 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 7684 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:10:57,115 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:10:57,146 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:10:57,146 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:10:57,730 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:10:57,730 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:10:57,762 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 16:10:58,043 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$50b21d1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:10:58,262 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:10:58,277 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:10:58,277 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:10:58,277 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:10:58,371 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:10:58,371 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1225 ms
+2022-02-14 16:10:58,933 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: eaf7f61f-424c-4e3e-9606-821cb5622bd2
+
+2022-02-14 16:10:58,964 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:10:58,996 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@282970fb, org.springframework.security.web.context.SecurityContextPersistenceFilter@60ebdf6d, org.springframework.security.web.header.HeaderWriterFilter@40943dca, org.springframework.security.web.authentication.logout.LogoutFilter@542f2f1a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a665a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2212519c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f593f79, org.springframework.security.web.session.SessionManagementFilter@5364ff4c, org.springframework.security.web.access.ExceptionTranslationFilter@d02f196, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b45c267]
+2022-02-14 16:10:59,105 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:10:59,168 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:10:59,371 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:10:59,386 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:10:59,402 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:10:59,402 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.552 seconds (JVM running for 3.184)
+2022-02-14 16:11:05,159 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:11:05,159 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:11:05,163 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:11:05,247 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:11:05,248 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:11:05,923 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:11:06,381 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:17:38,485 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 13644 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:17:38,485 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:17:38,531 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:17:38,531 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:17:39,156 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:17:39,156 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:17:39,188 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 16:17:39,422 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5390c0ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:17:39,625 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:17:39,625 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:17:39,625 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:17:39,625 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:17:39,703 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:17:39,703 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1156 ms
+2022-02-14 16:17:40,205 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 4a3401a3-9ed3-45ab-8aac-5ba0e387e67b
+
+2022-02-14 16:17:40,237 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:17:40,252 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73a2f203, org.springframework.security.web.context.SecurityContextPersistenceFilter@36d45925, org.springframework.security.web.header.HeaderWriterFilter@533910d, org.springframework.security.web.authentication.logout.LogoutFilter@62a9d369, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17298136, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b48b0e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7af91900, org.springframework.security.web.session.SessionManagementFilter@1c1abcc3, org.springframework.security.web.access.ExceptionTranslationFilter@6c56bda2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9aa8be1]
+2022-02-14 16:17:40,362 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:17:40,424 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:17:40,580 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:17:40,596 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:17:40,611 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:17:40,627 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.533 seconds (JVM running for 3.338)
+2022-02-14 16:17:44,632 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:17:44,633 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:17:44,638 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:17:44,731 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:17:44,732 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:17:45,401 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:17:45,769 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:37:29,192 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 14712 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:37:29,192 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:37:29,207 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:37:29,207 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:37:29,729 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:37:29,745 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:37:29,760 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 16:37:30,010 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$538618f6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:37:30,213 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:37:30,229 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:37:30,229 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:37:30,229 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:37:30,323 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:37:30,323 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1116 ms
+2022-02-14 16:37:30,838 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 248e8cb2-cca4-4833-a124-03406b14685c
+
+2022-02-14 16:37:30,869 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:37:30,901 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b675051, org.springframework.security.web.context.SecurityContextPersistenceFilter@656267cf, org.springframework.security.web.header.HeaderWriterFilter@48f85a73, org.springframework.security.web.authentication.logout.LogoutFilter@7cfc57b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40ffc895, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11bb60c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d00ecae, org.springframework.security.web.session.SessionManagementFilter@2c8741c4, org.springframework.security.web.access.ExceptionTranslationFilter@1e68d6f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54027ea1]
+2022-02-14 16:37:30,994 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:37:31,057 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:37:31,229 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:37:31,244 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:37:31,275 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:37:31,275 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.365 seconds (JVM running for 3.035)
+2022-02-14 16:37:35,431 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:37:35,431 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:37:35,436 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 16:37:35,522 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:37:35,523 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:37:36,145 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:37:36,610 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:39:07,524 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 15408 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:39:07,524 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:39:07,571 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:39:07,571 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:39:08,290 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:39:08,290 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:39:08,305 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 16:39:08,555 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e58a6fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:39:08,774 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:39:08,774 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:39:08,774 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:39:08,774 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:39:08,868 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:39:08,868 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1297 ms
+2022-02-14 16:39:09,383 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 6cc57de4-f661-4261-be0f-8b14a895b835
+
+2022-02-14 16:39:09,414 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:39:09,430 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1542e1dc, org.springframework.security.web.context.SecurityContextPersistenceFilter@52c0d165, org.springframework.security.web.header.HeaderWriterFilter@79cf0681, org.springframework.security.web.authentication.logout.LogoutFilter@e5dfecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@540a1da0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d2c8f46, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fe6c1a5, org.springframework.security.web.session.SessionManagementFilter@1cfd7cc1, org.springframework.security.web.access.ExceptionTranslationFilter@4b546fb9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31afb098]
+2022-02-14 16:39:09,539 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:39:09,602 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:39:09,780 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:39:09,795 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:39:09,811 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:39:09,811 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.662 seconds (JVM running for 3.811)
+2022-02-14 16:39:13,671 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:39:13,672 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:39:13,676 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:39:13,760 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:39:13,761 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:39:14,386 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:39:14,872 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:41:11,561 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 11884 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:41:11,561 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:41:11,577 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:41:11,577 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:41:12,108 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:41:12,108 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:41:12,124 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 16:41:12,358 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a5eba550] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:41:12,561 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:41:12,576 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:41:12,576 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:41:12,576 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:41:12,655 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:41:12,655 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1078 ms
+2022-02-14 16:41:13,186 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 22ebee90-717f-4882-a21d-04f41a5688c9
+
+2022-02-14 16:41:13,217 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:41:13,233 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b28246d, org.springframework.security.web.context.SecurityContextPersistenceFilter@a8e5f58, org.springframework.security.web.header.HeaderWriterFilter@24603d46, org.springframework.security.web.authentication.logout.LogoutFilter@6bce8f5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69cdf821, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62ac268e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56734bac, org.springframework.security.web.session.SessionManagementFilter@4d692bca, org.springframework.security.web.access.ExceptionTranslationFilter@13d00535, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47f34bc1]
+2022-02-14 16:41:13,326 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:41:13,404 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:41:13,592 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:41:13,607 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:41:13,623 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:41:13,623 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.327 seconds (JVM running for 2.959)
+2022-02-14 16:41:19,200 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:41:19,200 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:41:19,205 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 16:41:19,287 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:41:19,288 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:41:19,888 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:41:20,391 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:43:09,468 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 16380 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:43:09,483 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:43:09,546 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:43:09,546 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:43:10,068 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:43:10,068 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:43:10,083 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 16:43:10,318 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e7de66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:43:10,521 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:43:10,536 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:43:10,536 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:43:10,536 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:43:10,614 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:43:10,614 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1068 ms
+2022-02-14 16:43:11,114 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 2e2291ed-c421-4b03-ad70-549af39dc343
+
+2022-02-14 16:43:11,145 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:43:11,177 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ea72d11, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d250e92, org.springframework.security.web.header.HeaderWriterFilter@1de22930, org.springframework.security.web.authentication.logout.LogoutFilter@3a91866e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d92f5e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a99725c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d1fde1b, org.springframework.security.web.session.SessionManagementFilter@3ec3e547, org.springframework.security.web.access.ExceptionTranslationFilter@4aa612e8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41c8dd87]
+2022-02-14 16:43:11,255 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:43:11,333 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:43:11,505 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:43:11,520 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:43:11,536 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:43:11,536 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.521 seconds (JVM running for 3.212)
+2022-02-14 16:43:45,677 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:43:45,677 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:43:45,682 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:43:45,766 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:43:45,767 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:43:46,374 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:43:46,835 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:51:48,717 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 15996 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:51:48,717 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:51:48,749 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:51:48,749 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:51:49,452 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:51:49,452 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:51:49,467 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 16:51:49,702 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1d1bf0c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:51:49,920 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:51:49,920 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:51:49,936 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:51:49,936 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:51:50,014 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:51:50,014 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1265 ms
+2022-02-14 16:51:50,514 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 5df01296-0cf5-48ef-945f-6fbd13806672
+
+2022-02-14 16:51:50,551 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:51:50,567 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@108fcec, org.springframework.security.web.context.SecurityContextPersistenceFilter@466356c2, org.springframework.security.web.header.HeaderWriterFilter@77ce8bda, org.springframework.security.web.authentication.logout.LogoutFilter@51d3f845, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f2d8844, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e8911f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1365611c, org.springframework.security.web.session.SessionManagementFilter@4e7a7cde, org.springframework.security.web.access.ExceptionTranslationFilter@4694f069, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@14cf6eac]
+2022-02-14 16:51:50,661 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:51:50,723 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:51:50,895 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:51:50,910 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:51:50,926 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:51:50,926 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.568 seconds (JVM running for 3.432)
+2022-02-14 16:52:07,944 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:52:07,944 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:52:07,948 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:52:08,034 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:52:08,035 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:52:08,683 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:52:09,064 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:53:53,160 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 11652 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:53:53,160 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:53:53,207 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:53:53,207 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:53:53,769 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:53:53,785 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:53:53,800 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 16:53:54,035 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4e9fe5ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:53:54,253 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:53:54,269 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:53:54,269 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:53:54,269 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:53:54,363 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:53:54,363 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1156 ms
+2022-02-14 16:53:54,894 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: fc3da71f-7a7e-467d-85d9-943b17d3a4ca
+
+2022-02-14 16:53:54,925 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:53:54,941 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa95edb, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d8c2f58, org.springframework.security.web.header.HeaderWriterFilter@de637f, org.springframework.security.web.authentication.logout.LogoutFilter@205f9de7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43d6b444, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@141a0a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3cb29451, org.springframework.security.web.session.SessionManagementFilter@173ae8b0, org.springframework.security.web.access.ExceptionTranslationFilter@69cdf821, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36b8379b]
+2022-02-14 16:53:55,050 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:53:55,128 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:53:55,300 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:53:55,316 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:53:55,331 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:53:55,347 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.453 seconds (JVM running for 3.177)
+2022-02-14 16:54:23,580 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 12532 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:54:23,580 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:54:23,611 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:54:23,611 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:54:24,111 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:54:24,111 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:54:24,126 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 16:54:24,361 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$537de78a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:54:24,548 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:54:24,564 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:54:24,564 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:54:24,564 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:54:24,673 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:54:24,673 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1062 ms
+2022-02-14 16:54:25,173 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 6d219e8d-0293-481a-8c46-e0034210013e
+
+2022-02-14 16:54:25,204 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:54:25,220 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43df6b26, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f2d8844, org.springframework.security.web.header.HeaderWriterFilter@78f4e19f, org.springframework.security.web.authentication.logout.LogoutFilter@7e3abd5d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5cc8bc19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c0bd778, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@618c44f6, org.springframework.security.web.session.SessionManagementFilter@466356c2, org.springframework.security.web.access.ExceptionTranslationFilter@77ce8bda, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a9d90b9]
+2022-02-14 16:54:25,314 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:54:25,376 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:54:25,548 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:54:25,563 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:54:25,579 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:54:25,579 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.249 seconds (JVM running for 2.828)
+2022-02-14 16:54:29,734 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:54:29,735 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:54:29,739 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 16:54:29,822 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:54:29,823 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:54:30,441 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:54:30,826 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:56:36,599 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 13724 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:56:36,615 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:56:36,630 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:56:36,630 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:56:37,193 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:56:37,193 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:56:37,208 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 16:56:37,521 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3b67848] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:56:37,724 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:56:37,740 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:56:37,740 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:56:37,740 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:56:37,818 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:56:37,818 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1188 ms
+2022-02-14 16:56:38,349 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: e17a9bd0-9ac5-48a6-bbca-559691e39e07
+
+2022-02-14 16:56:38,380 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:56:38,396 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a98948e, org.springframework.security.web.context.SecurityContextPersistenceFilter@52e98460, org.springframework.security.web.header.HeaderWriterFilter@5c88d9d8, org.springframework.security.web.authentication.logout.LogoutFilter@28a9307c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5598d216, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21577e6f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61ca9476, org.springframework.security.web.session.SessionManagementFilter@7d6d52ba, org.springframework.security.web.access.ExceptionTranslationFilter@35e2666f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61cf96d3]
+2022-02-14 16:56:38,489 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:56:38,552 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:56:38,739 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:56:38,755 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:56:38,771 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:56:38,786 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.437 seconds (JVM running for 3.328)
+2022-02-14 16:56:44,197 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 16:56:44,197 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 16:56:44,203 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 6 ms
+2022-02-14 16:56:44,285 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 16:56:44,286 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 16:56:44,890 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 16:56:45,371 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 16:59:55,976 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 4416 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 16:59:55,976 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 16:59:56,023 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 16:59:56,023 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 16:59:56,625 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 16:59:56,625 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 16:59:56,641 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 16:59:56,875 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bb626206] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 16:59:57,063 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 16:59:57,078 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:59:57,078 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 16:59:57,078 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 16:59:57,141 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 16:59:57,141 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1118 ms
+2022-02-14 16:59:57,625 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: cdd6466e-a488-483c-87d2-cf84b5e21613
+
+2022-02-14 16:59:57,656 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 16:59:57,672 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f6674ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@33df673e, org.springframework.security.web.header.HeaderWriterFilter@4e5b65d, org.springframework.security.web.authentication.logout.LogoutFilter@1f4e3b9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58899bcb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71ff0b46, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c1a0190, org.springframework.security.web.session.SessionManagementFilter@d19aa48, org.springframework.security.web.access.ExceptionTranslationFilter@46ee7d62, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@335c342e]
+2022-02-14 16:59:57,781 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 16:59:57,844 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 16:59:58,000 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 16:59:58,016 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 16:59:58,031 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 16:59:58,031 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.493 seconds (JVM running for 3.575)
+2022-02-14 17:00:03,132 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:00:03,133 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:00:03,137 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:00:03,224 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:00:03,225 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:00:03,847 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:00:04,206 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:01:45,658 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 7788 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:01:45,658 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:01:45,705 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:01:45,705 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:01:46,413 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:01:46,413 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:01:46,444 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 17:01:46,667 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3b8b045f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:01:46,870 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:01:46,870 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:01:46,886 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:01:46,886 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:01:46,949 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:01:46,949 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1244 ms
+2022-02-14 17:01:47,448 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: ff02c95e-404f-40e4-a7f8-8106ec52b8d3
+
+2022-02-14 17:01:47,480 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:01:47,495 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a789921, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c2cc1a0, org.springframework.security.web.header.HeaderWriterFilter@b4d38a, org.springframework.security.web.authentication.logout.LogoutFilter@539f5535, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b05b3a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@111bdc20, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ca60fd6, org.springframework.security.web.session.SessionManagementFilter@6d204171, org.springframework.security.web.access.ExceptionTranslationFilter@3a604075, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a9e2322]
+2022-02-14 17:01:47,589 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:01:47,667 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:01:47,823 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:01:47,855 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:01:47,870 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:01:47,870 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.586 seconds (JVM running for 3.708)
+2022-02-14 17:01:52,172 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:01:52,172 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:01:52,177 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:01:52,260 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:01:52,261 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:01:52,841 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:01:53,815 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:02:39,779 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 16368 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:02:39,779 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:02:39,794 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:02:39,794 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:02:40,950 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:02:40,950 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:02:40,966 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 17:02:41,216 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8c6f4bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:02:41,425 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:02:41,441 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:02:41,441 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:02:41,441 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:02:41,550 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:02:41,550 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1756 ms
+2022-02-14 17:02:42,191 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 2584da2e-cff6-425b-913b-695579dea484
+
+2022-02-14 17:02:42,222 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:02:42,253 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51ebedfa, org.springframework.security.web.context.SecurityContextPersistenceFilter@24e5f4ad, org.springframework.security.web.header.HeaderWriterFilter@2880f0fc, org.springframework.security.web.authentication.logout.LogoutFilter@7b749d90, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@635c0c30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@543b1614, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@623c1b57, org.springframework.security.web.session.SessionManagementFilter@3051e231, org.springframework.security.web.access.ExceptionTranslationFilter@394f8132, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53a817a7]
+2022-02-14 17:02:42,347 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:02:42,441 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:02:42,675 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:02:42,690 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:02:42,722 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:02:42,722 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 3.214 seconds (JVM running for 3.843)
+2022-02-14 17:02:48,536 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:02:48,536 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:02:48,540 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:02:48,626 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:02:48,627 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:02:49,221 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:02:49,717 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:04:41,673 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 16220 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:04:41,673 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:04:41,704 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:04:41,704 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:04:42,220 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:04:42,220 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:04:42,235 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 17:04:42,485 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$befd457e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:04:42,688 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:04:42,688 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:04:42,704 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:04:42,704 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:04:42,766 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:04:42,766 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1062 ms
+2022-02-14 17:04:43,298 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 09ad9ccf-cc62-4473-8d05-7e7e9fcc9483
+
+2022-02-14 17:04:43,329 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:04:43,344 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f9c3f25, org.springframework.security.web.context.SecurityContextPersistenceFilter@21391807, org.springframework.security.web.header.HeaderWriterFilter@2ac9de9d, org.springframework.security.web.authentication.logout.LogoutFilter@205bf782, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31c82c7a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e1cc292, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6859891f, org.springframework.security.web.session.SessionManagementFilter@533910d, org.springframework.security.web.access.ExceptionTranslationFilter@2f6017d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@386de0d5]
+2022-02-14 17:04:43,438 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:04:43,501 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:04:43,657 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:04:43,688 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:04:43,704 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:04:43,704 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.303 seconds (JVM running for 2.895)
+2022-02-14 17:04:50,609 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:04:50,609 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:04:50,613 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:04:50,703 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:04:50,704 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:04:51,338 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:04:51,880 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:05:58,958 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 12224 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:05:58,958 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:05:58,989 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:05:58,989 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:05:59,551 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:05:59,551 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:05:59,567 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 0ms. Found 0 repository interfaces.
+2022-02-14 17:05:59,817 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$90359c47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:06:00,036 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:06:00,051 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:06:00,051 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:06:00,051 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:06:00,129 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:06:00,129 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1140 ms
+2022-02-14 17:06:00,660 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 8263b112-ad5d-4ef0-b5ac-5cbdc2ba32ad
+
+2022-02-14 17:06:00,707 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:06:00,723 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@178ddf66, org.springframework.security.web.context.SecurityContextPersistenceFilter@468d11c2, org.springframework.security.web.header.HeaderWriterFilter@67641450, org.springframework.security.web.authentication.logout.LogoutFilter@74dc2b58, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cc340ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60e77974, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ea95208, org.springframework.security.web.session.SessionManagementFilter@4d57582e, org.springframework.security.web.access.ExceptionTranslationFilter@2b9b9052, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b317fe0]
+2022-02-14 17:06:00,817 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:06:00,879 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:06:01,051 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:06:01,082 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:06:01,098 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:06:01,098 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.437 seconds (JVM running for 3.048)
+2022-02-14 17:06:04,870 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:06:04,870 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:06:04,874 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:06:04,957 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:06:04,958 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:06:05,573 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:06:05,931 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:10:15,177 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 2412 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:10:15,177 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:10:15,208 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:10:15,208 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:10:15,755 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:10:15,755 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:10:15,770 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 17:10:16,036 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$55ea69ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:10:16,239 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:10:16,239 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:10:16,255 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:10:16,255 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:10:16,348 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:10:16,348 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1140 ms
+2022-02-14 17:10:16,864 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 9dc3a38b-a9c3-44dd-a801-549a977b0238
+
+2022-02-14 17:10:16,895 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:10:16,927 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51fe1f45, org.springframework.security.web.context.SecurityContextPersistenceFilter@1292bd36, org.springframework.security.web.header.HeaderWriterFilter@61047244, org.springframework.security.web.authentication.logout.LogoutFilter@6975ce4d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@655ff392, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9fb029, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@370cdf8f, org.springframework.security.web.session.SessionManagementFilter@7658495d, org.springframework.security.web.access.ExceptionTranslationFilter@232c2f2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6056c12d]
+2022-02-14 17:10:17,011 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:10:17,073 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:10:17,245 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:10:17,261 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:10:17,276 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:10:17,276 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.396 seconds (JVM running for 3.015)
+2022-02-14 17:10:20,608 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:10:20,609 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:10:20,614 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 17:10:20,698 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:10:20,699 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:10:21,282 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:10:21,790 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:12:19,557 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 14204 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:12:19,557 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:12:19,588 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:12:19,588 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:12:20,120 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:12:20,120 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:12:20,135 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2022-02-14 17:12:20,369 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c52d6cf4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:12:20,573 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:12:20,588 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:12:20,588 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:12:20,588 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:12:20,666 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:12:20,666 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1078 ms
+2022-02-14 17:12:21,182 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 39913bae-77e2-43f2-8fdb-07b378bf7ea0
+
+2022-02-14 17:12:21,213 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:12:21,229 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5969f81b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7be8f693, org.springframework.security.web.header.HeaderWriterFilter@3ec3e547, org.springframework.security.web.authentication.logout.LogoutFilter@420819a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4838672, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21a991aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21ed2f1, org.springframework.security.web.session.SessionManagementFilter@7e9c030e, org.springframework.security.web.access.ExceptionTranslationFilter@1f1574ea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@411b5b7b]
+2022-02-14 17:12:21,338 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:12:21,400 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:12:21,572 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:12:21,588 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:12:21,604 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:12:21,619 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.328 seconds (JVM running for 2.931)
+2022-02-14 17:12:28,285 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:12:28,286 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:12:28,290 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:12:28,373 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:12:28,374 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:12:28,972 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:12:29,932 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:13:31,967 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 9960 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:13:31,967 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:13:32,013 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:13:32,013 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:13:32,817 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:13:32,817 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:13:32,848 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 17:13:33,207 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6acbaba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:13:33,457 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:13:33,457 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:13:33,473 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:13:33,473 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:13:33,535 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:13:33,535 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1522 ms
+2022-02-14 17:13:34,082 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: f18e91b8-970e-4850-a7ae-1c9ca157b821
+
+2022-02-14 17:13:34,113 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:13:34,129 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41108365, org.springframework.security.web.context.SecurityContextPersistenceFilter@45af31cd, org.springframework.security.web.header.HeaderWriterFilter@e03ba80, org.springframework.security.web.authentication.logout.LogoutFilter@32b0a825, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76e26df1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8393578, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24117158, org.springframework.security.web.session.SessionManagementFilter@732620ee, org.springframework.security.web.access.ExceptionTranslationFilter@7fc7f795, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ba30577]
+2022-02-14 17:13:34,223 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:13:34,285 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:13:34,454 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:13:34,470 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:13:34,485 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:13:34,485 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 3.128 seconds (JVM running for 3.869)
+2022-02-14 17:13:43,684 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:13:43,684 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:13:43,689 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2022-02-14 17:13:43,780 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:13:43,781 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:13:57,381 INFO [http-nio-8080-exec-2] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:13:57,753 INFO [http-nio-8080-exec-2] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2022-02-14 17:29:54,418 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:50] Starting AlumniApplication on DESKTOP-MS39Q40 with PID 15792 (D:\Code\IdeaProjects\alumni\target\classes started by Administrator in D:\Code\IdeaProjects\alumni)
+2022-02-14 17:29:54,418 INFO [restartedMain] c.g.a.AlumniApplication [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2022-02-14 17:29:54,449 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-14 17:29:54,449 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-14 17:29:54,949 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-14 17:29:54,949 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-14 17:29:54,965 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2022-02-14 17:29:55,199 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$61078045] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-14 17:29:55,386 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2022-02-14 17:29:55,402 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:29:55,402 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2022-02-14 17:29:55,402 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2022-02-14 17:29:55,496 INFO [restartedMain] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2022-02-14 17:29:55,496 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1047 ms
+2022-02-14 17:29:55,996 INFO [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:82] 
+
+Using generated security password: 0b48ed0a-8df5-48e3-9226-ff2c4c0a399c
+
+2022-02-14 17:29:56,027 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2022-02-14 17:29:56,042 INFO [restartedMain] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2212519c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dab4f8b, org.springframework.security.web.header.HeaderWriterFilter@2b942db1, org.springframework.security.web.authentication.logout.LogoutFilter@3797f405, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e9c030e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2527075f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d46dd4a, org.springframework.security.web.session.SessionManagementFilter@2dab8977, org.springframework.security.web.access.ExceptionTranslationFilter@a81acdb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ea72d11]
+2022-02-14 17:29:56,136 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-14 17:29:56,199 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2022-02-14 17:29:56,370 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2022-02-14 17:29:56,402 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-02-14 17:29:56,417 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path '/alumni'
+2022-02-14 17:29:56,417 INFO [restartedMain] c.g.a.AlumniApplication [StartupInfoLogger.java:59] Started AlumniApplication in 2.265 seconds (JVM running for 2.856)
+2022-02-14 17:30:04,257 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/alumni] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-14 17:30:04,258 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2022-02-14 17:30:04,262 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2022-02-14 17:30:04,346 INFO [http-nio-8080-exec-1] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2022-02-14 17:30:04,347 INFO [http-nio-8080-exec-1] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2022-02-14 17:30:18,163 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2022-02-14 17:30:18,541 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.glh.alumni.dao.CommentDao">
+
+    <resultMap type="cn.glh.alumni.entity.Comment" id="CommentMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="targetType" column="target_type" jdbcType="INTEGER"/>
+        <result property="targetId" column="target_id" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="fromUserId" column="from_user_id" jdbcType="INTEGER"/>
+        <result property="toUserId" column="to_user_id" jdbcType="INTEGER"/>
+        <result property="state" column="state" jdbcType="BOOLEAN"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="selectById" parameterType="integer" resultType="cn.glh.alumni.entity.Comment">
+        select
+        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+        where id = #{id}
+    </select>
+
+    <!--通过用户名查询-->
+    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.Comment">
+        select
+        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+        where user_name = #{userName}
+    </select>
+
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="CommentMap">
+        select
+        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+    </select>
+    <!--通过业务类型及ID确认评论/回复-->
+    <select id="selectCommentByType" parameterType="integer" resultType="cn.glh.alumni.entity.Comment">
+        select
+        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+        where target_type = #{type} and target_id = #{id}
+    </select>
+    <!--回复专属、找到对应的评论-->
+    <select id="findCommentById" parameterType="integer" resultType="cn.glh.alumni.entity.Comment">
+        select
+        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+        where id = #{id}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertComment" keyProperty="id" useGeneratedKeys="true">
+        insert into t_comment(target_type, target_id, content, from_user_id, to_user_id, state, create_time)
+        values (#{targetType}, #{targetId}, #{content}, #{fromUserId}, #{toUserId}, #{state}, #{createTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateComment">
+        update t_comment
+        <set>
+            <if test="targetType != null">
+                target_type = #{targetType},
+            </if>
+            <if test="targetId != null">
+                target_id = #{targetId},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="fromUserId != null">
+                from_user_id = #{fromUserId},
+            </if>
+            <if test="toUserId != null">
+                to_user_id = #{toUserId},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from t_comment where id = #{id}
+    </delete>
+
+</mapper>
+

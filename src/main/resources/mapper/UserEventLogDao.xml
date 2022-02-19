@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.glh.alumni.dao.UserEventLogDao">
+
+    <resultMap type="cn.glh.alumni.entity.UserEventLog" id="UserEventLogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="selectById" parameterType="integer" resultType="cn.glh.alumni.entity.UserEventLog">
+        select
+        id, user_id, content, create_time from t_user_event_log
+        where id = #{id}
+    </select>
+
+    <!--通过用户名查询-->
+    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.UserEventLog">
+        select
+        id, user_id, content, create_time from t_user_event_log
+        where user_name = #{userName}
+    </select>
+
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="UserEventLogMap">
+        select
+        id, user_id, content, create_time from t_user_event_log
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertUserEventLog" keyProperty="id" useGeneratedKeys="true">
+        insert into t_user_event_log(user_id, content, create_time)
+        values (#{userId}, #{content}, #{createTime})
+    </insert>
+
+
+</mapper>
+

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.glh.alumni.dao.ActivityDao">
+
+    <resultMap type="cn.glh.alumni.entity.Activity" id="ActivityMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="VARCHAR"/>
+        <result property="cover" column="cover" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="contact" column="contact" jdbcType="VARCHAR"/>
+        <result property="closeDate" column="close_date" jdbcType="VARCHAR"/>
+        <result property="numberLimit" column="number_limit" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="star" column="star" jdbcType="INTEGER"/>
+        <result property="collect" column="collect" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="startDate" column="start_date" jdbcType="VARCHAR"/>
+        <result property="endDate" column="end_date" jdbcType="VARCHAR"/>
+        <result property="province" column="province" jdbcType="VARCHAR"/>
+        <result property="city" column="city" jdbcType="VARCHAR"/>
+        <result property="county" column="county" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--活动报名-->
+    <resultMap id="EnrollMap" type="cn.glh.alumni.entity.ActivityEnroll">
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="enrollTime" column="enroll_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="selectById" parameterType="integer" resultType="cn.glh.alumni.entity.Activity">
+        select
+        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
+        start_date, end_date, province, city, county, address from t_activity
+        where id = #{id}
+    </select>
+
+    <!--通过用户名查询-->
+    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.Activity">
+        select
+        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
+        start_date, end_date, province, city, county, address from t_activity
+        where user_name = #{userName}
+    </select>
+
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="ActivityMap">
+        select
+        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
+        start_date, end_date, province, city, county, address from t_activity
+    </select>
+
+    <!--获取本次活动参与人及参与时间-->
+    <select id="getEnrollUser" parameterType="integer" resultMap="EnrollMap">
+        select
+        user_id, enroll_time from t_activity_enroll
+        where activity_id = #{id}
+    </select>
+    <!--查找是否存在重复报名的情况-->
+    <select id="findEnrollUser" parameterType="integer" resultType="cn.glh.alumni.entity.ActivityEnroll">
+        select
+        user_id, enroll_time from t_activity_enroll
+        where activity_id = #{activityId} and user_id = #{userId}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertActivity" keyProperty="id" useGeneratedKeys="true">
+        insert into t_activity(sort, cover, title, contact, close_date, number_limit, content, star, collect,
+        create_time, state, user_id, start_date, end_date, province, city, county, address)
+        values (#{sort}, #{cover}, #{title}, #{contact}, #{closeDate}, #{numberLimit}, #{content}, #{star}, #{collect},
+        #{createTime}, #{state}, #{userId}, #{startDate}, #{endDate}, #{province}, #{city}, #{county}, #{address})
+    </insert>
+
+    <!--登记活动报名人-->
+    <insert id="insertEnrollUser">
+        insert into t_activity_enroll(activity_id, user_id, enroll_time)
+        values(#{activityId},#{userId},#{enrollTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateActivity">
+        update t_activity
+        <set>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="cover != null and cover != ''">
+                cover = #{cover},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="contact != null and contact != ''">
+                contact = #{contact},
+            </if>
+            <if test="closeDate != null and closeDate != ''">
+                close_date = #{closeDate},
+            </if>
+            <if test="numberLimit != null">
+                number_limit = #{numberLimit},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="star != null">
+                star = #{star},
+            </if>
+            <if test="collect != null">
+                collect = #{collect},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="startDate != null and startDate != ''">
+                start_date = #{startDate},
+            </if>
+            <if test="endDate != null and endDate != ''">
+                end_date = #{endDate},
+            </if>
+            <if test="province != null and province != ''">
+                province = #{province},
+            </if>
+            <if test="city != null and city != ''">
+                city = #{city},
+            </if>
+            <if test="county != null and county != ''">
+                county = #{county},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from t_activity where id = #{id}
+    </delete>
+
+</mapper>
+
