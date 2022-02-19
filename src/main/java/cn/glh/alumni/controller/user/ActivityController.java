@@ -40,21 +40,27 @@ public class ActivityController {
     private ActivityService activityService;
 
     /**
-     * 进入到活动页面
+     * 进入到活动列表页面
      * @return String
      */
-    @GetMapping("/list")
-    public String getActivity(){ return "activity/activity"; }
+    @GetMapping("/list/{sort}")
+    public String getActivityList(Model model, @PathVariable(value = "sort") Integer sort){
+        List<Activity> activityList = activityService.getActivityList(sort);
+        model.addAttribute("activityList", activityList);
+        return "activity/list";
+    }
 
     /**
      * 进入到活动发布页面
      * @return String
      */
     @GetMapping("/publish")
-    public String getPublishPage(){
+    public String getPublishPage(Model model){
         User user = hostHolder.getUser();
         if (user == null){
-            return "login";
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+            return "operate-result";
         }
         return "activity/publish";}
 
@@ -108,12 +114,6 @@ public class ActivityController {
      */
     @GetMapping("/details/{id}")
     public String getDetails(@PathVariable("id") int id,Model model) {
-        User user = hostHolder.getUser();
-        if (user == null) {
-            model.addAttribute("msg", "请先登录!");
-            model.addAttribute("target", "/user/login");
-            return "operate-result";
-        }
         Activity activity = activityService.getDetails(id);
         List<ActivityEnroll> enrollList = activityService.getEnrollUser(id);
         // 活动点赞数量

@@ -39,6 +39,9 @@ public class LikeController {
     @ResponseBody
     public String like(int targetType, int targetId) {
         User user = hostHolder.getUser();
+        if (user == null){
+            return AlumniUtil.getJSONString(1,"请先登录!",null);
+        }
         // 点赞
         likeService.like(AlumniEnum.fromCode(targetType).getAlumniType(), targetId, user.getId());
         // 点赞数量

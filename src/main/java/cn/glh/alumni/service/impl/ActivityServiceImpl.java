@@ -8,6 +8,7 @@ import cn.glh.alumni.entity.ActivityEnroll;
 import cn.glh.alumni.entity.User;
 import cn.glh.alumni.entity.UserEventLog;
 import cn.glh.alumni.entity.enums.ActivityEnum;
+import cn.glh.alumni.entity.enums.AlumniEnum;
 import cn.glh.alumni.event.UserEvent;
 import cn.glh.alumni.service.ActivityService;
 import cn.glh.alumni.util.HostHolder;
@@ -18,10 +19,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 活动表(Activity)表服务实现类
@@ -170,6 +168,23 @@ public class ActivityServiceImpl implements ActivityService {
             activityEnroll.setHeadPic(user.getHeadPic());
         }
         return enrollList;
+    }
+
+    /**
+     * 进入到活动列表页面
+     * @param sort 分类
+     * @return 活动集合
+     */
+    @Override
+    public List<Activity> getActivityList(Integer sort) {
+        List<Activity> activityList = null;
+        //全部查询
+        if (sort == ActivityEnum.all.getCode()){
+            activityList  = activityDao.findAllActivity();
+        }else{
+            activityList = activityDao.findSortActivity(ActivityEnum.fromCode(sort).getActivitySort());
+        }
+        return activityList;
     }
 
 

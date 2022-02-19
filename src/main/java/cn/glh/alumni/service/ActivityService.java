@@ -76,4 +76,11 @@ public interface ActivityService {
      * @return
      */
     List<ActivityEnroll> getEnrollUser(int id);
+
+    /**
+     * 进入到活动列表页面
+     * @param sort 分类
+     * @return 活动集合
+     */
+    List<Activity> getActivityList(Integer sort);
 }

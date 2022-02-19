@@ -83,5 +83,18 @@ public interface ActivityDao {
      * @return
      */
     ActivityEnroll findEnrollUser(Integer activityId, Integer userId);
+
+    /**
+     * 找出所有活动
+     * @return
+     */
+    List<Activity> findAllActivity();
+
+    /**
+     * 根据分类找出所属活动
+     * @param sort
+     * @return
+     */
+    List<Activity> findSortActivity(String sort);
 }
 

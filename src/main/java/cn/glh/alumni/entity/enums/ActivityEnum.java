@@ -15,15 +15,17 @@ import java.util.Map;
 @AllArgsConstructor
 public enum ActivityEnum {
 
+    //全部
+    all(0,null),
     //闲聊聚餐
-    gossip_dinner(0,"闲聊聚餐"),
+    gossip_dinner(1,"闲聊聚餐"),
     //公益活动
-    charity_campaign(1,"公益活动"),
+    charity_campaign(2,"公益活动"),
     //校友聚会
-    alumni_reunion(2,"校友聚会"),
+    alumni_reunion(3,"校友聚会"),
     //旅游度假
-    tourism_vacation(3,"旅游度假"),
-    other(4,"其它");
+    tourism_vacation(4,"旅游度假"),
+    other(5,"其它");
 
     private final int code;
     private final String name;

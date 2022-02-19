@@ -60,10 +60,23 @@
         where activity_id = #{id}
     </select>
     <!--查找是否存在重复报名的情况-->
-    <select id="findEnrollUser" parameterType="integer" resultType="cn.glh.alumni.entity.ActivityEnroll">
+    <select id="findEnrollUser" parameterType="string" resultType="cn.glh.alumni.entity.ActivityEnroll">
         select
         user_id, enroll_time from t_activity_enroll
         where activity_id = #{activityId} and user_id = #{userId}
+    </select>
+
+    <!--找出所有活动-->
+    <select id="findAllActivity" resultType="cn.glh.alumni.entity.Activity">
+        select
+        id, sort, cover, title, content, start_date, province, city, county from t_activity
+    </select>
+
+    <!--根据分类找出所属活动-->
+    <select id="findSortActivity" parameterType="string" resultType="cn.glh.alumni.entity.Activity">
+        select
+        id, sort, cover, title, content, start_date, province, city, county from t_activity
+        where sort = #{sort}
     </select>
 
     <!--新增所有列-->
