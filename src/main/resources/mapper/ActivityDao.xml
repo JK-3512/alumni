@@ -38,14 +38,6 @@
         where id = #{id}
     </select>
 
-    <!--通过用户名查询-->
-    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.Activity">
-        select
-        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
-        start_date, end_date, province, city, county, address from t_activity
-        where user_name = #{userName}
-    </select>
-
     <!-- 查询全部 -->
     <select id="selectAll" resultMap="ActivityMap">
         select

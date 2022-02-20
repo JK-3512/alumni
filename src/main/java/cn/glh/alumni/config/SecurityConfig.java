@@ -55,8 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
         //认证所有请求，所有请求都会被拦截
         http.authorizeRequests()
-                .antMatchers("/**/publish")
-                .hasAuthority(AlumniConstant.AUTHORITY_USER)
+//                .antMatchers("/**/publish")
+//                .hasAuthority(AlumniConstant.AUTHORITY_USER)
                 .anyRequest().permitAll();
         // 权限不够时的处理
         http.exceptionHandling()

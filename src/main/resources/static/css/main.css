@@ -167,7 +167,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 
 
 /*album*/
-.album-content .img-info{margin-top: 66px; overflow: hidden; font-size: 16px; margin-bottom: 126px;}
+.album-content .img-info{margin-top: 66px; overflow: hidden; font-size: 16px; margin-bottom: 126px;cursor:pointer}
 .album-content .img-info img{float: left; padding-right: 60px;}
 .album-content .img-info .title{line-height: 30px; margin-top: 124px; padding-left: 20px;}
 .album-content .img-info .title .data{color: #ff7f21;}

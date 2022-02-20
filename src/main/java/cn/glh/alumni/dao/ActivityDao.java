@@ -24,14 +24,6 @@ public interface ActivityDao {
     Activity selectById(Integer id);
 
     /**
-     * 通过用户名查询单条数据
-     *
-     * @param userName 用户名
-     * @return 实例对象
-     */
-    Activity selectByName(String userName);
-
-    /**
      * 查询全部
      *
      * @return 对象列表
