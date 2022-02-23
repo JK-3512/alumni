@@ -114,7 +114,7 @@ public class ActivityController {
      */
     @GetMapping("/details/{id}")
     public String getDetails(@PathVariable("id") int id,Model model) {
-        Activity activity = activityService.getDetails(id);
+        Activity activity = activityService.selectById(id);
         List<ActivityEnroll> enrollList = activityService.getEnrollUser(id);
         // 活动点赞数量
         long likeCount = likeService.findTargetLikeCount(AlumniEnum.activity.getAlumniType(), activity.getId());

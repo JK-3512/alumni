@@ -20,7 +20,7 @@ public class Album implements Serializable {
     /**
      * 分类
      */
-    private Integer sort;
+    private String sort;
     /**
      * 标题
      */

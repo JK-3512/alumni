@@ -46,3 +46,8 @@ function collect(btn, targetType, targetId) {
         }
     )
 }
+
+//相册列表，点击其中一个跳转到详情页面
+function getDetails(id) {
+    $(location).attr('href', '/alumni/user/album/details/'+id);
+}

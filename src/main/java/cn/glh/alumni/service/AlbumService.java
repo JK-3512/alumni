@@ -4,6 +4,8 @@ import cn.glh.alumni.entity.Album;
 import cn.glh.alumni.base.BasePage;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 /**
  * 相册表(Album)表服务接口
  *
@@ -18,7 +20,7 @@ public interface AlbumService {
      * @param id 主键
      * @return 实例对象
      */
-    Album queryById(Integer id);
+    Album selectById(Integer id);
 
     /**
      * 分页查询
@@ -52,4 +54,23 @@ public interface AlbumService {
      */
     int deleteById(Integer id);
 
+    /**
+     * 发布相册
+     * @param album 相册对象
+     */
+    void insertAlbum(Album album);
+
+    /**
+     * 相册列表
+     * @param sort 分类
+     * @return 相册对象集合
+     */
+    List<Album> getAlbumList(Integer sort);
+
+    /**
+     * 获取相册下属所有的图片
+     * @param id 相册ID
+     * @return 图片集合
+     */
+    List<String> getAlbumPicList(Integer id);
 }

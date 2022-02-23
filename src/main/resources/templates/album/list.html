@@ -41,7 +41,7 @@
 </div>
 
 
-<div class="album-content w1000" id="layer-photos-demo" class="layer-photos-demo">
+<div class="album-content w1000" id="layer-photos-demo">
   <div class="img-info">
     <img th:src="@{/img/xc_img1.jpg}" alt="cover">
     <div class="title">
@@ -64,15 +64,15 @@
   </div>
   <div class="img-list">
     <div class="layui-fluid" style="padding:0">
-      <div class="layui-row layui-col-space30 space">
+      <div class="layui-row layui-col-space30 space" th:each="album:${albumList}">
         <!-- 第一个 -->
-        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4" style="cursor:pointer">
+        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4" style="cursor:pointer" th:onclick="|getDetails(${album.id});|">
           <div class="item">
-            <img th:src="@{/img/xc_img3.jpg}">
+            <img th:src="${album.albumPicList.get(0)}">
             <div class="cont-text">
-              <div class="data">2018/08/08</div>
-              <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-              <p class="briefly">今日天气晴朗,庐山一日游</p>
+              <div class="data" th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></div>
+              <p class="address"><span th:text="${album.title}"></span></p>
+              <p class="briefly" th:text="${album.content}"></p>
             </div>
           </div>
         </div>
@@ -100,6 +100,8 @@
     </div>
   </div>
 </div>
+<script th:src="@{/js/details.js}"></script>
+<script th:src="@{/js/jquery-3.6.0.js}"></script>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
 <script type="text/javascript">
   layui.config({
@@ -107,7 +109,7 @@
   }).use(['element', 'laypage', 'form', 'layer', 'menu'], function () {
     element = layui.element, laypage = layui.laypage, form = layui.form, layer = layui.layer, menu = layui.menu;
     laypage.render({
-      elem: 'demo'
+      elem: '#demo'
       , count: 70 //数据总数，从服务端得到
     });
     menu.init();

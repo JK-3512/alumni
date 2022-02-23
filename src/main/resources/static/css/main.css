@@ -144,7 +144,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 
 /*details*/
 
-.details-content .article-cont .cover{float: none; width: 100%;}
+.details-content .article-cont .cover{float: none; width: 800px;margin-bottom: 50px;}
 .details-content .article-cont .title{text-align: center; margin-bottom: 0;}
 .details-content .article-cont .title h1{ margin-bottom: 36px;}
 .details-content .article-cont .title p{padding:0;}
@@ -180,7 +180,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .album-content .img-list .item img{width: 100%;}
 .album-content .img-list .cont-text{padding-left: 10px;}
 .album-content .img-list .cont-text .data{line-height: 55px; color: #ff7f21;}
-.album-content .img-list .cont-text .briefly{line-height: 24px; margin-top: 16px;}
+.album-content .img-list .cont-text .briefly{line-height: 24px; margin-top: 16px;display: -webkit-box;overflow: hidden;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
 /*end-album*/
 
 

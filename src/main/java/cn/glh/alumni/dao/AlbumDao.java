@@ -2,6 +2,8 @@ package cn.glh.alumni.dao;
 
 import cn.glh.alumni.entity.Album;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -19,7 +21,7 @@ public interface AlbumDao {
      * @param id 主键
      * @return 实例对象
      */
-    Album queryById(Integer id);
+    Album selectById(Integer id);
     
     /**
      * 查询全部
@@ -34,7 +36,7 @@ public interface AlbumDao {
      * @param album 实例对象
      * @return 影响行数
      */
-    int insert(Album album);
+    int insertAlbum(Album album);
 
     /**
      * 修改数据
@@ -52,5 +54,25 @@ public interface AlbumDao {
      */
     int deleteById(Integer id);
 
+    /**
+     * 插入多图片
+     * @param id 相册ID
+     * @param albumPicList 图片集合
+     */
+    void insertAlbumPic(@Param("id") Integer id, @Param("albumPicList") List<String> albumPicList);
+
+    /**
+     * 获取相册下属所有的图片
+     * @param id 相册ID
+     * @return 图片集合
+     */
+    List<String> getAlbumPicList(Integer id);
+
+    /**
+     * 相册列表
+     * @param sort
+     * @return
+     */
+    List<Album> getAlbumList(String sort);
 }
 
