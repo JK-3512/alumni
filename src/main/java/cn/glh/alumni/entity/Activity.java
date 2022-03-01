@@ -45,14 +45,6 @@ public class Activity implements Serializable {
      */
     private String content;
     /**
-     * 点赞
-     */
-    private Integer star;
-    /**
-     * 收藏
-     */
-    private Integer collect;
-    /**
      * 创建时间
      */
     private Date createTime;

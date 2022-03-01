@@ -81,8 +81,6 @@ public class ActivityServiceImpl implements ActivityService {
         activity.setUserId(user.getId());
         activity.setSort(ActivityEnum.fromCode(Integer.valueOf(activity.getSort())).getActivitySort());
         activity.setCreateTime(new Date());
-        activity.setStar(0);
-        activity.setCollect(0);
         activity.setState(0);
 
         //事件产生

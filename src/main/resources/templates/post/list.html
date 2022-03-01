@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>相册详情</title>
+    <title>广场</title>
     <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 </head>
@@ -14,13 +14,14 @@
 <div class="header">
     <h1 class="logo">
         <a th:href="@{/user/index}">
-            <img th:src="@{/img/logo.png}" alt="logo">
+            <img th:src="@{/img/logo.png}">
         </a>
     </h1>
     <div class="nav">
         <a th:href="@{/user/index}">新闻资讯</a>
-        <a th:href="@{/user/activity}" class="active">活动</a>
-        <a href="album.html">相册</a>
+        <a th:href="@{/user/activity}">活动</a>
+        <a th:href="@{/user/album/list}">相册</a>
+        <a th:href="@{/user/post/list}" class="active">广场</a>
         <a href="about.html">关于</a>
     </div>
     <div class="nav-right">
@@ -41,50 +42,53 @@
 </div>
 
 
-<div class="content whisper-content leacots-content details-content">
-    <div class="cont w1000">
+<div class="content whisper-content">
+    <div class="cont">
+        <div class="title">
+        <span class="layui-breadcrumb" lay-separator="|">
+          <a th:href="@{/user/post/list}" class="active">全部</a>
+          <a th:href="@{/user/post/list}">今日新鲜事</a>
+          <a th:href="@{/user/post/list}">今天学到了</a>
+          <a th:href="@{/user/post/list}">下班去哪玩</a>
+          <a th:href="@{/user/post/list}">什么值得买</a>
+          <a th:href="@{/user/post/list}">搞笑段子</a>
+          <a th:href="@{/user/post/list}">其它</a>
+          <a th:href="@{/user/post/publish}">创建</a>
+        </span>
+        </div>
         <div class="whisper-list">
-            <div class="item-box">
-                <div class="review-version">
-                    <!-- 内容 -->
-                    <div class="article-cont">
-                        <!-- 标题 -->
-                        <div class="title">
-                            <h1 th:utext="${album.title}"></h1>
-                            <p class="cont-info"><span class="data"
-                                                       th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></span><span
-                                    class="types" th:utext="${album.sort}"></span></p>
-                        </div>
-                        <!-- 主要内容 -->
-                        <div class="main-content" th:utext="${album.content}">
-                        </div>
-                        <!-- 图片 -->
-                        <div th:each="pic:${album.albumPicList}">
-                            <img class="cover" th:src="${pic}" alt="图片">
-                        </div>
-                        <!-- 点赞、收藏 -->
-                        <div class="op-list">
-                            <p th:class="${likeStatus == 1} ? 'active like' : 'like'"
-                               th:onclick="|like(this, 3, ${album.id});|"><i
-                                    class="layui-icon layui-icon-praise"></i><span th:text="${likeCount}"></span></p>
-                            <p th:class="${collectStatus == 1} ? 'active like' : 'like'"
-                               th:onclick="|collect(this, 3, ${album.id});|"><i
-                                    class="layui-icon layui-icon-rate-solid"></i><span th:text="${collectCount}"></span>
-                            </p>
-                        </div>
-                        <div class="btn-box">
-                            <button class="layui-btn layui-btn-primary">上一篇</button>
-                            <button class="layui-btn layui-btn-primary">下一篇</button>
-                        </div>
+            <!--开始遍历-->
+            <div class="item-box" th:each="pvo:${posts}">
+                <div class="item">
+                    <div class="whisper-title">
+                        <i class="layui-icon layui-icon-date"></i><span class="date"
+                                                                        th:text="${#dates.format(pvo.post.createTime, 'yyyy-MM-dd')}">2018/06/08</span>
                     </div>
-                    <!-- 评论表单 -->
+                    <!--主要内容-->
+                    <div class="text-cont" th:utext="${pvo.post.content}"></div>
+                    <div class="op-list">
+                        <p th:class="${pvo.likeStatus == 1} ? 'active like' : 'like'"
+                           th:onclick="|like(this, 4, ${pvo.post.id});|"><i
+                                class="layui-icon layui-icon-praise"></i><span
+                                th:text="${pvo.likeCount}"></span></p>
+                        <p th:class="${pvo.collectStatus == 1} ? 'active like' : 'like'"
+                           th:onclick="|collect(this, 4, ${pvo.post.id});|"><i
+                                class="layui-icon layui-icon-rate-solid"></i><span
+                                th:text="${pvo.collectCount}"></span></p>
+                        <p><i class="layui-icon layui-icon-reply-fill"></i><span th:text="${pvo.msgNum}"></span></p>
+                        <p class="off"><span>展开</span><i class="layui-icon layui-icon-down"></i></p>
+                    </div>
+                </div>
+                <!--该帖子下的隐藏区域-->
+                <div class="review-version layui-hide">
+                    <!--评论表单-->
                     <div class="form">
                         <form class="layui-form" method="post" th:action="@{/user/comment/add}">
                             <div class="layui-form-item layui-form-text">
                                 <div class="layui-input-block">
-                                    <textarea name="content" placeholder="既然来了，就说几句" class="layui-textarea"></textarea>
-                                    <input type="hidden" name="targetType" value="3">
-                                    <input type="hidden" name="targetId" th:value="${album.id}">
+                                    <textarea name="content" class="layui-textarea"></textarea>
+                                    <input type="hidden" name="targetType" value="4">
+                                    <input type="hidden" name="targetId" th:value="${pvo.post.id}">
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -94,33 +98,32 @@
                             </div>
                         </form>
                     </div>
-                    <div class="volume">
-                        全部留言 <span th:text="${msgNum}"></span>
-                    </div>
+                    <!--评论列表-->
                     <div class="list-cont">
-                        <div class="cont" th:each="cmt:${comments}">
+                        <div class="cont" th:each="cmt:${pvo.comments}">
                             <!--评论-->
                             <div class="comment">
-                                <!-- 头像 -->
+                                <!--头像-->
                                 <div class="img">
                                     <img th:src="${cmt.user.headPic}" alt="头像" style="width: 50px;">
                                 </div>
+                                <!--用户名-->
                                 <div class="text">
-                                    <!-- 用户名 -->
                                     <p class="tit"><span class="name" th:text="${cmt.user.userName}"></span><span
                                             class="data"
-                                            th:text="${#dates.format(cmt.comment.createTime, 'yyyy-MM-dd')}"></span></p>
-                                    <!-- 评论内容 -->
+                                            th:text="${#dates.format(cmt.comment.createTime, 'yyyy-MM-dd')}">2018/06/06</span>
+                                    </p>
                                     <p class="ct" th:text="${cmt.comment.content}"></p>
                                     <div class="op-list">
                                         <p th:class="${cmt.likeStatus == 1} ? 'active like' : 'like'"
                                            th:onclick="|like(this, 5, ${cmt.comment.id});|"><i
                                                 class="layui-icon layui-icon-praise"></i><span
                                                 th:text="${cmt.likeCount}"></span></p>
-                                        <p class="edit"><i class="layui-icon layui-icon-reply-fill"></i><span>回复</span>
+                                        <p class="edit"><i
+                                                class="layui-icon layui-icon-reply-fill"></i><span>回复</span>
                                         </p>
                                     </div>
-                                    <!-- 回复表单 -->
+                                    <!-- 回复 -->
                                     <div class="comment layui-hide">
                                         <div class="form">
                                             <form class="layui-form" method="post" th:action="@{/user/comment/add}">
@@ -131,7 +134,8 @@
                                                         <input type="hidden" name="targetType" value="5">
                                                         <input type="hidden" name="targetId"
                                                                th:value="${cmt.comment.id}">
-                                                        <input type="hidden" name="toUserId" th:value="${cmt.user.id}">
+                                                        <input type="hidden" name="toUserId"
+                                                               th:value="${cmt.user.id}">
                                                     </div>
                                                 </div>
                                                 <div class="layui-form-item">
@@ -153,8 +157,9 @@
                                     <!-- 用户名 -->
                                     <p class="tit"><span class="name" th:text="${rvo.user.userName}"></span><span
                                             class="data"
-                                            th:text="${#dates.format(rvo.reply.createTime, 'yyyy-MM-dd')}"></span></p>
-                                    <!-- 评论内容 -->
+                                            th:text="${#dates.format(rvo.reply.createTime, 'yyyy-MM-dd')}"></span>
+                                    </p>
+                                    <!-- 回复内容 -->
                                     <p class="ct" th:text="${rvo.reply.content}"></p>
                                     <!-- 点赞 -->
                                     <div class="op-list">
@@ -170,8 +175,10 @@
                 </div>
             </div>
         </div>
+        <div id="demo" style="text-align: center;"></div>
     </div>
 </div>
+
 <div class="footer-wrap">
     <div class="footer w1000">
         <div class="qrcode">
@@ -196,10 +203,14 @@
         base: '[[@{/js/util/}]]'
     }).use(['element', 'laypage', 'form', 'menu'], function () {
         element = layui.element, laypage = layui.laypage, form = layui.form, menu = layui.menu;
-        // menu.init();
+        laypage.render({
+            elem: 'demo'
+            , count: 70 //数据总数，从服务端得到
+        });
+        menu.init();
+        menu.off();
         menu.comment_off();
-        menu.enroll_off();
-    });
+    })
 </script>
 </body>
 

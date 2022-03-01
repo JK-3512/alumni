@@ -11,8 +11,6 @@
         <result property="closeDate" column="close_date" jdbcType="VARCHAR"/>
         <result property="numberLimit" column="number_limit" jdbcType="INTEGER"/>
         <result property="content" column="content" jdbcType="VARCHAR"/>
-        <result property="star" column="star" jdbcType="INTEGER"/>
-        <result property="collect" column="collect" jdbcType="INTEGER"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="state" column="state" jdbcType="INTEGER"/>
         <result property="userId" column="user_id" jdbcType="INTEGER"/>
@@ -33,7 +31,7 @@
     <!--查询单个-->
     <select id="selectById" parameterType="integer" resultType="cn.glh.alumni.entity.Activity">
         select
-        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
+        id, sort, cover, title, contact, close_date, number_limit, content, create_time, state, user_id,
         start_date, end_date, province, city, county, address from t_activity
         where id = #{id}
     </select>
@@ -41,7 +39,7 @@
     <!-- 查询全部 -->
     <select id="selectAll" resultMap="ActivityMap">
         select
-        id, sort, cover, title, contact, close_date, number_limit, content, star, collect, create_time, state, user_id,
+        id, sort, cover, title, contact, close_date, number_limit, content, create_time, state, user_id,
         start_date, end_date, province, city, county, address from t_activity
     </select>
 
@@ -73,10 +71,10 @@
 
     <!--新增所有列-->
     <insert id="insertActivity" keyProperty="id" useGeneratedKeys="true">
-        insert into t_activity(sort, cover, title, contact, close_date, number_limit, content, star, collect,
+        insert into t_activity(sort, cover, title, contact, close_date, number_limit, content,
         create_time, state, user_id, start_date, end_date, province, city, county, address)
-        values (#{sort}, #{cover}, #{title}, #{contact}, #{closeDate}, #{numberLimit}, #{content}, #{star}, #{collect},
-        #{createTime}, #{state}, #{userId}, #{startDate}, #{endDate}, #{province}, #{city}, #{county}, #{address})
+        values (#{sort}, #{cover}, #{title}, #{contact}, #{closeDate}, #{numberLimit}, #{content},#{createTime}, #{state},
+                #{userId}, #{startDate}, #{endDate}, #{province}, #{city}, #{county}, #{address})
     </insert>
 
     <!--登记活动报名人-->
@@ -109,12 +107,6 @@
             </if>
             <if test="content != null and content != ''">
                 content = #{content},
-            </if>
-            <if test="star != null">
-                star = #{star},
-            </if>
-            <if test="collect != null">
-                collect = #{collect},
             </if>
             <if test="createTime != null">
                 create_time = #{createTime},
