@@ -11,35 +11,7 @@
 </head>
 
 <body>
-<div class="header">
-  <h1 class="logo">
-    <a th:href="@{/user/index}">
-      <img th:src="@{/img/logo.png}">
-    </a>
-  </h1>
-  <div class="nav">
-    <a th:href="@{/user/index}">新闻资讯</a>
-    <a th:href="@{/user/activity}">活动</a>
-    <a href="album.html" class="active">相册</a>
-    <a href="square.html">广场</a>
-    <a href="about.html">关于</a>
-  </div>
-  <div class="nav-right">
-    <form class="layui-form" action="">
-      <div class="layui-input-block">
-        <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
-               class="layui-icon layui-input">
-      </div>
-    </form>
-    <div class="user">
-      <a href="#">登录</a>
-      <a href="#">注册</a>
-      <!-- <a class="avatar">
-        <img src="../res/img/banner.jpg">
-      </a> -->
-    </div>
-  </div>
-</div>
+<header th:replace="album/list::header"></header>
 <div class="content">
   <div class="w1000">
     <div class="navigation">
@@ -81,6 +53,8 @@
           <div class="layui-upload layui-input-block">
             <button type="button" class="layui-btn layui-btn-primary layui-border-green" id="upload"
                     style="margin-left: 30px;">多图片上传</button>
+            <button type="button" class="layui-btn layui-btn-primary layui-border-green" id="reupload"
+                    style="margin-left: 30px;">重新上传</button>
             <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
               预览图：
               <div class="layui-upload-list" id="images"></div>
@@ -98,35 +72,11 @@
   </div>
 </div>
 
-<div class="footer-wrap">
-  <div class="footer w1000">
-    <div class="qrcode">
-      <img th:src="@{/img/erweima.jpg}">
-    </div>
-    <div class="practice-mode">
-      <img th:src="@{/img/down_img.jpg}">
-      <div class="text">
-        <h4 class="title">我的联系方式</h4>
-        <p>微信<span class="WeChat">1234567890</span></p>
-        <p>手机<span class="iphone">1234567890</span></p>
-        <p>邮箱<span class="email">1234567890@qq.com</span></p>
-      </div>
-    </div>
-  </div>
-</div>
+<footer th:replace="index::footer"></footer>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
 <script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
 <script type="text/javascript">
-  layui.config({
-    base: '[[@{/js/util/}]]'
-  }).use(['element', 'laypage', 'form', 'menu'], function () {
-    element = layui.element, laypage = layui.laypage, form = layui.form, menu = layui.menu;
-    laypage.render({
-      elem: 'demo'
-      , count: 70 //数据总数，从服务端得到
-    });
-    menu.init();
-  });
   layui.use(['form', 'layedit', 'upload'], function () {
     var form = layui.form
             , layer = layui.layer
@@ -147,7 +97,7 @@
         //上传完毕
         if (res.code === 0){
           //多图片上传
-          $("#images").append('<input type="hidden" name="albumPicList" value="'+ res.src +'"/>');
+          $("#images").append('<input type="hidden" name="albumPicList" value="'+res.data.src +'"/>');
           layui.msg("上传成功");
         }else{
           layui.msg("上传失败");
@@ -173,6 +123,11 @@
       });
       return true;
     });
+  });
+</script>
+<script type="text/javascript">
+  $("#reupload").click(function() {
+    $('#images').children().remove();
   });
 </script>
 </body>

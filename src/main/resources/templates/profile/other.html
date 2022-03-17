@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>其他人的资料</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+</head>
+
+<body>
+<!--头部-->
+<header th:replace="profile/oneself::header"></header>
+
+<div class="about-content">
+    <div class="w1000">
+        <div class="user-info">
+            <img th:src="@{/img/banner.jpg}" alt="avatar">
+            <div class="username">
+                <h1>JK-3512</h1>
+                <a href="profile_user.html" class="layui-btn layui-btn-green">关注</a>
+            </div>
+        </div>
+        <div class="user-view">
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">动态</li>
+                    <li>活动</li>
+                    <li>帖子</li>
+                    <li>相册</li>
+                    <li>点赞</li>
+                    <li>收藏</li>
+                </ul>
+                <div class="layui-tab-content" style="height: 100px;">
+                    <div class="layui-tab-item layui-show">
+                        <div class="user">
+                            <span class="name">JK-3512</span>
+                            <span class="dynamic">登陆了</span>
+                            <span class="time">2021.1.15</span>
+                            <hr class="layui-border-white">
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="entry">
+                            <!-- 作者、日期 -->
+                            <span class="layui-breadcrumb" lay-separator="|">
+                  <a><cite>作者</cite></a>
+                  <a><cite>日期</cite></a>
+                </span>
+                            <!-- 标题、正文、封面 -->
+                            <div class="entry-content">
+                                <div class="content-main">
+                                    <div class="title-row">更快的Maven来了，性能提升了180%</div>
+                                    <div class="abstract">周末被 maven-mvnd 刷屏了，于是我也下载了一个 mvnd
+                                        体验了一把。虽然测试的数据都是基于我本地项目，不具备普适性和权威性，但也足以说明问题。它的测试结果远远超出我的预期，下面一起来看。</div>
+                                </div>
+                                <img src="../res/img/down_img.jpg" />
+                                <hr class="layui-border-white">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">内容3</div>
+                    <div class="layui-tab-item">内容4</div>
+                    <div class="layui-tab-item">内容5</div>
+                    <div class="layui-tab-item">内容6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+</body>
+
+</html>

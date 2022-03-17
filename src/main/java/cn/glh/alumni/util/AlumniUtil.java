@@ -51,11 +51,12 @@ public class AlumniUtil {
         JSONObject json = new JSONObject();
         json.put("code", code);
         json.put("msg", msg);
-        if (map != null) {
-            for (String key : map.keySet()) {
-                json.put(key, map.get(key));
-            }
-        }
+        json.put("data", map);
+//        if (map != null) {
+//            for (String key : map.keySet()) {
+//                map.put(key, map.get(key));
+//            }
+//        }
         return json.toJSONString();
     }
 

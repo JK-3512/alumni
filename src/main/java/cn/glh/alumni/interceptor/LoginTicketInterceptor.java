@@ -2,7 +2,7 @@ package cn.glh.alumni.interceptor;
 
 import cn.glh.alumni.entity.LoginTicket;
 import cn.glh.alumni.entity.User;
-import cn.glh.alumni.service.UserService;
+import cn.glh.alumni.service.LoginService;
 import cn.glh.alumni.util.AlumniConstant;
 import cn.glh.alumni.util.CookieUtil;
 import cn.glh.alumni.util.HostHolder;
@@ -20,9 +20,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Author: Administrator
@@ -33,7 +31,7 @@ import java.util.List;
 public class LoginTicketInterceptor implements HandlerInterceptor {
 
     @Resource
-    private UserService userService;
+    private LoginService loginService;
 
     @Resource
     private HostHolder hostHolder;
@@ -53,11 +51,11 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
         String ticket = CookieUtil.getValue(request, "ticket");
         if (ticket != null) {
             // 查询凭证
-            LoginTicket loginTicket = userService.findLoginTicket(ticket);
+            LoginTicket loginTicket = loginService.findLoginTicket(ticket);
             // 检查凭证状态（是否有效）以及是否过期
             if (loginTicket != null && loginTicket.isStatus() && loginTicket.getExpired().after(new Date())) {
                 // 根据凭证查询用户
-                User user = userService.selectById(loginTicket.getUserId());
+                User user = loginService.selectById(loginTicket.getUserId());
                 // 在本次请求中持有用户信息
                 hostHolder.setUser(user);
                 // 构建用户认证的结果，并存入 SecurityContext, 以便于 Spring Security 进行授权

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>我的资料</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}"/>
+</head>
+
+<body>
+<header th:fragment="header">
+    <div class="header">
+        <h1 class="logo">
+            <a th:href="@{/user/index}">
+                <img th:src="@{/img/logo.png}">
+            </a>
+        </h1>
+        <div class="nav">
+            <a th:href="@{/user/index}">新闻资讯</a>
+            <a th:href="@{/user/activity/category/0}">活动</a>
+            <a th:href="@{/user/album/category/0}">相册</a>
+            <a th:href="@{/user/post/category/0}">广场</a>
+            <a th:href="@{/user/my/oneself}" class="active">主页</a>
+        </div>
+        <!--右侧搜索栏-->
+        <div class="nav-right">
+            <form class="layui-form" action="">
+                <div class="layui-input-block">
+                    <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                           class="layui-icon layui-input">
+                </div>
+            </form>
+            <div class="user">
+                <!-- <a href="#">登录</a>
+                <a href="#">注册</a> -->
+                <div class="avatar">
+                    <img th:src="@{/img/banner.jpg}">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="about-content">
+    <div class="w1000">
+        <div class="user-info">
+            <img th:src="${user.headPic}" alt="avatar">
+            <div class="username">
+                <h1 th:text="${user.nickName}"></h1>
+                <a th:href="@{/user/my/setting/profile}" class="layui-btn layui-btn-green">编辑个人资料</a>
+            </div>
+        </div>
+        <div class="user-view">
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">动态</li>
+                    <li>活动</li>
+                    <li>相册</li>
+                    <li>帖子</li>
+                    <li>收藏</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show" th:if="${userEventLogList} != null">
+                        <div th:each="log:${userEventLogList}">
+                            <div class="user" style="margin: 20px 0;">
+                                <span class="name" th:text="${user.nickName}"></span>
+                                <span class="dynamic" th:text="${log.content}"></span>
+                                <span class="time" th:text="${#dates.format(log.createTime, 'yyyy-MM-dd')}"></span>
+                                <hr class="layui-border-white">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item" th:if="${userEventLogList} == null">暂无数据</div>
+                    <div class="layui-tab-item" th:if="${activityList} != null">
+                        <div th:each="activity:${activityList}">
+                            <div class="entry">
+                                <!-- 作者、日期 -->
+                                <span class="layui-breadcrumb" lay-separator="|">
+                                <a><cite th:text="${user.nickName}"></cite></a>
+                                <a><cite th:text="${#dates.format(activity.createTime, 'yyyy-MM-dd')}"></cite></a>
+                                </span>
+                                <!-- 标题、正文、封面 -->
+                                <div class="entry-content" th:onclick="|window.location.href='@{|/user/activity/details/${activity.id}|}'|">
+                                    <div class="content-main">
+                                        <div class="title-row" th:text="${activity.title}"></div>
+                                        <div class="abstract" th:utext="${activity.content}"></div>
+                                    </div>
+                                    <img th:src="${activity.cover}"/>
+                                    <hr class="layui-border-white">
+                                </div>
+                                <div class="dropdown">
+                                    <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                    <div class="dropdown-content">
+                                        <a th:href="@{|/user/activity/update/${activity.id}|}">更新</a>
+                                        <a th:href="@{|/user/activity/delete/${activity.id}|}" onClick="return confirm('确定要删除吗?');">删除</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item" th:if="${activityList} == null">暂无数据</div>
+                    <div class="layui-tab-item" th:if="${albumList} != null">
+                        <div th:each="album:${albumList}">
+                            <div class="entry">
+                                <!-- 作者、日期 -->
+                                <span class="layui-breadcrumb" lay-separator="|">
+                                <a><cite th:text="${user.nickName}"></cite></a>
+                                <a><cite th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></cite></a>
+                            </span>
+                                <!-- 相片 -->
+                                <div class="entry-content" th:onclick="|window.location.href='@{|/user/album/details/${album.id}|}'|">
+                                    <img th:src="${album.albumPicList.get(0)}">
+                                    <img th:src="${album.albumPicList.get(1)}">
+                                    <hr class="layui-border-white">
+                                </div>
+                                <div class="dropdown">
+                                    <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                    <div class="dropdown-content">
+                                        <a th:href="@{|/user/album/update/${album.id}|}">更新</a>
+                                        <a th:href="@{|/user/album/delete/${album.id}|}" onClick="return confirm('确定要删除吗?');">删除</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item" th:if="${albumList} == null">暂无数据</div>
+                    <div class="layui-tab-item" th:if="${postList} != null">
+                        <div th:each="post:${postList}">
+                            <div class="entry">
+                                <!-- 作者、日期 -->
+                                <span class="layui-breadcrumb" lay-separator="|">
+                                <a><cite th:text="${user.nickName}"></cite></a>
+                                <a><cite th:text="${#dates.format(post.createTime, 'yyyy-MM-dd')}"></cite></a>
+                            </span>
+                                <!-- 帖子 -->
+                                <div class="entry-content" th:onclick="|window.location.href='@{/user/post/my}'|">
+                                    <div class="content-main">
+                                        <div class="abstract" th:utext="${post.content}"></div>
+                                    </div>
+                                    <hr class="layui-border-white">
+                                </div>
+                                <div class="dropdown">
+                                    <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                    <div class="dropdown-content">
+                                        <a th:href="@{|/user/post/update/${post.id}|}">更新</a>
+                                        <a th:href="@{|/user/post/delete/${post.id}|}" onClick="return confirm('确定要删除吗?');">删除</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item" th:if="${postList} == null">暂无数据</div>
+                    <div class="layui-tab-item" th:if="${collectMap} != null">
+                        <div class="layui-tab layui-tab-brief">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">新闻资讯</li>
+                                <li>活动</li>
+                                <li>相册</li>
+                                <li>帖子</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+<!--                                    <div class="entry">-->
+<!--                                        &lt;!&ndash; 作者、日期 &ndash;&gt;-->
+<!--                                        <span class="layui-breadcrumb" lay-separator="|">-->
+<!--                                            <a><cite th:text="${user.userName}"></cite></a>-->
+<!--                                            <a><cite th:text="${act.createTime}"></cite></a>-->
+<!--                                        </span>-->
+<!--                                        &lt;!&ndash; 标题、正文、封面 &ndash;&gt;-->
+<!--                                        <div class="entry-content">-->
+<!--                                            <div class="content-main">-->
+<!--                                                <div class="title-row" th:text="${act.title}"></div>-->
+<!--                                                <div class="abstract" th:utext="${act.content}"></div>-->
+<!--                                            </div>-->
+<!--                                            <img th:src="${act.cover}"/>-->
+<!--                                            <hr class="layui-border-white">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    暂无数据
+                                </div>
+                                <div class="layui-tab-item" th:if="${collectMap.activityList} != null">
+                                    <div th:each="act:${collectMap.activityList}">
+                                        <div class="entry">
+                                            <!-- 作者、日期 -->
+                                            <span class="layui-breadcrumb" lay-separator="|">
+                                            <a><cite th:text="${act.author}"></cite></a>
+                                            <a><cite th:text="${#dates.format(act.createTime, 'yyyy-MM-dd')}"></cite></a>
+                                        </span>
+                                            <!-- 标题、正文、封面 -->
+                                            <div class="entry-content" th:onclick="|window.location.href='@{|/user/activity/details/${act.id}|}'|">
+                                                <div class="content-main">
+                                                    <div class="title-row" th:text="${act.title}"></div>
+                                                    <div class="abstract" th:utext="${act.content}"></div>
+                                                </div>
+                                                <img th:src="${act.cover}"/>
+                                                <hr class="layui-border-white">
+                                            </div>
+                                            <div class="dropdown">
+                                                <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                                <div class="dropdown-content">
+                                                    <a href="javascript:location.reload();" th:onclick="|collect(this, 2, ${act.id});|">取消收藏</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-tab-item" th:if="${collectMap.activityList} == null">暂无数据</div>
+                                <div class="layui-tab-item" th:if="${collectMap.albumList} != null">
+                                    <div th:each="alb:${collectMap.albumList}">
+                                        <div class="entry">
+                                            <!-- 作者、日期 -->
+                                            <span class="layui-breadcrumb" lay-separator="|">
+                                            <a><cite th:text="${alb.author}"></cite></a>
+                                            <a><cite th:text="${#dates.format(alb.createTime, 'yyyy-MM-dd')}"></cite></a>
+                                        </span>
+                                            <!-- 相片 -->
+                                            <div class="entry-content" th:onclick="|window.location.href='@{|/user/album/details/${alb.id}|}'|">
+                                                <img th:src="${alb.albumPicList.get(0)}">
+                                                <img th:src="${alb.albumPicList.get(1)}">
+<!--                                                <img th:src="${alb.albumPicList.get(2)}">-->
+                                                <hr class="layui-border-white">
+                                            </div>
+                                            <div class="dropdown">
+                                                <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                                <div class="dropdown-content">
+                                                    <a href="javascript:location.reload();" th:onclick="|collect(this, 3, ${alb.id});|">取消收藏</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-tab-item" th:if="${collectMap.albumList} == null"></div>
+                                <div class="layui-tab-item" th:if="${collectMap.postList} != null">
+                                    <div th:each="pos:${collectMap.postList}">
+                                        <div class="entry">
+                                            <!-- 作者、日期 -->
+                                            <span class="layui-breadcrumb" lay-separator="|">
+                                                <a><cite th:text="${pos.author}"></cite></a>
+                                                <a><cite th:text="${#dates.format(pos.createTime, 'yyyy-MM-dd')}"></cite></a>
+                                            </span>
+                                            <!-- 帖子 -->
+                                            <div class="entry-content" th:onclick="|window.location.href='@{|/user/post/other/${pos.userId}|}'|">
+                                                <div class="content-main">
+                                                    <div class="abstract" th:utext="${pos.content}"></div>
+                                                </div>
+                                                <hr class="layui-border-white">
+                                            </div>
+                                            <div class="dropdown">
+                                                <i class="icon layui-icon layui-icon-more-vertical"></i>
+                                                <div class="dropdown-content">
+                                                    <a href="javascript:location.reload();" th:onclick="|collect(this, 4, ${pos.id});|">取消收藏</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-tab-item" th:if="${collectMap.postList} == null">暂无数据</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item" th:if="${collectMap} == null">暂无数据</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/details.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/}]]'
+    }).use(['oneself'], function () {
+        oneself = layui.oneself;
+        oneself.more();
+    });
+</script>
+</body>
+
+</html>

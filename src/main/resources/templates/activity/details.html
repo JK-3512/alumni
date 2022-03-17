@@ -11,35 +11,8 @@
 </head>
 
 <body>
-<div class="header">
-  <h1 class="logo">
-    <a th:href="@{/user/index}">
-      <img th:src="@{/img/logo.png}" alt="logo">
-    </a>
-  </h1>
-  <div class="nav">
-    <a th:href="@{/user/index}">新闻资讯</a>
-    <a th:href="@{/user/activity}" class="active">活动</a>
-    <a href="album.html">相册</a>
-    <a href="about.html">关于</a>
-  </div>
-  <div class="nav-right">
-    <form class="layui-form" action="">
-      <div class="layui-input-block">
-        <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
-               class="layui-icon layui-input">
-      </div>
-    </form>
-    <div class="user">
-      <a href="#">登录</a>
-      <a href="#">注册</a>
-      <!-- <a class="avatar">
-        <img src="../res/img/banner.jpg">
-      </a> -->
-    </div>
-  </div>
-</div>
-
+<!--头部-->
+<header th:replace="activity/list::header"></header>
 
 <div class="content whisper-content leacots-content details-content">
   <div class="cont w1000">
@@ -51,7 +24,11 @@
             <!-- 标题 -->
             <div class="title">
               <h1 th:utext="${activity.title}"></h1>
-              <p class="cont-info"><span class="data" th:text="${#dates.format(activity.createTime, 'yyyy-MM-dd')}"></span><span class="types" th:utext="${activity.sort}"></span></p>
+              <p class="cont-info">
+                <span class="data" th:text="${activity.author}"></span>
+                <span class="data" th:text="${#dates.format(activity.createTime, 'yyyy-MM-dd')}"></span>
+                <span class="types" th:utext="${activity.sort}"></span>
+              </p>
             </div>
             <!-- 活动信息 -->
             <div class="info">
@@ -86,7 +63,7 @@
                     <img th:src="${enrollUser.headPic}" alt="头像">
                   </div>
                   <!-- 用户名 -->
-                  <p class="userName" th:text="${enrollUser.userName}"></p>
+                  <p class="userName" th:text="${enrollUser.nickName}"></p>
                   <!-- 报名日期 -->
                   <p class="data" th:text="${#dates.format(enrollUser.enrollTime, 'yyyy-MM-dd')} + ' 报名'"></p>
                   <hr>
@@ -133,7 +110,7 @@
                 </div>
                 <div class="text">
                   <!-- 用户名 -->
-                  <p class="tit"><span class="name" th:text="${cmt.user.userName}"></span><span class="data" th:text="${#dates.format(cmt.comment.createTime, 'yyyy-MM-dd')}"></span></p>
+                  <p class="tit"><span class="name" th:text="${cmt.user.nickName}"></span><span class="data" th:text="${#dates.format(cmt.comment.createTime, 'yyyy-MM-dd')}"></span></p>
                   <!-- 评论内容 -->
                   <p class="ct" th:text="${cmt.comment.content}"></p>
                   <div class="op-list">
@@ -169,7 +146,7 @@
                     <img th:src="${rvo.user.headPic}" alt="头像" style="width: 50px;">
                   </div>
                   <!-- 用户名 -->
-                  <p class="tit"><span class="name" th:text="${rvo.user.userName}"></span><span class="data" th:text="${#dates.format(rvo.reply.createTime, 'yyyy-MM-dd')}"></span></p>
+                  <p class="tit"><span class="name" th:text="${rvo.user.nickName}"></span><span class="data" th:text="${#dates.format(rvo.reply.createTime, 'yyyy-MM-dd')}"></span></p>
                   <!-- 评论内容 -->
                   <p class="ct" th:text="${rvo.reply.content}"></p>
                   <!-- 点赞 -->
@@ -185,32 +162,18 @@
     </div>
   </div>
 </div>
-<div class="footer-wrap">
-  <div class="footer w1000">
-    <div class="qrcode">
-      <img th:src="@{/img/erweima.jpg}">
-    </div>
-    <div class="practice-mode">
-      <img th:src="@{/img/down_img.jpg}">
-      <div class="text">
-        <h4 class="title">我的联系方式</h4>
-        <p>微信<span class="WeChat">1234567890</span></p>
-        <p>手机<span class="iphone">1234567890</span></p>
-        <p>邮箱<span class="email">1234567890@qq.com</span></p>
-      </div>
-    </div>
-  </div>
-</div>
-<script th:src="@{/js/details.js}"></script>
-<script th:src="@{/js/jquery-3.6.0.js}"></script>
+<footer th:replace="index::footer"></footer>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/details.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+
 <script type="text/javascript">
   layui.config({
     base: '[[@{/js/util/}]]'
   }).use(['element', 'laypage', 'form', 'menu'], function () {
     element = layui.element, laypage = layui.laypage, form = layui.form, menu = layui.menu;
-    // menu.init();
-    menu.comment_off();
+    menu.reply_off();
     menu.enroll_off();
   });
 </script>

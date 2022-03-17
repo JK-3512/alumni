@@ -15,20 +15,12 @@ import java.util.List;
 public interface UserEventLogDao {
 
     /**
-     * 通过ID查询单条数据
+     * 通过用户ID查询用户所有动态
      *
      * @param id 主键
-     * @return 实例对象
+     * @return 动态集合
      */
-    UserEventLog selectById(Integer id);
-
-    /**
-     * 通过用户名查询单条数据
-     *
-     * @param userName 用户名
-     * @return 实例对象
-     */
-    UserEventLog selectByName(String userName);
+    List<UserEventLog> selectById(Integer id);
 
     /**
      * 查询全部
@@ -46,5 +38,11 @@ public interface UserEventLogDao {
     int insertUserEventLog(UserEventLog userEventLog);
 
 
+    /**
+     * 找到用户的动态
+     * @param userId 用户ID
+     * @return 动态列表
+     */
+    List<UserEventLog> findByUserId(Integer userId);
 }
 

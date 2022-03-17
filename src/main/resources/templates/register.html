@@ -45,8 +45,9 @@
   <div class="layui-form-item">
     <button class="layui-btn layui-btn-normal layui-btn-fluid" id="submit" type="submit"> 提交注册 </button>
   </div>
-  <!-- 登录 -->
+  <!-- 忘记密码、登录 -->
   <div class="tips">
+    <p style="float: left;font-weight: bold;"><a th:href="@{/user/resetPwd}">忘记密码 ?</a></p>
     <p style="text-align: center;"><small>已有账号?</small><a th:href="@{/user/login}" style="font-weight: bold;margin-left: 5px;">登录</a>
     </p>
   </div>

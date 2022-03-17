@@ -81,5 +81,10 @@ public class Activity implements Serializable {
      */
     private String address;
 
+    /**
+     * 作者
+     */
+    private String author;
+
 }
 

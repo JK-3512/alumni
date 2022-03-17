@@ -16,17 +16,16 @@
         where id = #{id}
     </select>
 
-    <!--通过用户名查询-->
-    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.UserEventLog">
-        select
-        id, user_id, content, create_time from t_user_event_log
-        where user_name = #{userName}
-    </select>
-
     <!-- 查询全部 -->
     <select id="selectAll" resultMap="UserEventLogMap">
         select
         id, user_id, content, create_time from t_user_event_log
+    </select>
+
+    <!--找到用户的动态-->
+    <select id="findByUserId" resultMap="UserEventLogMap">
+        select
+            id, user_id, content, create_time from t_user_event_log where user_id = #{userId}
     </select>
 
     <!--新增所有列-->

@@ -1,9 +1,0 @@
-2022-02-19 16:33:51,668 WARN [http-nio-8080-exec-10] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:35:52,335 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:37:02,363 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:38:26,048 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:45:07,492 WARN [http-nio-8080-exec-2] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:47:45,151 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:54:56,306 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 16:56:22,634 WARN [http-nio-8080-exec-7] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-19 17:09:13,861 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.

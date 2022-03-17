@@ -70,11 +70,18 @@ public interface UserDao {
 
     /**
      * 修改用户状态
-     * @param id
+     * @param id 用户ID
      * @param state 0：未激活，1：已激活
-     * @return
+     * @return 影响行数
      */
-    int updateStatus(int id, int state);
+    int updateStatus(Integer id, Integer state);
 
+    /**
+     * 重置密码
+     * @param id 用户ID
+     * @param pwd 新密码
+     * @return 影响行数
+     */
+    int updatePwd(Integer id, String pwd);
 }
 

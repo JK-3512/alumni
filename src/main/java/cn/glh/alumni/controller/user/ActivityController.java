@@ -4,6 +4,7 @@ import cn.glh.alumni.entity.*;
 import cn.glh.alumni.entity.enums.AlumniEnum;
 import cn.glh.alumni.service.*;
 import cn.glh.alumni.util.HostHolder;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,9 @@ public class ActivityController {
     private UserService userService;
 
     @Resource
+    private LoginService loginService;
+
+    @Resource
     private LikeService likeService;
 
     @Resource
@@ -43,7 +47,7 @@ public class ActivityController {
      * 进入到活动列表页面
      * @return String
      */
-    @GetMapping("/list/{sort}")
+    @GetMapping("/category/{sort}")
     public String getActivityList(Model model, @PathVariable(value = "sort") Integer sort){
         List<Activity> activityList = activityService.getActivityList(sort);
         model.addAttribute("activityList", activityList);
@@ -62,7 +66,25 @@ public class ActivityController {
             model.addAttribute("target", "/user/login");
             return "operate-result";
         }
-        return "activity/publish";}
+        return "activity/publish";
+    }
+
+    /**
+     * 进入到活动更新页面
+     * @return String
+     */
+    @GetMapping("/update/{id}")
+    public String getUpdatePage(Model model, @PathVariable("id") Integer id){
+        User user = hostHolder.getUser();
+        if (user == null){
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+            return "operate-result";
+        }
+        Activity activity = activityService.selectById(id);
+        model.addAttribute("activity", activity);
+        return "activity/update";
+    }
 
     /**
      * 发布活动
@@ -79,6 +101,24 @@ public class ActivityController {
             activityService.insertActivity(activity);
             model.addAttribute("msg", "活动发布成功!");
             model.addAttribute("target", "/user/activity/list");
+        }
+        return "operate-result";
+    }
+
+    /**
+     * 活动更新
+     * @return String
+     */
+    @PostMapping("/update")
+    public String updateActivity(Model model, Activity activity){
+        User user = hostHolder.getUser();
+        if (user == null){
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+        }else {
+            activityService.updateActivity(activity);
+            model.addAttribute("msg", "活动更新成功!");
+            model.addAttribute("target", "/user/activity/details/" + activity.getId());
         }
         return "operate-result";
     }
@@ -108,6 +148,7 @@ public class ActivityController {
         return "operate-result";
     }
 
+
     /**
      * 进入到活动详情页
      * @return String
@@ -115,6 +156,8 @@ public class ActivityController {
     @GetMapping("/details/{id}")
     public String getDetails(@PathVariable("id") int id,Model model) {
         Activity activity = activityService.selectById(id);
+        //设置作者
+        activity.setAuthor(userService.selectById(activity.getUserId()).getNickName());
         List<ActivityEnroll> enrollList = activityService.getEnrollUser(id);
         // 活动点赞数量
         long likeCount = likeService.findTargetLikeCount(AlumniEnum.activity.getAlumniType(), activity.getId());
@@ -147,7 +190,7 @@ public class ActivityController {
                 //评论
                 commentVo.put("comment", comment);
                 //评论人
-                commentVo.put("user", userService.selectById(comment.getFromUserId()));
+                commentVo.put("user", loginService.selectById(comment.getFromUserId()));
                 // 该评论点赞数量
                 likeCount = likeService.findTargetLikeCount(AlumniEnum.comment.getAlumniType(), comment.getId());
                 commentVo.put("likeCount", likeCount);
@@ -168,7 +211,7 @@ public class ActivityController {
                         //回复
                         replyVo.put("reply", reply);
                         //回复人
-                        replyVo.put("user", userService.selectById(reply.getFromUserId()));
+                        replyVo.put("user", loginService.selectById(reply.getFromUserId()));
                         // 该回复的点赞数量
                         likeCount = likeService.findTargetLikeCount(AlumniEnum.comment.getAlumniType(), reply.getId());
                         replyVo.put("likeCount", likeCount);
@@ -190,7 +233,29 @@ public class ActivityController {
         //总留言数
         model.addAttribute("msgNum", msgNum);
         return "activity/details";
-        }
     }
+
+
+    /**
+     * 活动删除
+     * @param model
+     * @param id 活动ID
+     * @return
+     */
+    @GetMapping("/delete/{id}")
+    public String deleteActivity(Model model, @PathVariable("id") Integer id){
+        User user = hostHolder.getUser();
+        if (user == null){
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+        }else {
+            activityService.deleteById(id);
+            model.addAttribute("msg", "活动删除成功!");
+            model.addAttribute("target", "/user/my/oneself");
+        }
+        return "operate-result";
+    }
+}
+
 
 

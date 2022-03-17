@@ -88,5 +88,18 @@ public interface ActivityDao {
      * @return
      */
     List<Activity> findSortActivity(String sort);
+
+    /**
+     * 找出用户发布的活动
+     * @param userId 用户ID
+     * @return 活动集合
+     */
+    List<Activity> findByUserId(Integer userId);
+
+    /**
+     * 清除活动报名表
+     * @param activityId
+     */
+    void deleteEnrollUser(Integer activityId);
 }
 

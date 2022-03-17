@@ -70,9 +70,22 @@ public interface AlbumDao {
 
     /**
      * 相册列表
-     * @param sort
-     * @return
+     * @param sort 类别
+     * @return 相册集合
      */
     List<Album> getAlbumList(String sort);
+
+    /**
+     * 找出用户发布的相册
+     * @param userId 用户ID
+     * @return 相册集合
+     */
+    List<Album> findByUserId(Integer userId);
+
+    /**
+     * 删除相册对应的所有图片
+     * @param id 相册ID
+     */
+    void deleteAlbumPic(Integer id);
 }
 

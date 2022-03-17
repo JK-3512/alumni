@@ -7,9 +7,9 @@
 <body>
 <div>
   <p>
-    <b th:text="${email}"></b>, 您好! 😃
+    您好! 😃, <b th:text="${email}"></b>
   </p>
-  <p>
+  <p th:if="${url} != null">
     您正在注册宁理校友网, 这是一封激活邮件, 请点击
     <a th:href="${url}">此链接</a>,
     激活您的 Alumni 账号! 🎉

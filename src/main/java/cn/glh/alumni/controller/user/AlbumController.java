@@ -1,7 +1,6 @@
 package cn.glh.alumni.controller.user;
 
 import cn.glh.alumni.entity.*;
-import cn.glh.alumni.entity.enums.AlbumEnum;
 import cn.glh.alumni.entity.enums.AlumniEnum;
 import cn.glh.alumni.service.*;
 import cn.glh.alumni.util.HostHolder;
@@ -32,7 +31,7 @@ public class AlbumController {
     private HostHolder hostHolder;
 
     @Resource
-    private UserService userService;
+    private LoginService loginService;
 
     @Resource
     private LikeService likeService;
@@ -86,21 +85,6 @@ public class AlbumController {
     }
 
     /**
-     * 编辑数据
-     *
-     * @param album 实体
-     * @return 编辑结果
-     */
-    @PutMapping(value = "/update")
-    public Result update(@RequestBody Album album) {
-        int result = albumService.update(album);
-        if (result > 0) {
-          return Result.ok();
-        }
-        return Result.fail(0,"修改失败");
-    }
-
-    /**
      * 删除数据
      *
      * @param id 主键
@@ -119,7 +103,7 @@ public class AlbumController {
      * 进入到相册列表页面
      * @return String
      */
-    @GetMapping("/list/{sort}")
+    @GetMapping("/category/{sort}")
     public String getAlbumList(Model model, @PathVariable(value = "sort") Integer sort){
         List<Album> albumList = albumService.getAlbumList(sort);
         model.addAttribute("albumList", albumList);
@@ -143,6 +127,25 @@ public class AlbumController {
     }
 
     /**
+     * 进入到更新相册页面
+     * @param model
+     * @return
+     */
+    @GetMapping("/update/{id}")
+    public String getUpdatePage(Model model, @PathVariable("id") Integer id){
+        User user = hostHolder.getUser();
+        if (user == null){
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+            return "operate-result";
+        }
+        Album album = albumService.selectById(id);
+        model.addAttribute("album", album);
+        return "album/update";
+    }
+
+
+    /**
      * 添加相册
      * @param model
      * @param album
@@ -163,12 +166,34 @@ public class AlbumController {
     }
 
     /**
+     * 更新相册
+     * @param model
+     * @param album
+     * @return
+     */
+    @PostMapping("/update")
+    public String updateAlbum(Model model, Album album){
+        User user = hostHolder.getUser();
+        if (user == null) {
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+        }else {
+            albumService.updateAlbum(album);
+            model.addAttribute("msg", "相册更新成功!");
+            model.addAttribute("target", "/user/album/details/" + album.getId());
+        }
+        return "operate-result";
+    }
+
+    /**
      * 进入到相册详情页
      * @return String
      */
     @GetMapping("/details/{id}")
     public String getDetails(Model model, @PathVariable("id") int id) {
         Album album = albumService.selectById(id);
+        //设置作者
+        album.setAuthor(loginService.selectById(album.getUserId()).getNickName());
         //获取相册下属所有的图片
         List<String> albumPicList = albumService.getAlbumPicList(id);
         album.setAlbumPicList(albumPicList);
@@ -201,7 +226,7 @@ public class AlbumController {
                 //评论
                 commentVo.put("comment", comment);
                 //评论人
-                commentVo.put("user", userService.selectById(comment.getFromUserId()));
+                commentVo.put("user", loginService.selectById(comment.getFromUserId()));
                 // 该评论点赞数量
                 likeCount = likeService.findTargetLikeCount(AlumniEnum.comment.getAlumniType(), comment.getId());
                 commentVo.put("likeCount", likeCount);
@@ -222,7 +247,7 @@ public class AlbumController {
                         //回复
                         replyVo.put("reply", reply);
                         //回复人
-                        replyVo.put("user", userService.selectById(reply.getFromUserId()));
+                        replyVo.put("user", loginService.selectById(reply.getFromUserId()));
                         // 该回复的点赞数量
                         likeCount = likeService.findTargetLikeCount(AlumniEnum.comment.getAlumniType(), reply.getId());
                         replyVo.put("likeCount", likeCount);
@@ -244,6 +269,20 @@ public class AlbumController {
         //总留言数
         model.addAttribute("msgNum", msgNum);
         return "album/details";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteAlbum(Model model, @PathVariable("id") Integer id){
+        User user = hostHolder.getUser();
+        if (user == null){
+            model.addAttribute("msg", "请先登录!");
+            model.addAttribute("target", "/user/login");
+        }else {
+            albumService.deleteById(id);
+            model.addAttribute("msg", "相册删除成功!");
+            model.addAttribute("target", "/user/my/oneself");
+        }
+        return "operate-result";
     }
 }
 

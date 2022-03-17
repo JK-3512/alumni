@@ -12,7 +12,7 @@
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="PostMap">
+    <select id="selectById" resultMap="PostMap">
         select id,
                sort,
                content,
@@ -39,6 +39,11 @@
         select id, sort, content, create_time, state, user_id from t_post where sort = #{sort}
     </select>
 
+    <!--找出用户发布的帖子-->
+    <select id="findByUserId" resultType="cn.glh.alumni.entity.Post">
+        select id, content, create_time, user_id from t_post where user_id = #{userId}
+    </select>
+
     <!--新增所有列-->
     <insert id="insertPost" keyProperty="id" useGeneratedKeys="true">
         insert into t_post(sort, content, create_time, state, user_id)
@@ -46,7 +51,7 @@
     </insert>
 
     <!--通过主键修改数据-->
-    <update id="update">
+    <update id="updatePost">
         update t_post
         <set>
             <if test="sort != null">

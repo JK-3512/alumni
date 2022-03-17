@@ -35,5 +35,10 @@ public class Post implements Serializable {
      */
     private Integer userId;
 
+    /**
+     * 作者
+     */
+    private String author;
+
 }
 

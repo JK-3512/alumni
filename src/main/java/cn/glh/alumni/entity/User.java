@@ -16,14 +16,27 @@ public class User implements Serializable {
     private static final long serialVersionUID = -87879006455990321L;
 
     private Integer id;
-    /**
-     * 密码(加密后)
-     */
-    private String pwd;
+
     /**
      * 用户名
      */
     private String userName;
+
+    /**
+     * 昵称
+     */
+    private String nickName;
+
+    /**
+     * 密码(加密后)
+     */
+    private String pwd;
+
+    /**
+     * 加盐
+     */
+    private String salt;
+
     /**
      * 性别(0.男 1.女)
      */
@@ -35,11 +48,17 @@ public class User implements Serializable {
     /**
      * 出生日期
      */
-    private Date birthday;
+    private String birthday;
     /**
-     * 籍贯(至市级)
+     * 籍贯(省级)
      */
-    private String nativePlace;
+    private String province;
+
+    /**
+     * 籍贯(市级)
+     */
+    private String city;
+
     /**
      * 专业
      */
@@ -59,7 +78,7 @@ public class User implements Serializable {
     /**
      * 手机
      */
-    private Integer phone;
+    private String phone;
     /**
      * 状态(0.未激活 1.激活)
      */
@@ -76,10 +95,6 @@ public class User implements Serializable {
      * 创建时间
      */
     private Date createTime;
-    /**
-     * 加盐
-     */
-    private String salt;
 
 }
 

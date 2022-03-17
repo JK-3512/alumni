@@ -1,22 +1,19 @@
 package cn.glh.alumni;
 
-import org.apache.commons.lang3.time.DateFormatUtils;
+import cn.glh.alumni.util.AlumniUtil;
+import cn.glh.alumni.util.RedisKeyUtil;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
-import java.util.Date;
-
+import javax.annotation.Resource;
 @SpringBootTest
-class AlumniApplicationTests {
-
-    /**
-     * 测试Git推送
-     */
+public class AlumniApplicationTests {
 
     @Test
-    void contextLoads() {
-        String format = DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss");
-        System.out.println(format);
+    public void test(){
+        String s = AlumniUtil.md5("123456" + "0246e");
+        System.out.println(s);
     }
 
 }

@@ -69,6 +69,13 @@
         where sort = #{sort}
     </select>
 
+    <!---找出用户发布的活动-->
+    <select id="findByUserId" resultMap="ActivityMap">
+        select
+            id, title, content, create_time, user_id from t_activity
+        where user_id = #{userId}
+    </select>
+
     <!--新增所有列-->
     <insert id="insertActivity" keyProperty="id" useGeneratedKeys="true">
         insert into t_activity(sort, cover, title, contact, close_date, number_limit, content,
@@ -142,6 +149,11 @@
     <!--通过主键删除-->
     <delete id="deleteById">
         delete from t_activity where id = #{id}
+    </delete>
+
+    <!--清理活动报名表-->
+    <delete id="deleteEnrollUser" parameterType="integer">
+        delete from t_activity_enroll where activity_id = #{activityId}
     </delete>
 
 </mapper>

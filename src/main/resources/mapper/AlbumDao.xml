@@ -35,6 +35,11 @@
         select id, sort, title, content, create_time, state, user_id from t_album where sort = #{sort}
     </select>
 
+    <!--找出用户发布的相册-->
+    <select id="findByUserId" resultMap="AlbumMap">
+        select id, title, content, create_time, user_id from t_album where user_id = #{userId}
+    </select>
+
     <!--新增所有列-->
     <insert id="insertAlbum" keyProperty="id" useGeneratedKeys="true">
         insert into t_album(sort, title, content, create_time, state, user_id)
@@ -78,6 +83,10 @@
     <!--通过主键删除-->
     <delete id="deleteById">
         delete from t_album where id = #{id}
+    </delete>
+    <!--删除相册对应的所有图片-->
+    <delete id="deleteAlbumPic" parameterType="integer">
+        delete from t_album_pic where album_id = #{id}
     </delete>
 
 </mapper>

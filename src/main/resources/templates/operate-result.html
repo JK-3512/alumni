@@ -12,36 +12,8 @@
 </head>
 
 <body>
-<div class="header">
-    <h1 class="logo">
-        <a href="index.html">
-            <span>MYBLOG</span>
-            <img th:src="@{/img/logo.png}">
-        </a>
-    </h1>
-    <div class="nav">
-        <a href="index.html" class="active">新闻资讯</a>
-        <a href="activity/list.html">活动</a>
-        <a href="square.html">广场</a>
-        <a href="album.html">相册</a>
-        <a href="about.html">关于</a>
-    </div>
-    <div class="nav-right">
-        <form class="layui-form" action="">
-            <div class="layui-input-block">
-                <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
-                       class="layui-icon layui-input">
-            </div>
-        </form>
-        <div class="user">
-            <!-- <a href="#">登录</a>
-            <a href="#">注册</a> -->
-            <div class="avatar">
-                <img th:src="@{/img/banner.jpg}">
-            </div>
-        </div>
-    </div>
-</div>
+<!--头部-->
+<header th:replace="index::header"></header>
 
 <!-- 内容 -->
 <div class="container">
@@ -55,24 +27,10 @@
     </div>
 </div>
 
-<div class="footer-wrap">
-    <div class="footer w1000">
-        <div class="qrcode">
-            <img th:src="@{/img/erweima.jpg}">
-        </div>
-        <div class="practice-mode">
-            <img th:src="@{/img/down_img.jpg}">
-            <div class="text">
-                <h4 class="title">我的联系方式</h4>
-                <p>微信<span class="WeChat">1234567890</span></p>
-                <p>手机<span class="iphone">1234567890</span></p>
-                <p>邮箱<span class="email">1234567890@qq.com</span></p>
-            </div>
-        </div>
-    </div>
-</div>
+<footer th:replace="index::footer"></footer>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
-<script th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
 <script>
     $(function () {
         setInterval(function () {

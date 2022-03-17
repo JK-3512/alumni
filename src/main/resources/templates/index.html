@@ -11,36 +11,38 @@
 </head>
 
 <body>
-<div class="header">
-  <h1 class="logo">
-    <a href="index.html">
-      <img th:src="@{/img/logo.png}">
-    </a>
-  </h1>
-  <div class="nav">
-    <a href="index.html" class="active">新闻资讯</a>
-    <a href="activity/list.html">活动</a>
-    <a href="square.html">广场</a>
-    <a href="album.html">相册</a>
-    <a href="about.html">关于</a>
-  </div>
-  <!--右侧搜索栏-->
-  <div class="nav-right">
-    <form class="layui-form" action="">
-      <div class="layui-input-block">
-        <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
-               class="layui-icon layui-input">
-      </div>
-    </form>
-    <div class="user">
-      <!-- <a href="#">登录</a>
-      <a href="#">注册</a> -->
-      <div class="avatar">
-        <img th:src="@{/img/banner.jpg}">
+<header th:fragment="header">
+  <div class="header">
+    <h1 class="logo">
+      <a th:href="@{/user/index}">
+        <img th:src="@{/img/logo.png}">
+      </a>
+    </h1>
+    <div class="nav">
+      <a th:href="@{/user/index}" class="active">新闻资讯</a>
+      <a th:href="@{/user/activity/category/0}">活动</a>
+      <a th:href="@{/user/album/category/0}">相册</a>
+      <a th:href="@{/user/post/category/0}">广场</a>
+      <a th:href="@{/user/my/oneself}">主页</a>
+    </div>
+    <!--右侧搜索栏-->
+    <div class="nav-right">
+      <form class="layui-form" action="">
+        <div class="layui-input-block">
+          <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                 class="layui-icon layui-input">
+        </div>
+      </form>
+      <div class="user">
+        <!-- <a href="#">登录</a>
+        <a href="#">注册</a> -->
+        <div class="avatar">
+          <img th:src="@{/img/banner.jpg}">
+        </div>
       </div>
     </div>
   </div>
-</div>
+</header>
 
 <!-- 轮播图 -->
 <div class="layui-carousel" id="carousel">
@@ -159,23 +161,27 @@
   </div>
 </div>
 
-<div class="footer-wrap">
-  <div class="footer w1000">
-    <div class="qrcode">
-      <img th:src="@{/img/erweima.jpg}">
-    </div>
-    <div class="practice-mode">
-      <img th:src="@{/img/down_img.jpg}">
-      <div class="text">
-        <h4 class="title">我的联系方式</h4>
-        <p>微信<span class="WeChat">1234567890</span></p>
-        <p>手机<span class="iphone">1234567890</span></p>
-        <p>邮箱<span class="email">1234567890@qq.com</span></p>
+<footer th:fragment="footer">
+  <div class="footer-wrap">
+    <div class="footer w1000">
+      <div class="qrcode">
+        <img th:src="@{/img/erweima.jpg}">
+      </div>
+      <div class="practice-mode">
+        <img th:src="@{/img/down_img.jpg}">
+        <div class="text">
+          <h4 class="title">我的联系方式</h4>
+          <p>微信<span class="WeChat">1234567890</span></p>
+          <p>手机<span class="iphone">1234567890</span></p>
+          <p>邮箱<span class="email">1234567890@qq.com</span></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</footer>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
 <script type="text/javascript">
   layui.config({
     base: '[[@{/js/util/}]]'
@@ -185,7 +191,6 @@
       elem: 'demo'
       , count: 70 //数据总数，从服务端得到
     });
-    menu.init();
   });
   //轮播图
   layui.use('carousel', function () {
@@ -198,41 +203,6 @@
       , arrow: 'always' //始终显示箭头
     });
   });
-  layui.use('dropdown', function () {
-    var dropdown = layui.dropdown
-    // 下拉菜单
-    dropdown.render({
-      elem: '.avatar' //可绑定在任意元素中，此处以上述按钮为例
-      , data: [{
-        title: '我的主页'
-        , templet: '<i class="layui-icon layui-icon-username"></i> {{d.title}}'
-        , id: 100
-        , href: 'about.html'
-      }, { type: '-' }, {
-        title: '我赞过的'
-        , templet: '<i class="layui-icon layui-icon-praise"></i> {{d.title}}'
-        , id: 101
-        , href: '#' //开启超链接
-      }, { type: '-' }, {
-        title: '我的收藏'
-        , templet: '<i class="layui-icon layui-icon-star"></i> {{d.title}}'
-        , id: 102
-        , href: '#'
-      }, { type: '-' }, {
-        title: '退出'
-        , templet: '<i class="layui-icon layui-icon-logout"></i> {{d.title}}'
-        , id: 103
-        , href: '#'
-      }]
-      , id: 'avatar'
-      //菜单被点击的事件
-      , click: function (obj) {
-        console.log(obj);
-        layer.msg('回调返回的参数已显示再控制台');
-      }
-    });
-  });
 </script>
 </body>
-
 </html>

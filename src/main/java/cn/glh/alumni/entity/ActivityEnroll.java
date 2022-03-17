@@ -28,7 +28,7 @@ public class ActivityEnroll implements Serializable {
     /**
      * 校友名称
      */
-    private String userName;
+    private String nickName;
 
     /**
      * 校友头像

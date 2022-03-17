@@ -20,7 +20,7 @@ public interface PostDao {
      * @param id 主键
      * @return 实例对象
      */
-    Post queryById(Integer id);
+    Post selectById(Integer id);
 
     /**
      * 查询全部
@@ -43,7 +43,7 @@ public interface PostDao {
      * @param post 实例对象
      * @return 影响行数
      */
-    int update(Post post);
+    int updatePost(Post post);
 
     /**
      * 通过主键删除数据
@@ -59,5 +59,12 @@ public interface PostDao {
      * @return 帖子集合
      */
     List<Post> queryBySort(String sort);
+
+    /**
+     * 找出用户发布的帖子
+     * @param userId
+     * @return
+     */
+    List<Post> findByUserId(Integer userId);
 }
 

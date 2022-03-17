@@ -1,2 +1,0 @@
-2022-02-21 09:29:26,999 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
-2022-02-21 09:38:02,226 WARN [http-nio-8080-exec-1] c.z.h.HikariConfig [HikariConfig.java:973] HikariPool-2 - idleTimeout is close to or more than maxLifetime, disabling it.

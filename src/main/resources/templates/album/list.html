@@ -10,35 +10,39 @@
 </head>
 
 <body>
-<div class="header">
-    <h1 class="logo">
-        <a th:href="@{/user/index}">
-            <img th:src="@{/img/logo.png}">
-        </a>
-    </h1>
-    <div class="nav">
-        <a th:href="@{/user/index}">新闻资讯</a>
-        <a th:href="@{/user/activity}">活动</a>
-        <a href="album.html" class="active">相册</a>
-        <a href="square.html">广场</a>
-        <a href="about.html">关于</a>
-    </div>
-    <div class="nav-right">
-        <form class="layui-form" action="">
-            <div class="layui-input-block">
-                <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
-                       class="layui-icon layui-input">
+<!--头部-->
+<header th:fragment="header">
+    <div class="header">
+        <h1 class="logo">
+            <a th:href="@{/user/index}">
+                <img th:src="@{/img/logo.png}">
+            </a>
+        </h1>
+        <div class="nav">
+            <a th:href="@{/user/index}">新闻资讯</a>
+            <a th:href="@{/user/activity/category/0}">活动</a>
+            <a th:href="@{/user/album/category/0}" class="active">相册</a>
+            <a th:href="@{/user/post/category/0}">广场</a>
+            <a th:href="@{/user/my/oneself}">主页</a>
+        </div>
+        <!--右侧搜索栏-->
+        <div class="nav-right">
+            <form class="layui-form" action="">
+                <div class="layui-input-block">
+                    <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                           class="layui-icon layui-input">
+                </div>
+            </form>
+            <div class="user">
+                <!-- <a href="#">登录</a>
+                <a href="#">注册</a> -->
+                <div class="avatar">
+                    <img th:src="@{/img/banner.jpg}">
+                </div>
             </div>
-        </form>
-        <div class="user">
-            <a href="#">登录</a>
-            <a href="#">注册</a>
-            <!-- <a class="avatar">
-              <img src="../res/img/banner.jpg">
-            </a> -->
         </div>
     </div>
-</div>
+</header>
 
 
 <div class="album-content w1000" id="layer-photos-demo">
@@ -52,14 +56,13 @@
     <!-- 导航 -->
     <div class="title">
       <span class="layui-breadcrumb" lay-separator="|">
-        <a th:href="@{/user/album/list/0}" class="active">全部</a>
-        <a th:href="@{/user/album/list/1}">同学时光</a>
-        <a th:href="@{/user/album/list/2}">校园追忆</a>
-        <a th:href="@{/user/album/list/3}">校友今夕</a>
-        <a th:href="@{/user/album/list/4}">活动聚会</a>
-        <a th:href="@{/user/album/list/5}">个人风采</a>
-        <a th:href="@{/user/album/list/6}">其它</a>
-        <a th:href="@{/user/album/publish}">创建</a>
+        <a th:href="@{/user/album/category/0}" class="active">全部</a>
+        <a th:href="@{/user/album/category/1}">同学时光</a>
+        <a th:href="@{/user/album/category/2}">校园追忆</a>
+        <a th:href="@{/user/album/category/3}">校友今夕</a>
+        <a th:href="@{/user/album/category/4}">活动聚会</a>
+        <a th:href="@{/user/album/category/5}">个人风采</a>
+        <a th:href="@{/user/album/category/6}">其它</a>
       </span>
     </div>
     <div class="img-list">
@@ -73,7 +76,6 @@
                         <div class="cont-text">
                             <div class="data" th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></div>
                             <p class="address"><span th:text="${album.title}"></span></p>
-                            <div class="briefly" th:utext="${album.content}"></div>
                         </div>
                     </div>
                 </div>
@@ -84,26 +86,11 @@
     </div>
 </div>
 
-
-<div class="footer-wrap">
-    <div class="footer w1000">
-        <div class="qrcode">
-            <img th:src="@{/img/erweima.jpg}">
-        </div>
-        <div class="practice-mode">
-            <img th:src="@{/img/down_img.jpg}">
-            <div class="text">
-                <h4 class="title">我的联系方式</h4>
-                <p>微信<span class="WeChat">1234567890</span></p>
-                <p>手机<span class="iphone">1234567890</span></p>
-                <p>邮箱<span class="email">1234567890@qq.com</span></p>
-            </div>
-        </div>
-    </div>
-</div>
-<script th:src="@{/js/details.js}"></script>
-<script th:src="@{/js/jquery-3.6.0.js}"></script>
+<footer th:replace="index::footer"></footer>
 <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/details.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
 <script type="text/javascript">
     layui.config({
         base: '[[@{/js/util/}]]'
@@ -113,7 +100,6 @@
             elem: '#demo'
             , count: 70 //数据总数，从服务端得到
         });
-        menu.init();
     });
 </script>
 </body>

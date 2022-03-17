@@ -43,6 +43,11 @@ public class Album implements Serializable {
     private Integer userId;
 
     /**
+     * 作者
+     */
+    private String author;
+
+    /**
      * 多图片
      */
     private List<String> albumPicList;

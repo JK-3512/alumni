@@ -67,12 +67,10 @@ public interface CommentDao {
      * @param id 具体内容ID
      * @return 评论集合
      */
-    List<Comment> selectCommentByType(int type, int id);
+    List<Comment> selectCommentByType(Integer type, Integer id);
 
     /**
      * 回复专属、找到对应的评论
-     * @param id
-     * @return
      */
     Comment findCommentById(Integer id);
 }
