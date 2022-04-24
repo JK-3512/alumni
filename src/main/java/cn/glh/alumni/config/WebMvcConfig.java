@@ -20,11 +20,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * 配置静态访问资源
-     * @param registry
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginTicketInterceptor)
-                .excludePathPatterns("/css/**", "/js/**", "/img/**", "/layui/**");
+                .excludePathPatterns("/**/*.css","/**/*.js","/**/*.json","/**/*.svg","/**/*.png","/**/*.jpg","/**/*.gif","/**/font/*");
     }
 }

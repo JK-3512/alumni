@@ -1,5 +1,6 @@
 package cn.glh.alumni.dao;
 
+import cn.glh.alumni.entity.Activity;
 import cn.glh.alumni.entity.Album;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -28,7 +29,7 @@ public interface AlbumDao {
      *
      * @return 对象列表
      */
-    List<Album> queryAll();
+    List<Album> findAllAlbum(@Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 新增数据
@@ -73,7 +74,7 @@ public interface AlbumDao {
      * @param sort 类别
      * @return 相册集合
      */
-    List<Album> getAlbumList(String sort);
+    List<Album> findAlbumBySort(@Param("sort") String sort, @Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 找出用户发布的相册
@@ -87,5 +88,55 @@ public interface AlbumDao {
      * @param id 相册ID
      */
     void deleteAlbumPic(Integer id);
+
+    /**
+     * 分页查询已审核信息
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<Album> queryByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
+
+    /**
+     * 分页查询未审核信息
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<Album> queryAuditByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
+
+    /**
+     * 修改资讯审核状态
+     * @param id 资讯ID
+     * @param state 0.未审核 1.审核通过 2.审核不通过
+     * @return 影响行数
+     */
+    int updateState(@Param("id") Integer id, @Param("state") Integer state);
+
+    /**
+     * 找到最新的相册
+     * @return 相册集合
+     */
+    Album getNewAlbum();
+
+    /**
+     * 获取该类别下的总条码
+     * @param sort 类别
+     * @return
+     */
+    Integer getCountBySort(@Param("sort") String sort);
+
+    /**
+     * 获取总条码
+     * @return
+     */
+    Integer getCount();
+
+    /**
+     * 相册检索
+     * @param search 关键词
+     * @return
+     */
+    List<Album> searchAlbum(@Param("search") String search);
 }
 

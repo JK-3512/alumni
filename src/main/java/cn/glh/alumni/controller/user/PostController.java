@@ -19,7 +19,7 @@ import java.util.*;
  * @author makejava
  * @since 2022-02-28 09:28:22
  */
-@Controller
+@Controller("post_user")
 @RequestMapping("/user/post")
 public class PostController {
 
@@ -44,62 +44,30 @@ public class PostController {
     private PostService postService;
 
     /**
-     * 分页查询
-     *
-     * @param basePage 分页参数
-     * @return Result对象
-     */
-    @PostMapping(value = "/queryPage")
-    public Result<PageInfo<Post>> queryPage(@RequestBody BasePage basePage) {
-        PageInfo<Post> page = postService.queryByPage(basePage);
-        return Result.ok(page);
-    }
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping(value = "/get/{id}")
-    public Result<Post> selectById(@PathVariable("id") Integer id) {
-        Post result = postService.selectById(id);
-        if (Objects.nonNull(result)) {
-            return Result.ok(result);
-        }
-        return Result.fail(0, "查询失败");
-    }
-
-    /**
-     * 新增数据
-     *
-     * @param post 实体
-     * @return 新增结果
-     */
-    @PostMapping(value = "/insert")
-    public Result insert(@RequestBody Post post) {
-        int result = postService.insert(post);
-        if (result > 0) {
-            return Result.ok();
-        }
-        return Result.fail(0, "新增失败");
-    }
-
-
-
-    /**
      * 进入到帖子列表页
      * @param model
      * @return
      */
-    @GetMapping("/category/{sort}")
-    public String getPostList(Model model, @PathVariable(value = "sort") Integer sort){
+    @GetMapping("/sort/{sort}")
+    public String getPostList(
+            Model model, @PathVariable(value = "sort") Integer sort,
+            @RequestParam(value = "page",required = false, defaultValue = "1") Integer page,
+            @RequestParam(value = "limit",required = false, defaultValue = "2") Integer limit,
+            @RequestParam(value = "isPage",required = false, defaultValue = "false") Boolean isPage){
         //获取该分类下的所有帖子
-        List<Post> postList = postService.getPostList(sort);
+        List<Post> postList = postService.getPostList(sort, page, limit);
         List<Map<String, Object>> postVoList = this.getPostList(postList);
         //所有帖子的全部内容
         model.addAttribute("posts", postVoList);
-        return "post/list";
+        //分页需要用到
+        model.addAttribute("sort",sort);
+        //获取该类别下的总条码
+        model.addAttribute("count", postService.getCountBySort(sort));
+        //除第一次访问外，其余返回th:fragment内容，只更新内容列表
+        if (isPage){
+            return "/user/post/list::content";
+        }
+        return "/user/post/list";
     }
 
     /**
@@ -113,13 +81,13 @@ public class PostController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
         List<Post> postList = postService.findByUserId(user.getId());
         List<Map<String, Object>> postVoList = this.getPostList(postList);
         //所有帖子的全部内容
         model.addAttribute("posts", postVoList);
-        return "post/list";
+        return "/user/post/list";
     }
 
     /**
@@ -134,7 +102,7 @@ public class PostController {
         List<Map<String, Object>> postVoList = this.getPostList(postList);
         //所有帖子的全部内容
         model.addAttribute("posts", postVoList);
-        return "post/list";
+        return "/user/post/list";
     }
 
     /**
@@ -147,9 +115,9 @@ public class PostController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
-        return "post/publish";
+        return "/user/post/publish";
     }
 
     /**
@@ -166,9 +134,9 @@ public class PostController {
         }else {
             postService.insertPost(post);
             model.addAttribute("msg", "帖子发布成功!");
-            model.addAttribute("target", "/user/post/list/0");
+            model.addAttribute("target", "/user/post/category/0");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -181,11 +149,11 @@ public class PostController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
         Post post = postService.selectById(id);
         model.addAttribute("post", post);
-        return "post/update";
+        return "/user/post/update";
     }
 
     /**
@@ -193,7 +161,7 @@ public class PostController {
      * @return String
      */
     @PostMapping("/update")
-    public String updateActivity(Model model, Post post){
+    public String updatePost(Model model, Post post){
         User user = hostHolder.getUser();
         if (user == null){
             model.addAttribute("msg", "请先登录!");
@@ -203,7 +171,7 @@ public class PostController {
             model.addAttribute("msg", "帖子更新成功!");
             model.addAttribute("target", "/user/post/my");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -318,7 +286,18 @@ public class PostController {
             model.addAttribute("msg", "帖子删除成功!");
             model.addAttribute("target", "/user/my/oneself");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
+    }
+
+    @GetMapping("/search")
+    public String searchPost(Model model, @RequestParam("search") String search){
+        List<Post> postList = postService.searchPost(search);
+        List<Map<String, Object>> postVoList = this.getPostList(postList);
+        //所有帖子的全部内容
+        model.addAttribute("posts", postVoList);
+        model.addAttribute("search", search);
+        model.addAttribute("count", postList.size());
+        return "/user/post/search";
     }
 
 }

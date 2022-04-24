@@ -20,13 +20,6 @@
         where id = #{id}
     </select>
 
-    <!--通过用户名查询-->
-    <select id="selectByName" parameterType="string" resultType="cn.glh.alumni.entity.Comment">
-        select
-        id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
-        where user_name = #{userName}
-    </select>
-
     <!-- 查询全部 -->
     <select id="selectAll" resultMap="CommentMap">
         select
@@ -43,6 +36,13 @@
         select
         id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
         where id = #{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="queryByPage" resultType="cn.glh.alumni.entity.Comment">
+        select
+            id, target_type, target_id, content, from_user_id, to_user_id, state, create_time from t_comment
+        limit #{offset},#{rows}
     </select>
 
     <!--新增所有列-->

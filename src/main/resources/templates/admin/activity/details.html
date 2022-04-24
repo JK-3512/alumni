@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>活动详情</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+<body>
+<div class="content whisper-content leacots-content details-content">
+  <div class="cont w1000">
+    <div class="whisper-list">
+      <div class="item-box">
+        <div class="review-version">
+          <!-- 内容 -->
+          <div class="article-cont">
+            <!-- 标题 -->
+            <div class="title">
+              <h1 th:utext="${activity.title}"></h1>
+              <p class="cont-info">
+                <span class="data" th:text="${activity.author}"></span>
+                <span class="data" th:text="${#dates.format(activity.createTime, 'yyyy-MM-dd')}"></span>
+                <span class="types" th:utext="${activity.sort}"></span>
+              </p>
+            </div>
+            <!-- 活动信息 -->
+            <div class="info">
+              <p><i class="layui-icon layui-icon-date"></i><span class="left">活动日期:</span><span
+                      class="right" th:text="${activity.startDate} + ' ~ ' + ${activity.endDate}"></span></p>
+              <p><i class="layui-icon layui-icon-time"></i><span class="left">报名截止:</span><span
+                      class="right" th:text="${activity.closeDate}"></span></p>
+              <p><i class="layui-icon layui-icon-user"></i><span class="left">人数上限:</span><span
+                      class="right" th:text="${activity.numberLimit}"></span></p>
+              <p><i class="layui-icon layui-icon-cellphone-fine"></i><span class="left">联系方式:</span><span
+                      class="right" th:text="${activity.contact}"></span></p>
+              <p><i class="layui-icon layui-icon-location"></i><span class="left">活动地区:</span>
+                <span class="right" th:text="${activity.province} + ' ' + ${activity.city} +  ' ' + ${activity.county}"></span></p>
+              <p><i class="layui-icon layui-icon-location"></i><span class="left">详细地址:</span><span
+                      class="right" th:text="${activity.address}"></span></p>
+            </div>
+            <!-- 主要内容 -->
+            <div class="main-content" th:utext="${activity.content}">
+            </div>
+            <!-- 封面 -->
+            <img class="cover" th:src="${activity.cover}" alt="封面">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+</body>
+</html>

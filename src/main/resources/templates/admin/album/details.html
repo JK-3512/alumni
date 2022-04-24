@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>相册详情</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+<body>
+<div class="content whisper-content leacots-content details-content">
+  <div class="cont w1000">
+    <div class="whisper-list">
+      <div class="item-box">
+        <div class="review-version">
+          <!-- 内容 -->
+          <div class="article-cont">
+            <!-- 标题 -->
+            <div class="title">
+              <h1 th:utext="${album.title}"></h1>
+              <p class="cont-info">
+                <span class="data" th:text="${album.author}"></span>
+                <span class="data" th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></span>
+                <span class="types" th:utext="${album.sort}"></span>
+              </p>
+            </div>
+            <!-- 主要内容 -->
+            <div class="main-content" th:utext="${album.content}"></div>
+            <!-- 图片 -->
+            <div th:each="pic:${album.albumPicList}">
+              <img class="cover" th:src="${pic}" alt="图片">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+</body>
+</html>

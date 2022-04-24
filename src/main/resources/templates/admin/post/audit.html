@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <title>审核帖子</title>
+    <link rel="stylesheet" th:href="@{/pear/component/pear/css/pear.css}" />
+</head>
+<body class="pear-container">
+<div class="layui-card">
+    <div class="layui-card-body">
+        <form class="layui-form" action="">
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">标题</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" placeholder="" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <label class="layui-form-label">分类</label>
+                <div class="layui-input-block">
+                    <select name="sort" lay-verify="required">
+                        <option value=""></option>
+                        <option value="1">同学时光</option>
+                        <option value="2">校园追忆</option>
+                        <option value="3">校友今夕</option>
+                        <option value="4">活动聚会</option>
+                        <option value="5">个人风采</option>
+                        <option value="6">其它</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="post-query">
+                    <i class="layui-icon layui-icon-search"></i>
+                    查询
+                </button>
+                <button type="reset" class="pear-btn pear-btn-md">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                    重置
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="layui-card">
+    <div class="layui-card-body">
+        <table id="post-table" lay-filter="post-table"></table>
+    </div>
+</div>
+
+<script type="text/html" id="post-toolbar">
+    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="batchPass">
+        <i class="layui-icon layui-icon-ok"></i>
+        通过
+    </button>
+    <button class="pear-btn pear-btn-danger pear-btn-md" lay-event="batchNoPass">
+        <i class="layui-icon layui-icon-close"></i>
+        不通过
+    </button>
+</script>
+
+<script type="text/html" id="post-bar">
+    <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="details"><i class="layui-icon layui-icon-layer"></i></button>
+    <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="pass"><i class="layui-icon layui-icon-ok"></i></button>
+    <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="noPass"><i class="layui-icon layui-icon-close"></i></button>
+</script>
+
+<script type="text/html" id="post-createTime">
+    {{layui.util.toDateString(d.createTime, 'yyyy-MM-dd')}}
+</script>
+
+<script type="text/html" id="post-content">
+    <div value="{{d.content}}"></div>
+</script>
+
+<script th:src="@{/pear/component/layui/layui.js}"></script>
+<script th:src="@{/pear/component/pear/pear.js}"></script>
+<script>
+    layui.use(['table', 'form', 'jquery','common'], function() {
+        let table = layui.table;
+        let form = layui.form;
+        let $ = layui.jquery;
+        let common = layui.common;
+
+        // let MODULE_PATH = "operate/";
+        let MODULE_PATH = "/alumni/admin/post";
+
+        let cols = [
+            [{
+                type: 'checkbox'
+            },
+                {
+                    title: 'ID',
+                    field: 'id',
+                    align: 'left',
+                    width: 143
+                },
+                {
+                    title: '标题',
+                    field: 'title',
+                    align: 'left',
+                    width: 400
+                },
+                {
+                    title: '分类',
+                    field: 'sort',
+                    align: 'left',
+                    width: 250,
+                },
+                {
+                    title: '创建时间',
+                    field: 'createTime',
+                    align: 'left',
+                    width: 250,
+                    templet: '#post-createTime'
+                },
+                {
+                    title: '操作',
+                    toolbar: '#post-bar',
+                    align: 'center',
+                    width: 250
+                }
+            ]
+        ]
+
+        table.render({
+            elem: '#post-table',
+            url: '/alumni/admin/post/audit/list',
+            page: true,
+            cols: cols,
+            skin: 'line',
+            toolbar: '#post-toolbar',
+            defaultToolbar: [{
+                title: '刷新',
+                layEvent: 'refresh',
+                icon: 'layui-icon-refresh',
+            }, 'filter', 'print', 'exports']
+        });
+
+        table.on('tool(post-table)', function(obj) {
+            if (obj.event === 'details') {
+                window.details(obj);
+            } else if (obj.event === 'refresh') {
+                window.refresh(obj);
+            } else if (obj.event === 'pass') {
+                window.pass(obj);
+            } else if (obj.event === 'noPass') {
+                window.noPass(obj);
+            }
+        });
+
+        table.on('toolbar(post-table)', function(obj) {
+            if (obj.event === 'batchPass') {
+                window.batchPass(obj);
+            } else if (obj.event === 'batchNoPass') {
+                window.batchNoPass(obj);
+            }
+        });
+
+        form.on('submit(post-query)', function(data) {
+            table.reload('post-table', {
+                where: data.field
+            })
+            return false;
+        });
+
+        window.details = function(obj) {
+            layer.open({
+                type: 2,
+                title: '详情',
+                shade: 0.1,
+                area: ['1200px', '800px'],
+                content: MODULE_PATH + '/audit/details/' + obj.data['id']
+            });
+        }
+
+        window.pass = function(obj) {
+            layer.confirm('确认审核结果是:通过?', {
+                icon: 3,
+                title: '提示'
+            }, function(index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "/audit/pass/" + obj.data['id'],
+                    dataType:'json',
+                    type:'post',
+                    success: function(result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function() {
+                                obj.del();
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.noPass = function(obj) {
+            layer.confirm('确定审核结果是:不通过?', {
+                icon: 3,
+                title: '提示'
+            }, function(index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "/audit/noPass/" + obj.data['id'],
+                    dataType:'json',
+                    type:'post',
+                    success: function(result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function() {
+                                obj.del();
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.batchPass = function(obj) {
+
+            var checkIds = common.checkField(obj,'id');
+
+            if (checkIds === "") {
+                layer.msg("未选中数据", {
+                    icon: 3,
+                    time: 1000
+                });
+                return false;
+            }
+
+            layer.confirm('确定这些审核结果是:通过?', {
+                icon: 3,
+                title: '提示'
+            }, function(index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "/audit/batchPass/" + checkIds,
+                    dataType:'json',
+                    type:'post',
+                    success: function(result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function() {
+                                table.reload('post-table');
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.batchNoPass = function(obj) {
+
+            var checkIds = common.checkField(obj,'id');
+
+            if (checkIds === "") {
+                layer.msg("未选中数据", {
+                    icon: 3,
+                    time: 1000
+                });
+                return false;
+            }
+
+            layer.confirm('确定这些审核结果是:不通过?', {
+                icon: 3,
+                title: '提示'
+            }, function(index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "/audit/batchNoPass/" + checkIds,
+                    dataType:'json',
+                    type:'post',
+                    success: function(result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function() {
+                                table.reload('post-table');
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.refresh = function(param) {
+            table.reload('post-table');
+        }
+    })
+</script>
+</body>
+</html>

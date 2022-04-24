@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>活动搜索</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<body>
+<header th:fragment="header">
+    <div class="header">
+        <h1 class="logo">
+            <a th:href="@{/user/news/sort/0}">
+                <img th:src="@{/img/logo.png}">
+            </a>
+        </h1>
+        <div class="nav">
+            <a th:href="@{/user/news/sort/0}">新闻资讯</a>
+            <a th:href="@{/user/activity/sort/0}" class="active">活动</a>
+            <a th:href="@{/user/album/sort/0}">相册</a>
+            <a th:href="@{/user/post/sort/0}">广场</a>
+            <a th:href="@{/user/my/oneself}">主页</a>
+        </div>
+        <!--右侧搜索栏-->
+        <div class="nav-right">
+            <form class="layui-form" th:method="get" th:action="@{/user/activity/search}">
+                <div class="layui-input-block">
+                    <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                           class="layui-icon layui-input">
+                </div>
+            </form>
+            <div class="user">
+                <div class="login" style="display: none;">
+                    <a th:href="@{/user/login}">登录</a>
+                    <a th:href="@{/user/register}">注册</a>
+                </div>
+                <div class="avatar" style="display: none;">
+                    <img src alt="头像">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <!--封面-->
+    <div class="cover">
+        <img th:src="@{/img/banner3.jpg}" alt="cover">
+    </div>
+    <div class="cont w1000">
+        <!--搜索-->
+        <div style="font-size: 24px;margin-top: 40px;">
+            <p>站内搜索"<span th:text="${search}" id="search"></span>"的结果 共<span th:text="${count}"></span>条数据</p>
+        </div>
+        <div class="list-item">
+            <!--活动列表-->
+            <div class="item" th:each="activity:${activityList}">
+                <div class="layui-fluid">
+                    <div class="layui-row">
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
+                            <div class="img" style="margin-top: 35px;"><img th:src="${activity.cover}" alt="cover">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
+                            <div class="item-cont">
+                                <h3 th:text="${activity.title}"></h3>
+                                <h5 th:text="${activity.sort}"></h5>
+                                <div th:utext="${activity.content}"></div>
+                                <a th:href="@{|/user/activity/details/${activity.id}|}" class="go-icon"></a>
+                                <!-- 时间、地点 -->
+                                <div class="icon-list">
+                                    <p><i class="layui-icon layui-icon-date"></i><span
+                                            th:text="${activity.startDate}"></span></p>
+                                    <p><i class="layui-icon layui-icon-location"></i><span
+                                            th:text="${activity.province} + ' ' + ${activity.city} +  ' ' + ${activity.county}"></span>
+                                    </p>
+                                    <p>
+                                        <span th:if="${activity.closeDate} > ${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+                                              class="layui-badge layui-bg-green">正在进行</span>
+                                        <span th:if="${activity.closeDate} < ${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+                                              class="layui-badge layui-bg-orange">已过期</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+</body>
+
+</html>

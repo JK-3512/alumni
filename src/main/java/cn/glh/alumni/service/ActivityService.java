@@ -61,16 +61,6 @@ public class ActivityService {
     }
 
     /**
-     * 分页查询
-     * @param basePage 分页参数
-     * @return 查询结果
-     */
-    public PageInfo<Activity> selectByPage(BasePage basePage) {
-        return PageHelper.startPage(basePage.getPageNum(), basePage.getPageSize(), "id desc")
-                .doSelectPageInfo(() -> activityDao.selectAll());
-    }
-
-    /**
      * 新增活动（默认当前用户报名）
      * 需要做空值处理
      * @param activity 实例对象
@@ -102,7 +92,7 @@ public class ActivityService {
      *
      * @param activity 实例对象
      */
-    public void updateActivity(Activity activity) {
+    public int updateActivity(Activity activity) {
         if (activity == null){
             throw new IllegalArgumentException("参数不能为空");
         }
@@ -110,13 +100,14 @@ public class ActivityService {
         activity.setSort(ActivityEnum.fromCode(Integer.valueOf(activity.getSort())).getActivitySort());
         activity.setState(0);
 
-        this.activityDao.updateActivity(activity);
+        int i = this.activityDao.updateActivity(activity);
 
         User user = hostHolder.getUser();
         //事件产生
         UserEventLog userEventLog = new UserEventLog(user.getId(),  "更新了活动:"+ activity.getTitle(), new Date());
         //事件发布,需要listener接收到事件并处理返回
         applicationEventPublisher.publishEvent(new UserEvent(userEventLog));
+        return i;
 
     }
 
@@ -126,7 +117,7 @@ public class ActivityService {
      * @return 是否成功
      */
     @Transactional(rollbackFor = Exception.class)
-    public void deleteById(Integer id) {
+    public int deleteById(Integer id) {
         //生成动态
         Activity activity = this.selectById(id);
         //事件产生
@@ -144,7 +135,7 @@ public class ActivityService {
         commentService.deleteComment(AlumniEnum.activity.getCode(), id);
 
         //最后清除活动
-        this.activityDao.deleteById(id);
+        return this.activityDao.deleteById(id);
     }
 
     /**
@@ -176,6 +167,16 @@ public class ActivityService {
     }
 
     /**
+     * 取消活动报名
+     * @param activityId 活动ID
+     * @param userId 用户ID
+     * @return
+     */
+    public int cancelEnroll(Integer activityId, Integer userId) {
+        return activityDao.cancelEnroll(activityId, userId);
+    }
+
+    /**
      * 获取本次活动参与人
      * @param id 活动Id
      * @return List<ActivityEnroll> 报名人集合
@@ -198,15 +199,17 @@ public class ActivityService {
     /**
      * 进入到活动列表页面
      * @param sort 分类
+     * @param page 分页参数(当前页码)
+     * @param limit 分页参数(数据量)
      * @return 活动集合
      */
-    public List<Activity> getActivityList(Integer sort) {
+    public List<Activity> getActivityList(Integer sort, Integer page, Integer limit) {
         List<Activity> activityList = null;
         //全部查询
         if (sort == ActivityEnum.all.getCode()){
-            activityList  = activityDao.findAllActivity();
+            activityList  = activityDao.findAllActivity((page - 1) * limit, limit);
         }else{
-            activityList = activityDao.findSortActivity(ActivityEnum.fromCode(sort).getActivitySort());
+            activityList = activityDao.findSortActivity(ActivityEnum.fromCode(sort).getActivitySort(), (page - 1) * limit, limit);
         }
         return activityList;
     }
@@ -219,6 +222,21 @@ public class ActivityService {
      */
     public List<Activity> findByUserId(Integer userId) {
         return activityDao.findByUserId(userId);
+    }
+
+    /**
+     * 找出用户参加的所有活动
+     * @param userId
+     */
+    public List<Activity> findEnrollByUserId(Integer userId) {
+        List<Integer> ids = activityDao.findEnrollByUserId(userId);
+        List<Activity> activityList = new ArrayList<>();
+        for (Integer id : ids) {
+            Activity activity = activityDao.selectById(id);
+            activity.setAuthor(userDao.selectById(activity.getUserId()).getNickName());
+            activityList.add(activity);
+        }
+        return activityList;
     }
 
     /**
@@ -240,5 +258,63 @@ public class ActivityService {
 
         }
         return activityList;
+    }
+
+    /**
+     * 分页查询已审核信息
+     * @param page 页数
+     * @param limit 每页最大记录数
+     * @return
+     */
+    public List<Activity> queryByPage(Integer page, Integer limit) {
+        return activityDao.queryByPage((page - 1) * limit, limit);
+    }
+
+    /**
+     * 分页查询未审核信息
+     * @param page 页数
+     * @param limit 每页最大记录数
+     * @return
+     */
+    public List<Activity> queryAuditByPage(Integer page, Integer limit) {
+        return activityDao.queryAuditByPage((page - 1) * limit, limit);
+    }
+
+    /**
+     * 修改资讯审核状态
+     * @param id 资讯ID
+     * @param state 0.未审核 1.审核通过 2.审核不通过
+     * @return 影响行数
+     */
+    public int updateState(Integer id, Integer state){
+        return activityDao.updateState(id, state);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void updateStateList(List<Integer> ids, Integer state){
+        for (Integer id : ids) {
+            this.updateState(id, state);
+        }
+    }
+
+    /**
+     * 获取该类别下的总条码
+     * @param sort 类别
+     * @return
+     */
+    public Integer getCountBySort(Integer sort) {
+        if (sort == ActivityEnum.all.getCode()){
+            return activityDao.getCount();
+        }
+        return activityDao.getCountBySort(ActivityEnum.fromCode(sort).getActivitySort());
+    }
+
+    /**
+     * 活动检索
+     * @param search 关键词
+     * @return
+     */
+    public List<Activity> searchActivity(String search) {
+        return activityDao.searchActivity(search);
     }
 }

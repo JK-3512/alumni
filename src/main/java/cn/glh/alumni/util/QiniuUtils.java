@@ -24,7 +24,7 @@ public class QiniuUtils {
     private static final String ACCESS_KEY = "EJR3oiw6SZh1FhwFp96KDuJmF8QHUeFfW-7UmzbB";
     private static final String SECRET_KEY = "Q3u6SyqI3IxvPjg-XJyVxHFfYaa32UK5rCaOFGKU";
     private static final String BUCKET = "alumni-glh";
-    private static final String BUCKET_URL = "http://r8tp3srqc.hn-bkt.clouddn.com";
+    private static final String BUCKET_URL = "http://img.alumni.ink";
 
     private static Configuration cfg;
     private static UploadManager uploadManager;

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>活动详情</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<body>
+<!--头部-->
+<header th:replace="/user/activity/list::header"></header>
+
+<div class="content whisper-content leacots-content details-content">
+    <div class="cont w1000">
+        <div class="whisper-list">
+            <div class="item-box">
+                <div class="review-version">
+                    <!-- 内容 -->
+                    <div class="article-cont">
+                        <!-- 标题 -->
+                        <div class="title">
+                            <h1 th:utext="${activity.title}"></h1>
+                            <p class="cont-info">
+                                <a th:href="@{|/user/other/${activity.userId}|}"><span class="data"
+                                                                                       th:text="${activity.author}"></span></a>
+                                <span class="data" th:text="${#dates.format(activity.createTime, 'yyyy-MM-dd')}"></span>
+                                <span class="types" th:utext="${activity.sort}"></span>
+                            </p>
+                        </div>
+                        <!-- 活动信息 -->
+                        <div class="info">
+                            <p><i class="layui-icon layui-icon-date"></i><span class="left">活动日期:</span><span
+                                    class="right" th:text="${activity.startDate} + ' ~ ' + ${activity.endDate}"></span>
+                            </p>
+                            <p><i class="layui-icon layui-icon-time"></i><span class="left">报名截止:</span><span
+                                    class="right" th:text="${activity.closeDate}"></span></p>
+                            <p><i class="layui-icon layui-icon-user"></i><span class="left">人数上限:</span><span
+                                    class="right" th:text="${activity.numberLimit}"></span></p>
+                            <p><i class="layui-icon layui-icon-cellphone-fine"></i><span class="left">联系方式:</span><span
+                                    class="right" th:text="${activity.contact}">关利华</span></p>
+                            <p><i class="layui-icon layui-icon-location"></i><span class="left">活动地区:</span>
+                                <span class="right"
+                                      th:text="${activity.province} + ' ' + ${activity.city} +  ' ' + ${activity.county}"></span>
+                            </p>
+                            <p><i class="layui-icon layui-icon-location"></i><span class="left">详细地址:</span><span
+                                    class="right" th:text="${activity.address}"></span></p>
+                        </div>
+                        <!-- 主要内容 -->
+                        <div class="main-content" th:utext="${activity.content}">
+                        </div>
+                        <!-- 封面 -->
+                        <img class="cover" th:src="${activity.cover}" alt="封面">
+                        <!-- 报名 -->
+                        <div class="enroll-view">
+                            <button type="button" class="layui-btn layui-border-black layui-btn-radius"
+                                    th:onclick="|getEnroll(${activity.id});|"
+                                    th:classappend="${activity.closeDate gt #dates.format(#dates.createNow(), 'yyyy-MM-dd')} ? 'layui-btn-primary': 'layui-btn-disabled'"
+                                    th:disabled="${activity.closeDate lt #dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
+                                报名参加
+                            </button>
+                            <span id="enroll" th:text="${enrollNum} + '人报名'"></span>
+                            <div class="enroll">
+                                <!-- 参与人 -->
+                                <div th:each="enrollUser:${enrollList}">
+                                    <!-- 头像 -->
+                                    <div class="img">
+                                        <img th:src="${enrollUser.headPic}" alt="头像">
+                                    </div>
+                                    <!-- 用户名 -->
+                                    <a th:href="@{|/user/other/${enrollUser.userId}|}"><p class="userName"
+                                                                                          th:text="${enrollUser.nickName}"></p>
+                                    </a>
+                                    <!-- 报名日期 -->
+                                    <p class="data"
+                                       th:text="${#dates.format(enrollUser.enrollTime, 'yyyy-MM-dd')} + ' 报名'"></p>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 点赞、收藏 -->
+                        <div class="op-list">
+                            <p th:class="${likeStatus == 1} ? 'active like' : 'like'"
+                               th:onclick="|like(this, 2, ${activity.id});|"><i
+                                    class="layui-icon layui-icon-praise"></i><span th:text="${likeCount}"></span></p>
+                            <p th:class="${collectStatus == 1} ? 'active like' : 'like'"
+                               th:onclick="|collect(this, 2, ${activity.id});|"><i
+                                    class="layui-icon layui-icon-rate-solid"></i><span th:text="${collectCount}"></span>
+                            </p>
+                        </div>
+                        <div class="btn-box">
+                            <button class="layui-btn layui-btn-primary">上一篇</button>
+                            <button class="layui-btn layui-btn-primary">下一篇</button>
+                        </div>
+                    </div>
+                    <!-- 评论表单 -->
+                    <div class="form">
+                        <form class="layui-form" method="post" th:action="@{/user/comment/add}">
+                            <div class="layui-form-item layui-form-text">
+                                <div class="layui-input-block">
+                                    <textarea name="content" class="layui-textarea" placeholder="请输入内容(200字)"
+                                              maxlength="200" required></textarea>
+                                    <input type="hidden" name="targetType" value="2">
+                                    <input type="hidden" name="targetId" th:value="${activity.id}">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block" style="text-align: right;">
+                                    <button class="layui-btn definite" type="submit">確定</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="volume">
+                        全部留言 <span th:text="${msgNum}"></span>
+                    </div>
+                    <div class="list-cont">
+                        <div class="cont" th:each="cmt:${comments}">
+                            <!--评论-->
+                            <div class="comment">
+                                <!-- 头像 -->
+                                <div class="img">
+                                    <img th:src="${cmt.user.headPic}" alt="头像" style="width: 50px;">
+                                </div>
+                                <div class="text">
+                                    <!-- 用户名 -->
+                                    <a th:href="@{|/user/other/${cmt.user.id}|}">
+                                        <p class="tit"><span class="name" th:text="${cmt.user.nickName}"></span><span
+                                                class="data"
+                                                th:text="${#dates.format(cmt.comment.createTime, 'yyyy-MM-dd')}"></span>
+                                        </p>
+                                    </a>
+                                    <!-- 评论内容 -->
+                                    <p class="ct" th:text="${cmt.comment.content}"></p>
+                                    <div class="op-list">
+                                        <p th:class="${cmt.likeStatus == 1} ? 'active like' : 'like'"
+                                           th:onclick="|like(this, 5, ${cmt.comment.id});|"><i
+                                                class="layui-icon layui-icon-praise"></i><span
+                                                th:text="${cmt.likeCount}"></span></p>
+                                        <p class="edit"><i class="layui-icon layui-icon-reply-fill"></i><span>回复</span>
+                                        </p>
+                                    </div>
+                                    <!-- 回复表单 -->
+                                    <div class="comment layui-hide">
+                                        <div class="form">
+                                            <form class="layui-form" method="post" th:action="@{/user/comment/add}">
+                                                <div class="layui-form-item layui-form-text">
+                                                    <div class="layui-input-block">
+                                                        <textarea name="content" class="layui-textarea"
+                                                                  placeholder="请输入内容(200字)" maxlength="200"
+                                                                  required></textarea>
+                                                        <input type="hidden" name="targetType" value="5">
+                                                        <input type="hidden" name="targetId"
+                                                               th:value="${cmt.comment.id}">
+                                                        <input type="hidden" name="toUserId" th:value="${cmt.user.id}">
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-input-block" style="text-align: right;">
+                                                        <button class="layui-btn definite" type="submit">確定</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div th:each="rvo:${cmt.replys}">
+                                <div class="reply">
+                                    <!-- 头像 -->
+                                    <div class="img">
+                                        <img th:src="${rvo.user.headPic}" alt="头像" style="width: 50px;">
+                                    </div>
+                                    <!-- 用户名 -->
+                                    <a th:href="@{|/user/other/${rvo.user.id}|}">
+                                        <p class="tit"><span class="name" th:text="${rvo.user.nickName}"></span><span
+                                                class="data"
+                                                th:text="${#dates.format(rvo.reply.createTime, 'yyyy-MM-dd')}"></span>
+                                        </p>
+                                    </a>
+                                    <!-- 评论内容 -->
+                                    <p class="ct" th:text="${rvo.reply.content}"></p>
+                                    <!-- 点赞 -->
+                                    <div class="op-list">
+                                        <p th:class="${rvo.likeStatus == 1} ? 'active like' : 'like'"
+                                           th:onclick="|like(this, 5, ${rvo.reply.id});|"><i
+                                                class="layui-icon layui-icon-praise"></i><span
+                                                th:text="${rvo.likeCount}"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/details.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/util/}]]'
+    }).use(['element', 'laypage', 'form', 'menu'], function () {
+        element = layui.element, laypage = layui.laypage, form = layui.form, menu = layui.menu;
+        menu.reply_off();
+        menu.enroll_off();
+    });
+</script>
+</body>
+
+</html>

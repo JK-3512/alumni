@@ -20,9 +20,10 @@
     </select>
     
     <!-- 查询全部 -->
-    <select id="queryAll" resultMap="AlbumMap">
+    <select id="findAllAlbum" resultMap="AlbumMap">
         select
         id, sort, title, content, create_time, state, user_id        from t_album
+        limit #{offset}, #{rows}
     </select>
 
     <!--获取相册下属所有的图片-->
@@ -31,13 +32,55 @@
     </select>
 
     <!--相册列表-->
-    <select id="getAlbumList" parameterType="string" resultType="cn.glh.alumni.entity.Album">
+    <select id="findAlbumBySort" parameterType="string" resultType="cn.glh.alumni.entity.Album">
         select id, sort, title, content, create_time, state, user_id from t_album where sort = #{sort}
+        limit #{offset}, #{rows}
     </select>
 
     <!--找出用户发布的相册-->
     <select id="findByUserId" resultMap="AlbumMap">
-        select id, title, content, create_time, user_id from t_album where user_id = #{userId}
+        select id, title, content, state, create_time, user_id from t_album where user_id = #{userId}
+    </select>
+
+    <!--分页查询已审核信息-->
+    <select id="queryByPage" parameterType="integer" resultType="cn.glh.alumni.entity.Album">
+        select id, sort, title, content, create_time, state, user_id
+        from t_album
+        where state != 0
+        limit #{offset}, #{rows};
+    </select>
+
+    <!--分页查询未审核信息-->
+    <select id="queryAuditByPage" resultType="cn.glh.alumni.entity.Album">
+        select id, sort, title, content, create_time, state, user_id
+        from t_album
+        where state = 0
+        limit #{offset}, #{rows};
+    </select>
+
+    <!--找出最新发布的一条相册记录-->
+    <select id="getNewAlbum" resultType="cn.glh.alumni.entity.Album">
+        SELECT *, ABS(NOW() - create_time )  AS diffTime
+        FROM t_album
+        ORDER BY diffTime
+        LIMIT 0, 1
+    </select>
+
+    <!--获取该类别总条码-->
+    <select id="getCountBySort" resultType="java.lang.Integer">
+        select count(*) from t_album where sort = #{sort}
+    </select>
+
+    <!--获取总条码-->
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_album
+    </select>
+
+    <!--相册检索-->
+    <select id="searchAlbum" resultType="cn.glh.alumni.entity.Album">
+        select id, title, create_time, state
+        from t_album
+        where title like concat('%',#{search},'%')
     </select>
 
     <!--新增所有列-->
@@ -78,6 +121,11 @@
             </if>
         </set>
         where id = #{id}
+    </update>
+
+    <!--更新审核状态-->
+    <update id="updateState">
+        update t_album set state = #{state} where id = #{id}
     </update>
 
     <!--通过主键删除-->

@@ -39,6 +39,9 @@ public class CollectController {
     @ResponseBody
     public String collect(int targetType, int targetId) {
         User user = hostHolder.getUser();
+        if (user == null){
+            return AlumniUtil.getJSONString(1,"请先登录!",null);
+        }
         // 收藏
         collectService.collect(AlumniEnum.fromCode(targetType).getAlumniType(), targetId, user.getId());
         // 收藏数量

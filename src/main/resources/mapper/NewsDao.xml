@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.glh.alumni.dao.NewsDao">
+
+    <resultMap type="cn.glh.alumni.entity.News" id="NewsMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="cover" column="cover" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="adminId" column="admin_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="selectById" resultMap="NewsMap">
+        select
+          id, sort, title, cover, content, create_time, state, admin_id        from t_news
+        where id = #{id}
+    </select>
+    
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="NewsMap">
+        select
+        id, sort, title, cover, content, create_time, state, admin_id        from t_news
+    </select>
+    <!--分页查询已审核-->
+    <select id="queryByPage" parameterType="integer" resultType="cn.glh.alumni.entity.News">
+        select
+            id, sort, title, cover, content, create_time, state, admin_id        from t_news
+        where state != 0
+        limit #{offset},#{rows}
+    </select>
+    <!--分页查询未审核-->
+    <select id="queryAuditByPage" parameterType="integer" resultType="cn.glh.alumni.entity.News">
+        select
+            id, sort, title, cover, content, create_time, state, admin_id        from t_news
+        where state = 0
+        limit #{offset},#{rows}
+    </select>
+
+    <!--找出所有活动-->
+    <select id="findAllNews" resultType="cn.glh.alumni.entity.News">
+        select id, sort, title, cover, content, create_time, state, admin_id
+        from t_news
+        limit #{offset}, #{rows}
+    </select>
+
+    <!--找出该分类下的所有资讯-->
+    <select id="findSortNews" resultType="cn.glh.alumni.entity.News">
+        select id, sort, title, cover, content, create_time, state, admin_id
+        from t_news
+        where sort = #{sort}
+        limit #{offset}, #{rows}
+    </select>
+
+    <!--资讯板块的封面（最新发布的两条数据）-->
+    <select id="getCoverList" resultType="cn.glh.alumni.entity.News">
+        SELECT id, title, cover, ABS(NOW() - create_time )  AS diffTime
+        FROM t_news
+        ORDER BY diffTime
+        LIMIT 0, 2
+    </select>
+
+    <!--获取总条码-->
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_news
+    </select>
+
+    <!--获取该类别总条码-->
+    <select id="getCountBySort" resultType="java.lang.Integer">
+        select count(*) from t_news where sort = #{sort}
+    </select>
+
+    <!--资讯检索-->
+    <select id="searchNews" resultType="cn.glh.alumni.entity.News">
+        select id, sort, cover, title, content
+        from t_news
+        where title like concat('%',#{search},'%')
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertNews" keyProperty="id" useGeneratedKeys="true">
+        insert into t_news(sort, title, cover, content, create_time, state, admin_id)
+        values (#{sort}, #{title}, #{cover}, #{content}, #{createTime}, #{state}, #{adminId})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateNews">
+        update t_news
+        <set>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="cover != null and cover != ''">
+                cover = #{cover},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+            <if test="adminId != null">
+                admin_id = #{adminId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateState">
+        update t_news set state = #{state} where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from t_news where id = #{id}
+    </delete>
+
+</mapper>
+

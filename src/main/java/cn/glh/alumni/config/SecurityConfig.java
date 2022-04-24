@@ -57,43 +57,46 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.authorizeRequests()
 //                .antMatchers("/**/publish")
 //                .hasAuthority(AlumniConstant.AUTHORITY_USER)
+//                .antMatchers("/admin/index")
+//                .hasAuthority(AlumniConstant.AUTHORITY_ADMIN)
+//                .antMatchers("/*.svg","/*.png","/*.js","/*.css").permitAll()
                 .anyRequest().permitAll();
-        // 权限不够时的处理
-        http.exceptionHandling()
-//                 1. 未登录时的处理
-                .authenticationEntryPoint(new AuthenticationEntryPoint() {
-                    @Override
-                    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
-                        String xRequestedWith = request.getHeader("x-requested-with");
-                        if ("XMLHttpRequest".equals(xRequestedWith)) {
-                            // 异步请求
-                            response.setContentType("application/plain;charset=utf-8");
-                            PrintWriter writer = response.getWriter();
-                            writer.write(AlumniUtil.getJSONString(403, "你还没有登录"));
-                        }
-                        else {
-                            // 普通请求
-                           response.sendRedirect(request.getContextPath() + "/user/login");
-                        }
-                    }
-                })
+//        // 权限不够时的处理
+//        http.exceptionHandling()
+////                 1. 未登录时的处理
+//                .authenticationEntryPoint(new AuthenticationEntryPoint() {
+//                    @Override
+//                    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
+//                        String xRequestedWith = request.getHeader("x-requested-with");
+//                        if ("XMLHttpRequest".equals(xRequestedWith)) {
+//                            // 异步请求
+//                            response.setContentType("application/plain;charset=utf-8");
+//                            PrintWriter writer = response.getWriter();
+//                            writer.write(AlumniUtil.getJSONString(403, "你还没有登录"));
+//                        }
+//                        else {
+//                            // 普通请求
+//                           response.sendRedirect(request.getContextPath() + "/user/login");
+//                        }
+//                    }
+//                })
 //                // 2. 权限不够时的处理
-                .accessDeniedHandler(new AccessDeniedHandler() {
-                    @Override
-                    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException {
-                        String xRequestedWith = request.getHeader("x-requested-with");
-                        if ("XMLHttpRequest".equals(xRequestedWith)) {
-                            // 异步请求
-                            response.setContentType("application/plain;charset=utf-8");
-                            PrintWriter writer = response.getWriter();
-                            writer.write(AlumniUtil.getJSONString(403, "你没有访问该功能的权限"));
-                        }
-                        else {
-                            // 普通请求
-                            response.sendRedirect(request.getContextPath() + "/user/register");
-                        }
-                    }
-                });
+//                .accessDeniedHandler(new AccessDeniedHandler() {
+//                    @Override
+//                    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException {
+//                        String xRequestedWith = request.getHeader("x-requested-with");
+//                        if ("XMLHttpRequest".equals(xRequestedWith)) {
+//                            // 异步请求
+//                            response.setContentType("application/plain;charset=utf-8");
+//                            PrintWriter writer = response.getWriter();
+//                            writer.write(AlumniUtil.getJSONString(403, "你没有访问该功能的权限"));
+//                        }
+//                        else {
+//                            // 普通请求
+//                            response.sendRedirect(request.getContextPath() + "/user/register");
+//                        }
+//                    }
+//                });
 
         // Security 底层会默认拦截 /logout 请求，进行退出处理
         // 此处赋予它一个根本不存在的退出路径，使得程序能够执行到我们自己编写的退出代码

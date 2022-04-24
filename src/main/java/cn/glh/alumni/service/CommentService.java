@@ -44,13 +44,12 @@ public class CommentService {
     }
 
     /**
-     * 分页查询
-     * @param basePage 分页参数
-     * @return 查询结果
+     * 查询全部
+     *
+     * @return 对象列表
      */
-    public PageInfo<Comment> selectByPage(BasePage basePage) {
-        return PageHelper.startPage(basePage.getPageNum(), basePage.getPageSize(), "id desc")
-                .doSelectPageInfo(() -> commentDao.selectAll());
+    public List<Comment> queryByPage(Integer page, Integer limit){
+        return commentDao.queryByPage((page - 1) * limit ,limit);
     }
 
     /**
@@ -84,8 +83,22 @@ public class CommentService {
      * @param id 主键
      * @return 是否成功
      */
+    @Transactional(rollbackFor = Exception.class)
     public int deleteById(Integer id) {
-        return this.commentDao.deleteById(id);
+        //删除评论及其相关回复
+        Comment comment = commentDao.findCommentById(id);
+        //评论的全部回复
+        List<Comment> replyList = this.findCommentByType(AlumniEnum.comment.getCode(), comment.getId());
+        for (Comment reply : replyList) {
+            //清除回复的点赞
+            likeService.deleteTargetLike(AlumniEnum.comment.getAlumniType(), reply.getId());
+            //清理回复
+            this.commentDao.deleteById(reply.getId());
+        }
+        //清除该条评论的点赞
+        likeService.deleteTargetLike(AlumniEnum.comment.getAlumniType(), comment.getId());
+        //清理该条评论
+        return this.commentDao.deleteById(comment.getId());
     }
 
     /**

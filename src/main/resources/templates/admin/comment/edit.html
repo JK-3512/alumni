@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>编辑评论</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+  <link rel="shortcut icon" th:href="@{/img/favicon.ico}"/>
+</head>
+
+<body>
+<!-- 评论表单 -->
+<div class="form" style="width: 1000px;margin-top: 100px;">
+  <form class="layui-form" action="" >
+    <div class="layui-form-item layui-form-text">
+      <div class="layui-input-block">
+        <textarea name="content" th:text="${comment.content}" class="layui-textarea"></textarea>
+        <input type="hidden" name="id" th:value="${comment.id}">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block" style="text-align: right;">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">確定</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script th:src="@{/pear/component/layui/layui.js}"></script>
+<script type="text/javascript">
+  layui.config({
+    base: '[[@{/js/}]]'
+  });
+  layui.use(['form', 'jquery'], function () {
+    var form = layui.form
+            , $ = layui.jquery;
+    //监听提交
+    form.on('submit(formDemo)', function(data){
+      $.ajax({
+        url:'/alumni/admin/comment/edit',
+        data:JSON.stringify(data.field),
+        dataType:'json',
+        contentType:'application/json;charset=UTF-8',
+        type:'post',
+        success:function(result){
+          if(result.code === 0){
+            layer.msg(result.msg,{icon:1,time:800},function(){
+              parent.layer.close(parent.layer.getFrameIndex(window.name));//关闭当前页
+              parent.layui.table.reload("user-table");
+            });
+          }else{
+            layer.msg(result.msg,{icon:2,time: 800});
+          }
+        }
+      })
+      return false;
+    });
+  });
+
+</script>
+</body>
+
+</html>

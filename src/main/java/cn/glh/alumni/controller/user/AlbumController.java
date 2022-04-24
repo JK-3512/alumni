@@ -18,7 +18,7 @@ import java.util.*;
  * @author makejava
  * @since 2022-02-20 17:21:00
  */
-@Controller
+@Controller("album_user")
 @RequestMapping("/user/album")
 public class AlbumController {
     /**
@@ -43,71 +43,29 @@ public class AlbumController {
     private CommentService commentService;
 
     /**
-     * 分页查询
-     *
-     * @param basePage 分页参数
-     * @return Result对象
-     */
-    @PostMapping(value = "/queryPage")
-    public Result<PageInfo<Album>> queryPage(@RequestBody BasePage basePage) {
-        PageInfo<Album> page = albumService.queryByPage(basePage);
-        return Result.ok(page);
-    }
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping(value = "/get/{id}")
-    public Result<Album> queryById(@PathVariable("id") Integer id) {
-    Album result = albumService.selectById(id);
-        if(Objects.nonNull(result)){
-            return Result.ok(result);
-        }
-        return Result.fail(0,"查询失败");
-    }
-
-    /**
-     * 新增数据
-     *
-     * @param album 实体
-     * @return 新增结果
-     */
-    @PostMapping(value = "/insert")
-    public Result insert(@RequestBody Album album) {
-        int result = albumService.insert(album);
-        if (result > 0) {
-          return Result.ok();
-        }
-        return Result.fail(0,"新增失败");
-    }
-
-    /**
-     * 删除数据
-     *
-     * @param id 主键
-     * @return 删除是否成功
-     */
-    @DeleteMapping(value = "/delete/{id}")
-    public Result delete(@PathVariable("id") Integer id) {
-        int result = albumService.deleteById(id);
-        if (result > 0) {
-          return Result.ok();
-        }
-        return Result.fail(0,"删除失败");
-    }
-
-    /**
      * 进入到相册列表页面
      * @return String
      */
-    @GetMapping("/category/{sort}")
-    public String getAlbumList(Model model, @PathVariable(value = "sort") Integer sort){
-        List<Album> albumList = albumService.getAlbumList(sort);
+    @GetMapping("/sort/{sort}")
+    public String getAlbumList(
+            Model model, @PathVariable(value = "sort") Integer sort,
+            @RequestParam(value = "page",required = false, defaultValue = "1") Integer page,
+            @RequestParam(value = "limit",required = false, defaultValue = "3") Integer limit,
+            @RequestParam(value = "isPage",required = false, defaultValue = "false") Boolean isPage
+            ){
+        Album newAlbum = albumService.getNewAlbum();
+        List<Album> albumList = albumService.getAlbumList(sort, page, limit);
+        model.addAttribute("newAlbum", newAlbum);
         model.addAttribute("albumList", albumList);
-        return "album/list";
+        //分页需要用到
+        model.addAttribute("sort",sort);
+        //获取该类别下的总条码
+        model.addAttribute("count", albumService.getCountBySort(sort));
+        //除第一次访问外，其余返回th:fragment内容，只更新内容列表
+        if (isPage){
+            return "/user/album/list::content";
+        }
+        return "/user/album/list";
     }
 
     /**
@@ -121,9 +79,9 @@ public class AlbumController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
-        return "album/publish";
+        return "/user/album/publish";
     }
 
     /**
@@ -137,11 +95,11 @@ public class AlbumController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
         Album album = albumService.selectById(id);
         model.addAttribute("album", album);
-        return "album/update";
+        return "/user/album/update";
     }
 
 
@@ -160,9 +118,9 @@ public class AlbumController {
         }else {
             albumService.insertAlbum(album);
             model.addAttribute("msg", "相册发布成功!");
-            model.addAttribute("target", "/user/album/list");
+            model.addAttribute("target", "/user/album/category/0");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -182,7 +140,7 @@ public class AlbumController {
             model.addAttribute("msg", "相册更新成功!");
             model.addAttribute("target", "/user/album/details/" + album.getId());
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -268,7 +226,7 @@ public class AlbumController {
         model.addAttribute("comments", commentVoList);
         //总留言数
         model.addAttribute("msgNum", msgNum);
-        return "album/details";
+        return "/user/album/details";
     }
 
     @GetMapping("/delete/{id}")
@@ -282,7 +240,18 @@ public class AlbumController {
             model.addAttribute("msg", "相册删除成功!");
             model.addAttribute("target", "/user/my/oneself");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
+    }
+
+    @GetMapping("/search")
+    public String searchAlbum(Model model, @RequestParam("search") String search){
+        Album newAlbum = albumService.getNewAlbum();
+        model.addAttribute("newAlbum", newAlbum);
+        List<Album> albumList = albumService.searchAlbum(search);
+        model.addAttribute("albumList", albumList);
+        model.addAttribute("search", search);
+        model.addAttribute("count", albumList.size());
+        return "/user/album/search";
     }
 }
 

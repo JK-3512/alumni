@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>其他</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+</head>
+
+<body>
+<!--头部-->
+<header th:replace = "/user/profile/oneself::header"></header>
+
+<div class="about-content">
+    <div class="w1000">
+        <div class="user-info">
+            <img th:src="${user.headPic}" alt="avatar">
+            <div class="username">
+                <h1 th:text="${user.nickName}"></h1>
+                <p><span th:text="${user.major}"></span> | <span th:text="${user.schoolDate}"></span> | <span th:text="${user.education}"></span></p>
+            </div>
+        </div>
+        <div class="user-details">
+            <p><span>籍贯</span><span th:text="${user.province}"></span> <span th:text="${user.city}"></span></p>
+            <hr />
+            <p><span>性别</span><span th:text="${user.sex == 0} ? '男' : '女'"></span></p>
+            <hr />
+            <p><span>注册时间</span><span th:text="${#dates.format(user.createTime, 'yyyy-MM-dd')}"></span></p>
+            <hr />
+            <p><span>出生日期</span><span th:text="${user.birthday}"></span></p>
+            <hr />
+            <p><span>电话</span><span th:text="${user.phone}"></span></p>
+            <hr />
+            <p><span>邮箱</span><span th:text="${user.email}"></span></p>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>修改资料</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+</head>
+
+<body>
+<!--头部-->
+<header th:replace="/user/profile/oneself::header"></header>
+
+<div class="about-content">
+    <div class="w1000">
+        <div class="navigation">
+            <a th:href="@{/user/my/oneself}"><i class="layui-icon layui-icon-left">返回个人主页</i></a>
+        </div>
+        <div class="setting">
+            <!-- 边栏 -->
+            <div class="sidebar">
+                <ul class="layui-menu">
+                    <li class="layui-menu-item-checked">
+                        <div class="layui-menu-body-title">
+                            <a th:href="@{/user/setting/profile}"><i class="layui-icon layui-icon-username"></i><span>个人资料</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="layui-menu-body-title">
+                            <a th:href="@{/user/setting/password}"><i class="layui-icon layui-icon-password"></i><span>修改密码</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="setting-view">
+                <!-- 个人资料表单 -->
+                <form class="layui-form layui-form-pane" method="post" th:action="@{/user/my/update/profile}">
+                    <!-- 左 -->
+                    <div class="setting-left">
+                        <!-- 姓名 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="nickName" th:value="${user.nickName}" placeholder="请输入要修改的昵称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- 性别 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="sex" value="0" title="男" th:checked="${user.sex == 0}">
+                                <input type="radio" name="sex" value="1" title="女" th:checked="${user.sex == 1}">
+                            </div>
+                        </div>
+                        <!-- 出生年月 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">出生年月</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="birthday" id="birthday" th:value="${user.birthday}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- 邮箱 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="email" placeholder="请输入要修改的邮箱" th:value="${user.email}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- 手机 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="phone" placeholder="请输入要修改的手机号" th:value="${user.phone}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- 籍贯 -->
+                        <div class="layui-form-item" id="area-picker">
+                            <div class="layui-form-label">籍贯</div>
+                            <div class="layui-input-inline" style="width: 120px;">
+                                <select name="province" class="province-selector" th:data-value="${user.province}">
+                                    <option value="">--选择省--</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 120px;">
+                                <select name="city" class="city-selector" th:data-value="${user.city}">
+                                    <option value="">--选择市--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 专业 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">专业</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="major" placeholder="请输入专业" th:value="${user.major}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- 在校时间 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">在校时间</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="schoolDate" class="layui-input" id="schoolDate" placeholder=" - " th:value="${user.schoolDate}">
+                            </div>
+                        </div>
+                        <!-- 学历 -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">学历</label>
+                            <div class="layui-input-inline">
+                                <select name="education">
+                                    <option value="">请选择学历</option>
+                                    <option th:selected="${user.education == '初中'}" value="0">初中</option>
+                                    <option th:selected="${user.education == '高中'}" value="1">高中</option>
+                                    <option th:selected="${user.education == '专科'}" value="2">专科</option>
+                                    <option th:selected="${user.education == '本科'}" value="3">本科</option>
+                                    <option th:selected="${user.education == '硕士'}" value="4">硕士</option>
+                                    <option th:selected="${user.education == '博士'}" value="5">博士</option>
+                                    <option th:selected="${user.education == '其它'}" value="6">其它</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右 -->
+                    <div class="setting-right">
+                        <!-- 头像 -->
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline">
+                                <div class="layui-upload-drag" id="avatar">
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传头像，或将文件拖拽到此处</p>
+                                    <div th:class="${user.headPic == null} ? 'layui-hide' : 'layui-show'" id="uploadView">
+                                        <hr>
+                                        <img th:src="${user.headPic}" alt="上传成功后渲染" style="max-width: 196px">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 隐藏组件，获取图片上传后的路径、并提交表单 -->
+                            <input type="hidden" name="headPic" id="headPic">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/}]]'
+    });
+    layui.use(['form', 'laydate', 'layarea', 'upload'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , layarea = layui.layarea
+            , upload = layui.upload;
+        //日期
+        laydate.render({
+            elem: '#birthday'
+        });
+        //年范围
+        laydate.render({
+            elem: '#schoolDate'
+            , type: 'year'
+            , range: true
+        });
+        // 地区选择
+        layarea.render({
+            elem: '#area-picker',
+        });
+        //拖拽上传
+        upload.render({
+            elem: '#avatar'
+            , url: '/alumni/api/upload' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+            , done: function (res) {
+                layer.msg('上传成功');
+                layui.$('#uploadView').removeClass('layui-hide').find('img').attr('src', res.data.src);
+                layui.$('#headPic').attr("value", res.data.src);
+            }
+        });
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return true;
+        });
+    });
+
+</script>
+</body>
+
+</html>

@@ -25,7 +25,7 @@ public class AlumniConstant {
     /**
      * 默认的登录凭证超时时间 (12小时)
      */
-    public static final int DEFAULT_EXPIRED_SECONDS = 3600 * 12;
+    public static final int DEFAULT_EXPIRED_SECONDS = 3600 * 24 * 7;
 
     /**
      * 权限：普通用户
@@ -35,6 +35,6 @@ public class AlumniConstant {
     /**
      * 权限：管理员
      */
-    public static final String AUTHORITY_ADMIN = "ADMIN";
+    public static final String AUTHORITY_ADMIN = "ROLE_ADMIN";
 
 }

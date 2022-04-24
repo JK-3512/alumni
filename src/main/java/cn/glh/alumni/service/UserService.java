@@ -5,13 +5,19 @@ import cn.glh.alumni.entity.User;
 import cn.glh.alumni.entity.enums.EducationEnum;
 import cn.glh.alumni.util.AlumniUtil;
 import cn.glh.alumni.util.HostHolder;
+import cn.glh.alumni.util.MailClient;
 import cn.glh.alumni.util.RedisKeyUtil;
 import io.netty.util.internal.StringUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +32,20 @@ public class UserService {
 
     @Resource
     private RedisTemplate redisTemplate;
+
+    @Resource
+    private TemplateEngine templateEngine;
+
+    @Resource
+    private MailClient mailClient;
+
+    // 网站域名
+    @Value("${alumni.path.domain}")
+    private String domain;
+
+    // 项目名(访问路径)
+    @Value("${server.servlet.context-path}")
+    private String contextPath;
 
     public User selectById(Integer id){
         return userDao.selectById(id);
@@ -84,5 +104,42 @@ public class UserService {
     private void clearCache(int userId) {
         String redisKey = RedisKeyUtil.getUserKey(userId);
         redisTemplate.delete(redisKey);
+    }
+
+    /**
+     * 查询全部
+     *
+     * @return 对象列表
+     */
+    public List<User> queryByPage(Integer page, Integer limit){
+        return userDao.queryByPage((page - 1) * limit ,limit);
+    }
+
+    /**
+     * 管理员添加用户
+     * @param user
+     */
+    public void addUser(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("参数不能为空");
+        }
+
+        // 注册用户
+        user.setSalt(AlumniUtil.generateUUID().substring(0, 5));
+        user.setPwd(AlumniUtil.md5(user.getPwd() + user.getSalt()));
+        user.setType(0);
+        user.setState(false);
+        user.setActivationCode(AlumniUtil.generateUUID());
+        user.setCreateTime(new Date());
+        userDao.insertUser(user);
+
+        // 给注册用户发送激活邮件
+        Context context = new Context();
+        context.setVariable("email", user.getEmail());
+        // http://localhost:8080/alumni/user/activation/用户id/激活码
+        String url = domain + contextPath + "/user/activation/" + user.getId() + "/" + user.getActivationCode();
+        context.setVariable("url", url);
+        String content = templateEngine.process("/user/mail/activation", context);
+        mailClient.sendMail(user.getEmail(),"激活宁理校友网账号", content);
     }
 }

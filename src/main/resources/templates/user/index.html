@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>首页</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+  <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+</head>
+
+<body>
+<header th:fragment="header">
+  <div class="header">
+    <h1 class="logo">
+      <a th:href="@{/user/index}">
+        <img th:src="@{/img/logo.png}">
+      </a>
+    </h1>
+    <div class="nav">
+      <a th:href="@{/user/index}" class="active">新闻资讯</a>
+      <a th:href="@{/user/activity/category/0}">活动</a>
+      <a th:href="@{/user/album/category/0}">相册</a>
+      <a th:href="@{/user/post/category/0}">广场</a>
+      <a th:href="@{/user/my/oneself}">主页</a>
+    </div>
+    <!--右侧搜索栏-->
+    <div class="nav-right">
+      <form class="layui-form" action="">
+        <div class="layui-input-block">
+          <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                 class="layui-icon layui-input">
+        </div>
+      </form>
+      <div class="user">
+        <!-- <a href="#">登录</a>
+        <a href="#">注册</a> -->
+        <div class="avatar">
+          <img th:src="@{/img/banner.jpg}">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 轮播图 -->
+<div class="layui-carousel" id="carousel">
+  <div carousel-item>
+    <div class="carousel-item">
+      <a href="#"><img th:src="@{/img/wy_img1.jpg}" />
+        <h1>冬奥会上的“微笑卫士” | 宁理学生赵楠用行动诠释志愿者精神</h1>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="#"><img th:src="@{/img/wy_img2.jpg}" />
+        <h1>喜报！宁理仨学生在宁夏大学生原创文学大赛中分获一二三等奖</h1>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="content">
+  <div class="cont w1000">
+    <div class="title">
+        <span class="layui-breadcrumb" lay-separator="|">
+          <a href="javascript:;" class="active">校友资讯</a>
+          <a href="javascript:;">校友风采</a>
+          <a href="javascript:;">母校资讯</a>
+          <a href="javascript:;">其它</a>
+        </span>
+    </div>
+    <div class="list-item">
+      <div class="item">
+        <div class="layui-fluid">
+          <div class="layui-row">
+            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
+              <div class="img"><img src="http://img.alumni.ink/2022-03-29-24ce0b89b0324a5599962fedf949cc24.jpg" alt=""></div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
+              <div class="item-cont">
+                <h3>“饮水思源、砥砺奋进” 丨经济管理学院校友返校交流暨捐赠仪式成功举行</h3>
+                <h5>母校资讯</h5>
+                <p>2020年7月20日上午，原经济贸易系2007级校友代表返校交流暨捐赠仪式在办公楼会议室举行。院长范晓伟、党委副书记蒋清民、纪委书记魏新华出席会议</p>
+                <a href="details.html" class="go-icon"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="demo" style="text-align: center;"></div>
+  </div>
+</div>
+
+<footer th:fragment="footer">
+  <div class="footer-wrap">
+    <div class="footer w1000">
+      <div class="qrcode">
+        <img th:src="@{/img/erweima.jpg}">
+      </div>
+      <div class="practice-mode">
+        <img th:src="@{/img/down_img.jpg}">
+        <div class="text">
+          <h4 class="title">我的联系方式</h4>
+          <p>微信<span class="WeChat">1234567890</span></p>
+          <p>手机<span class="iphone">1234567890</span></p>
+          <p>邮箱<span class="email">1234567890@qq.com</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+<script type="text/javascript">
+  layui.config({
+    base: '[[@{/js/util/}]]'
+  }).use(['element', 'laypage', 'jquery', 'menu',], function () {
+    element = layui.element, laypage = layui.laypage, $ = layui.$, menu = layui.menu;
+    laypage.render({
+      elem: 'demo'
+      , count: 70 //数据总数，从服务端得到
+    });
+  });
+  //轮播图
+  layui.use('carousel', function () {
+    var carousel = layui.carousel;
+    //建造实例
+    carousel.render({
+      elem: '#carousel'
+      , width: '1000px'
+      , height: '465px'
+      , arrow: 'always' //始终显示箭头
+    });
+  });
+</script>
+</body>
+</html>

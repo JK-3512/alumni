@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @author Administrator
  * @since 2022-02-14 09:45:39
  */
-@Controller
+@Controller("comment_user")
 @RequestMapping("/user/comment")
 public class CommentController {
     /**
@@ -62,7 +62,7 @@ public class CommentController {
             model.addAttribute("msg", "发表成功!");
 
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
 

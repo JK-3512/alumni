@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>相册</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<body>
+<!--头部-->
+<header th:fragment="header">
+    <div class="header">
+        <h1 class="logo">
+            <a th:href="@{/user/news/sort/0}">
+                <img th:src="@{/img/logo.png}">
+            </a>
+        </h1>
+        <div class="nav">
+            <a th:href="@{/user/news/sort/0}">新闻资讯</a>
+            <a th:href="@{/user/activity/sort/0}">活动</a>
+            <a th:href="@{/user/album/sort/0}" class="active">相册</a>
+            <a th:href="@{/user/post/sort/0}">广场</a>
+            <a th:href="@{/user/my/oneself}">主页</a>
+        </div>
+        <!--右侧搜索栏-->
+        <div class="nav-right">
+            <form class="layui-form" th:method="get" th:action="@{/user/album/search}">
+                <div class="layui-input-block">
+                    <input type="text" name="search" lay-verify="required" autocomplete="off" placeholder="&#xe615;"
+                           class="layui-icon layui-input">
+                </div>
+            </form>
+            <div class="user">
+                <div class="login" style="display: none;">
+                    <a th:href="@{/user/login}">登录</a>
+                    <a th:href="@{/user/register}">注册</a>
+                </div>
+                <div class="avatar" style="display: none;">
+                    <img src alt="头像">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="album-content w1000" id="layer-photos-demo">
+    <!--封面-->
+    <div class="img-info" th:onclick="|getDetails(${newAlbum.id});|">
+        <img th:src="${newAlbum.albumPicList.get(0)}" alt="cover">
+        <div class="title">
+            <p class="data">最新上传<span th:text="${#dates.format(newAlbum.createTime, 'yyyy/MM/dd')}"></span></p>
+            <p class="text" th:text="${newAlbum.title}"></p>
+        </div>
+    </div>
+    <!-- 导航 -->
+    <div class="title">
+      <span class="layui-breadcrumb" lay-separator="|">
+        <a th:href="@{/user/album/sort/0}" class="active">全部</a>
+        <a th:href="@{/user/album/sort/1}">同学时光</a>
+        <a th:href="@{/user/album/sort/2}">校园追忆</a>
+        <a th:href="@{/user/album/sort/3}">校友今夕</a>
+        <a th:href="@{/user/album/sort/4}">活动聚会</a>
+        <a th:href="@{/user/album/sort/5}">个人风采</a>
+        <a th:href="@{/user/album/sort/6}">其它</a>
+      </span>
+    </div>
+    <div class="img-list" th:fragment="content" id="content">
+        <div class="layui-fluid" style="padding:0">
+            <div class="layui-row layui-col-space30 space">
+                <!-- 开始遍历图片集合 -->
+                <div class="layui-col-xs12 layui-col-sm4 layui-col-md4" style="cursor:pointer"
+                     th:each="album:${albumList}">
+                    <div class="item" th:onclick="|getDetails(${album.id});|">
+                        <img th:src="${album.albumPicList.get(0)}">
+                        <div class="cont-text">
+                            <div class="data" th:text="${#dates.format(album.createTime, 'yyyy-MM-dd')}"></div>
+                            <p class="address"><span th:text="${album.title}"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--分页栏-->
+    <div id="render" style="text-align: center;"></div>
+</div>
+
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/details.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/util/}]]'
+    }).use(['element', 'laypage', 'form', 'layer', 'menu'], function () {
+        element = layui.element, laypage = layui.laypage, form = layui.form, layer = layui.layer, menu = layui.menu;
+        //获取后端传递的分类
+        var sort = [[${sort}]];
+        var curPage = 1;
+        laypage.render({
+            elem: 'render',
+            count: [[${count}]], //数据总数，应该从后台获得
+            limit: 3, //每页条数
+            curr: $(".layui-laypage-em").next().html(),
+            layout: ['prev', 'page', 'next', 'skip'], //这里就是一些功能按钮 详情可以阅读 layui的官方文档
+            jump: function (obj, first) {
+                curPage = obj.curr;
+                //这里是首次不执行，以为当我们异步请求后 需要重新加载该页面获取新的数据 如果直接写在外面 会循环调用 导致页面一直重复加载
+                if (!first) {
+                    ajax(obj.curr, obj.limit, sort);
+                }
+            }
+        });
+    });
+
+    function ajax(page, limit, sort) {
+        $.ajax({
+            type: "get",
+            url: "/alumni/user/album/sort/" + sort,
+            data: {page: page, limit: limit, isPage: true},
+            dataType: "text",
+            success: function (res) {
+                //局部更新内容列表
+                $("#content").html(res);
+            }
+        })
+    };
+</script>
+</body>
+
+</html>

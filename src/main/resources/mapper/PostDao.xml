@@ -13,41 +13,68 @@
 
     <!--查询单个-->
     <select id="selectById" resultMap="PostMap">
-        select id,
-               sort,
-               content,
-               create_time,
-               state,
-               user_id
+        select id, sort, title,  content, create_time, state, user_id
         from t_post
         where id = #{id}
     </select>
 
     <!-- 查询全部 -->
-    <select id="queryAll" resultMap="PostMap">
-        select id,
-               sort,
-               content,
-               create_time,
-               state,
-               user_id
+    <select id="findAllPost" resultMap="PostMap">
+        select id, sort, title,  content, create_time, state, user_id
         from t_post
+        limit #{offset}, #{rows}
     </select>
 
     <!--获取该分类下的所有帖子-->
-    <select id="queryBySort" parameterType="string" resultType="cn.glh.alumni.entity.Post">
-        select id, sort, content, create_time, state, user_id from t_post where sort = #{sort}
+    <select id="findSortPost" parameterType="string" resultType="cn.glh.alumni.entity.Post">
+        select id, sort, title,  content, create_time, state, user_id
+        from t_post
+        where sort = #{sort}
+        limit #{offset}, #{rows}
     </select>
 
     <!--找出用户发布的帖子-->
     <select id="findByUserId" resultType="cn.glh.alumni.entity.Post">
-        select id, content, create_time, user_id from t_post where user_id = #{userId}
+        select id, sort, title, content, state, create_time, state, user_id from t_post where user_id = #{userId}
+    </select>
+
+    <!--分页查询已审核信息-->
+    <select id="queryByPage" resultType="cn.glh.alumni.entity.Post">
+        select id, sort, title,  content, create_time, state, user_id
+        from t_post
+        where state != 0
+        limit #{offset},#{rows}
+    </select>
+
+    <!--分页查询未审核信息-->
+    <select id="queryAuditByPage" resultType="cn.glh.alumni.entity.Post">
+        select id, sort, title,  content, create_time, state, user_id
+        from t_post
+        where state = 0
+        limit #{offset},#{rows}
+    </select>
+
+    <!--获取该类别总条码-->
+    <select id="getCountBySort" resultType="java.lang.Integer">
+        select count(*) from t_post where sort = #{sort}
+    </select>
+
+    <!--获取总条码-->
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_post
+    </select>
+
+    <!--帖子检索-->
+    <select id="searchPost" resultType="cn.glh.alumni.entity.Post">
+        select id, sort, title,  content, create_time, state, user_id
+        from t_post
+        where title like concat('%',#{search},'%')
     </select>
 
     <!--新增所有列-->
     <insert id="insertPost" keyProperty="id" useGeneratedKeys="true">
-        insert into t_post(sort, content, create_time, state, user_id)
-        values (#{sort}, #{content}, #{createTime}, #{state}, #{userId})
+        insert into t_post(sort, title,  content, create_time, state, user_id)
+        values (#{sort}, #{title}, #{content}, #{createTime}, #{state}, #{userId})
     </insert>
 
     <!--通过主键修改数据-->
@@ -56,6 +83,9 @@
         <set>
             <if test="sort != null">
                 sort = #{sort},
+            </if>
+            <if test="title != null">
+                title = #{title},
             </if>
             <if test="content != null and content != ''">
                 content = #{content},
@@ -71,6 +101,11 @@
             </if>
         </set>
         where id = #{id}
+    </update>
+
+    <!--更新审核情况-->
+    <update id="updateState">
+        update t_post set state = #{state} where id = #{id}
     </update>
 
     <!--通过主键删除-->

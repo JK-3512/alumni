@@ -1,6 +1,7 @@
 package cn.glh.alumni.dao;
 
 import cn.glh.alumni.entity.Comment;
+import cn.glh.alumni.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,19 +24,19 @@ public interface CommentDao {
     Comment selectById(Integer id);
 
     /**
-     * 通过用户名查询单条数据
-     *
-     * @param userName 用户名
-     * @return 实例对象
-     */
-    Comment selectByName(String userName);
-
-    /**
      * 查询全部
      *
      * @return 对象列表
      */
     List<Comment> selectAll();
+
+    /**
+     * 分页查询全部
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<Comment> queryByPage(Integer offset, Integer rows);
 
     /**
      * 新增数据

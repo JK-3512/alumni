@@ -16,9 +16,8 @@ function like(btn, targetType, targetId) {
                     //取消点赞
                     $(btn).removeClass("active");
                 }
-            }
-            else {
-                alert(res.data.msg);
+            } else {
+                alert("请先登录!");
             }
 
         }
@@ -40,9 +39,8 @@ function collect(btn, targetType, targetId) {
                 }else{
                     $(btn).removeClass("active");
                 }
-            }
-            else {
-                alert(res.msg);
+            } else {
+                alert("请先登录!");
             }
 
         }
@@ -52,4 +50,12 @@ function collect(btn, targetType, targetId) {
 //相册列表，点击其中一个跳转到详情页面
 function getDetails(id) {
     $(location).attr('href', '/alumni/user/album/details/'+id);
+}
+
+//相册列表，点击其中一个跳转到详情页面
+function getEnroll(id) {
+    var con = confirm("确定要报名参加吗?");
+    if (con == true){
+        $(location).attr('href', '/alumni/user/activity/enroll/'+id);
+    }
 }

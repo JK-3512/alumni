@@ -4,7 +4,6 @@ import cn.glh.alumni.entity.*;
 import cn.glh.alumni.entity.enums.AlumniEnum;
 import cn.glh.alumni.service.*;
 import cn.glh.alumni.util.HostHolder;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ import java.util.*;
  * @author Administrator
  * @since 2022-02-08 10:20:43
  */
-@Controller
+@Controller("activity_user")
 @RequestMapping("/user/activity")
 public class ActivityController {
 
@@ -47,11 +46,23 @@ public class ActivityController {
      * 进入到活动列表页面
      * @return String
      */
-    @GetMapping("/category/{sort}")
-    public String getActivityList(Model model, @PathVariable(value = "sort") Integer sort){
-        List<Activity> activityList = activityService.getActivityList(sort);
+    @GetMapping("/sort/{sort}")
+    public String getActivityList(
+            Model model, @PathVariable(value = "sort") Integer sort,
+            @RequestParam(value = "page",required = false, defaultValue = "1") Integer page,
+            @RequestParam(value = "limit",required = false, defaultValue = "2") Integer limit,
+            @RequestParam(value = "isPage",required = false, defaultValue = "false") Boolean isPage){
+        List<Activity> activityList = activityService.getActivityList(sort, page, limit);
         model.addAttribute("activityList", activityList);
-        return "activity/list";
+        //分页需要用到
+        model.addAttribute("sort",sort);
+        //获取该类别下的总条码
+        model.addAttribute("count", activityService.getCountBySort(sort));
+        //除第一次访问外，其余返回th:fragment内容，只更新内容列表
+        if (isPage){
+            return "/user/activity/list::content";
+        }
+        return "/user/activity/list";
     }
 
     /**
@@ -64,9 +75,9 @@ public class ActivityController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
-        return "activity/publish";
+        return "/user/activity/publish";
     }
 
     /**
@@ -79,11 +90,11 @@ public class ActivityController {
         if (user == null){
             model.addAttribute("msg", "请先登录!");
             model.addAttribute("target", "/user/login");
-            return "operate-result";
+            return "/user/system/operate-result";
         }
         Activity activity = activityService.selectById(id);
         model.addAttribute("activity", activity);
-        return "activity/update";
+        return "/user/activity/update";
     }
 
     /**
@@ -100,9 +111,9 @@ public class ActivityController {
         }else {
             activityService.insertActivity(activity);
             model.addAttribute("msg", "活动发布成功!");
-            model.addAttribute("target", "/user/activity/list");
+            model.addAttribute("target", "/user/activity/sort/0");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -120,7 +131,7 @@ public class ActivityController {
             model.addAttribute("msg", "活动更新成功!");
             model.addAttribute("target", "/user/activity/details/" + activity.getId());
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
     /**
@@ -145,9 +156,26 @@ public class ActivityController {
             }
             model.addAttribute("target", "/user/activity/details/" + id);
         }
-        return "operate-result";
+        return "/user/system/operate-result";
     }
 
+    /**
+     * 取消活动报名
+     * @param model
+     * @param id
+     * @return
+     */
+    @GetMapping("/cancel/{id}")
+    public String cancelActivity(Model model, @PathVariable("id") Integer id) {
+        int i = activityService.cancelEnroll(id, hostHolder.getUser().getId());
+        if (i > 0){
+            model.addAttribute("msg", "取消报名成功");
+        }else {
+            model.addAttribute("msg", "取消报名失败");
+        }
+        model.addAttribute("target", "/user/my/oneself");
+        return "/user/system/operate-result";
+    }
 
     /**
      * 进入到活动详情页
@@ -232,7 +260,7 @@ public class ActivityController {
         model.addAttribute("comments", commentVoList);
         //总留言数
         model.addAttribute("msgNum", msgNum);
-        return "activity/details";
+        return "/user/activity/details";
     }
 
 
@@ -253,7 +281,16 @@ public class ActivityController {
             model.addAttribute("msg", "活动删除成功!");
             model.addAttribute("target", "/user/my/oneself");
         }
-        return "operate-result";
+        return "/user/system/operate-result";
+    }
+
+    @GetMapping("/search")
+    public String searchActivity(Model model, @RequestParam("search") String search){
+        List<Activity> activityList = activityService.searchActivity(search);
+        model.addAttribute("activityList", activityList);
+        model.addAttribute("search", search);
+        model.addAttribute("count", activityList.size());
+        return "/user/activity/search";
     }
 }
 

@@ -49,6 +49,12 @@
             id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
         where email = #{email}
     </select>
+    <!--分页查询全部-->
+    <select id="queryByPage" parameterType="integer" resultType="cn.glh.alumni.entity.User">
+        select
+            id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        limit #{offset},#{rows}
+    </select>
 
     <!--新增所有列-->
     <insert id="insertUser" keyProperty="id" useGeneratedKeys="true">

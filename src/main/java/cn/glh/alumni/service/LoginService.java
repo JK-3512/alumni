@@ -10,6 +10,7 @@ import cn.glh.alumni.util.MailClient;
 import cn.glh.alumni.util.RedisKeyUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageInfo;
@@ -59,6 +60,10 @@ public class LoginService {
             user = initCache(id);
         }
         return user;
+    }
+
+    public User selectByName(String userName) {
+        return userDao.selectByName(userName);
     }
 
     /**
@@ -178,7 +183,7 @@ public class LoginService {
         // http://localhost:8080/alumni/user/activation/用户id/激活码
         String url = domain + contextPath + "/user/activation/" + user.getId() + "/" + user.getActivationCode();
         context.setVariable("url", url);
-        String content = templateEngine.process("/mail/activation", context);
+        String content = templateEngine.process("/user/mail/activation", context);
         mailClient.sendMail(user.getEmail(),"激活宁理校友网账号", content);
         return map;
     }
@@ -317,5 +322,4 @@ public class LoginService {
         String redisKey = RedisKeyUtil.getUserKey(userId);
         redisTemplate.delete(redisKey);
     }
-
 }

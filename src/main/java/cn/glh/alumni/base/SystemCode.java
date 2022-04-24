@@ -13,7 +13,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum SystemCode {
 
-    OK(200, "成功"),
+    OK(0, "成功"),
     AccessTokenError(400, "用户登录令牌失效"),
     UNAUTHORIZED(401, "用户未登录"),
     AuthError(402, "用户名或密码错误"),

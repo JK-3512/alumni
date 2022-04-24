@@ -1,7 +1,9 @@
 package cn.glh.alumni.dao;
 
+import cn.glh.alumni.entity.News;
 import cn.glh.alumni.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -27,7 +29,7 @@ public interface PostDao {
      *
      * @return 对象列表
      */
-    List<Post> queryAll();
+    List<Post> findAllPost(@Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 新增数据
@@ -58,13 +60,57 @@ public interface PostDao {
      * @param sort 类别
      * @return 帖子集合
      */
-    List<Post> queryBySort(String sort);
+    List<Post> findSortPost(@Param("sort") String sort, @Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 找出用户发布的帖子
-     * @param userId
-     * @return
+     * @param userId 用户ID
+     * @return 帖子集合
      */
     List<Post> findByUserId(Integer userId);
+
+    /**
+     * 分页查询已审核信息
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<Post> queryByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
+
+    /**
+     * 分页查询未审核信息
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<Post> queryAuditByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
+
+    /**
+     * 修改资讯审核状态
+     * @param id 资讯ID
+     * @param state 0.未审核 1.审核通过 2.审核不通过
+     * @return 影响行数
+     */
+    int updateState(@Param("id") Integer id, @Param("state") Integer state);
+
+    /**
+     * 获取该类别下的总条码
+     * @param sort 类别
+     * @return
+     */
+    Integer getCountBySort(@Param("sort") String sort);
+
+    /**
+     * 获取总条码
+     * @return
+     */
+    Integer getCount();
+
+    /**
+     * 帖子检索
+     * @param search 关键词
+     * @return
+     */
+    List<Post> searchPost(@Param("search") String search);
 }
 

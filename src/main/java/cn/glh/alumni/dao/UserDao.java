@@ -45,6 +45,14 @@ public interface UserDao {
     List<User> queryAll();
 
     /**
+     * 分页查询全部
+     * @param offset 返回记录行的偏移量
+     * @param rows 返回记录行的最大数目
+     * @return 对象列表
+     */
+    List<User> queryByPage(Integer offset, Integer rows);
+
+    /**
      * 新增数据
      *
      * @param user 实例对象

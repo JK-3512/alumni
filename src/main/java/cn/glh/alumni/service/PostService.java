@@ -1,12 +1,9 @@
 package cn.glh.alumni.service;
 
 import cn.glh.alumni.dao.UserDao;
-import cn.glh.alumni.entity.Activity;
-import cn.glh.alumni.entity.Post;
+import cn.glh.alumni.entity.*;
 import cn.glh.alumni.base.BasePage;
 import cn.glh.alumni.dao.PostDao;
-import cn.glh.alumni.entity.User;
-import cn.glh.alumni.entity.UserEventLog;
 import cn.glh.alumni.entity.enums.ActivityEnum;
 import cn.glh.alumni.entity.enums.AlumniEnum;
 import cn.glh.alumni.entity.enums.PostEnum;
@@ -55,17 +52,9 @@ public class PostService {
      * @return 实例对象
      */
     public Post selectById(Integer id) {
-        return this.postDao.selectById(id);
-    }
-
-    /**
-     * 分页查询
-     * @param basePage 分页参数
-     * @return 查询结果
-     */
-    public PageInfo<Post> queryByPage(BasePage basePage) {
-        return PageHelper.startPage(basePage.getPageNum(), basePage.getPageSize(), "id desc")
-                .doSelectPageInfo(() -> postDao.queryAll());
+        Post post = this.postDao.selectById(id);
+        post.setAuthor(userDao.selectById(post.getUserId()).getNickName());
+        return post;
     }
 
     /**
@@ -83,14 +72,14 @@ public class PostService {
      * @return 实例对象
      */
     @Transactional(rollbackFor = Exception.class)
-    public void updatePost(Post post) {
+    public int updatePost(Post post) {
         if (post == null){
             throw new IllegalArgumentException("参数不能为空");
         }
         //重新设置帖子的类别、状态
         post.setSort(PostEnum.fromCode(Integer.valueOf(post.getSort())).getPostType());
         post.setState(0);
-        this.postDao.updatePost(post);
+        return this.postDao.updatePost(post);
     }
 
     /**
@@ -116,7 +105,7 @@ public class PostService {
      * @param post 帖子对象
      */
     @Transactional(rollbackFor = Exception.class)
-    public void insertPost(Post post) {
+    public int insertPost(Post post) {
         if (post == null){
             throw new IllegalArgumentException("参数不能为空");
         }
@@ -127,21 +116,23 @@ public class PostService {
         post.setState(0);
         post.setUserId(user.getId());
         //发布帖子
-        postDao.insertPost(post);
+        return postDao.insertPost(post);
     }
 
     /**
      * 获取分类下的所有帖子
      * @param sort 分类
+     * @param page 分页参数(当前页码)
+     * @param limit 分页参数(数据量)
      * @return List<Post> 帖子集合
      */
-    public List<Post> getPostList(Integer sort) {
+    public List<Post> getPostList(Integer sort, Integer page, Integer limit) {
         List<Post> postList = null;
         //所有帖子
         if (sort == PostEnum.all.getCode()){
-            postList = postDao.queryAll();
+            postList = postDao.findAllPost((page - 1) * limit, limit);
         }else {
-            postList = postDao.queryBySort(PostEnum.fromCode(sort).getPostType());
+            postList = postDao.findSortPost(PostEnum.fromCode(sort).getPostType(), (page - 1) * limit, limit);
         }
         return postList;
     }
@@ -174,5 +165,63 @@ public class PostService {
 
         }
         return postList;
+    }
+
+    /**
+     * 分页查询已审核信息
+     * @param page 页数
+     * @param limit 每页最大记录数
+     * @return 新闻集合
+     */
+    public List<Post> queryByPage(Integer page, Integer limit) {
+        return postDao.queryByPage((page - 1) * limit ,limit);
+    }
+
+    /**
+     * 分页查询未审核信息
+     * @param page 页数
+     * @param limit 每页最大记录数
+     * @return 新闻集合
+     */
+    public List<Post> queryAuditByPage(Integer page, Integer limit) {
+        return postDao.queryAuditByPage((page - 1) * limit ,limit);
+    }
+
+    /**
+     * 修改审核状态
+     * @param id 资讯ID
+     * @param state 0.未审核 1.审核通过 2.审核不通过
+     * @return 影响行数
+     */
+    public int updateState(Integer id, Integer state){
+        return postDao.updateState(id, state);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void updateStateList(List<Integer> ids, Integer state){
+        for (Integer id : ids) {
+            this.updateState(id, state);
+        }
+    }
+
+    /**
+     * 获取该类别下的总条码
+     * @param sort 类别
+     * @return
+     */
+    public Integer getCountBySort(Integer sort) {
+        if (sort == PostEnum.all.getCode()){
+            return postDao.getCount();
+        }
+        return postDao.getCountBySort(PostEnum.fromCode(sort).getPostType());
+    }
+
+    /**
+     * 帖子检索
+     * @param search 关键词
+     * @return
+     */
+    public List<Post> searchPost(String search) {
+        return postDao.searchPost(search);
     }
 }

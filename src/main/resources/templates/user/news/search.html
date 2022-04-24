@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>新闻资讯搜索</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<body>
+<!--头部-->
+<header th:replace="/user/news/list::header"></header>
+
+<!-- 轮播图 -->
+<div class="layui-carousel" id="carousel">
+    <div carousel-item>
+        <div th:each="cov:${coverList}">
+            <div class="carousel-item">
+                <a th:href="@{|/user/news/details/${cov.id}|}"><img th:src="${cov.cover}"/>
+                    <h1 th:text="${cov.title}"></h1>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="cont w1000">
+        <!--搜索-->
+        <div style="font-size: 24px;">
+            <p>站内搜索"<span th:text="${search}"></span>"的结果 共<span th:text="${count}"></span>条数据</p>
+        </div>
+        <div class="list-item">
+            <!--资讯列表-->
+            <div class="item" th:each="news:${newsList}">
+                <div class="layui-fluid">
+                    <div class="layui-row">
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
+                            <div class="img" style="margin-top: 35px;"><img th:src="${news.cover}" alt="cover"></div>
+                        </div>
+                        <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
+                            <div class="item-cont">
+                                <h3 th:text="${news.title}"></h3>
+                                <h5 th:text="${news.sort}"></h5>
+                                <div th:utext="${news.content}"></div>
+                                <a th:href="@{|/user/news/details/${news.id}|}" class="go-icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/user/index::footer"></footer>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/header.js}"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/util/}]]'
+    }).use(['element', 'laypage', 'jquery', 'carousel'], function () {
+        element = layui.element, laypage = layui.laypage, $ = layui.$, carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#carousel'
+            , width: '1000px'
+            , height: '465px'
+            , arrow: 'always' //始终显示箭头
+        });
+    });
+</script>
+</body>
+
+</html>

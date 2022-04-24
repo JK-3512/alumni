@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "title": "工作空间",
+    "icon": "layui-icon layui-icon-component",
+    "type": 0,
+    "href": "",
+    "children": [
+      {
+        "id": 11,
+        "title": "首页",
+        "icon": "layui-icon layui-icon-console",
+        "type": 1,
+        "href": "/alumni/admin/console"
+      },
+      {
+        "id": 12,
+        "title": "数据分析",
+        "icon": "layui-icon layui-icon-console",
+        "type": 1,
+        "href": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "资讯管理",
+    "icon": "layui-icon layui-icon-component",
+    "type": 0,
+    "href": "",
+    "children": [
+      {
+        "id": 21,
+        "title": "审核资讯",
+        "icon": "layui-icon layui-icon-console",
+        "type": 1,
+        "href": "/alumni/admin/news/audit"
+      },
+      {
+        "id": 22,
+        "title": "资讯列表",
+        "icon": "layui-icon layui-icon-console",
+        "type": 1,
+        "href": "/alumni/admin/news/list"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "活动管理",
+    "icon": "layui-icon layui-icon-auz",
+    "type": 0,
+    "href": "",
+    "children": [
+      {
+        "id": 31,
+        "title": "审核活动",
+        "icon": "layui-icon layui-icon-face-smile",
+        "type": 1,
+        "href": "/alumni/admin/activity/audit"
+      },
+      {
+        "id": 32,
+        "title": "活动列表",
+        "icon": "layui-icon layui-icon-face-cry",
+        "type": 1,
+        "href": "/alumni/admin/activity/list"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "相册管理",
+    "icon": "layui-icon layui-icon-face-cry",
+    "type": 0,
+    "href": "",
+    "children": [
+      {
+        "id": 41,
+        "title": "审核相册",
+        "icon": "layui-icon layui-icon-face-smile",
+        "type": 1,
+        "href": "/alumni/admin/album/audit"
+      },
+      {
+        "id": 42,
+        "title": "相册列表",
+        "icon": "layui-icon layui-icon-face-cry",
+        "type": 1,
+        "href": "/alumni/admin/album/list"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "帖子管理",
+    "icon": "layui-icon layui-icon-set-fill",
+    "type": 0,
+    "href": "",
+    "children": [
+      {
+        "id": 51,
+        "title": "审核帖子",
+        "icon": "layui-icon layui-icon-face-smile",
+        "type": 1,
+        "href": "/alumni/admin/post/audit"
+      },
+      {
+        "id": 52,
+        "title": "帖子列表",
+        "icon": "layui-icon layui-icon-face-cry",
+        "type": 1,
+        "href": "/alumni/admin/post/list"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "校友管理",
+    "icon": "layui-icon layui-icon-template-1",
+    "type": 1,
+    "href": "/alumni/admin/user/list"
+  },
+  {
+    "id": 7,
+    "title": "评论管理",
+    "icon": "layui-icon layui-icon-chart",
+    "type": 1,
+    "href": "/alumni/admin/comment/list"
+  }
+]

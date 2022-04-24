@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <title>活动管理</title>
+    <link rel="stylesheet" th:href="@{/pear/component/pear/css/pear.css}"/>
+</head>
+<body class="pear-container">
+<div class="layui-card">
+    <div class="layui-card-body">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <div class="layui-form-item layui-inline">
+                    <label class="layui-form-label">标题</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" placeholder="" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-inline">
+                    <label class="layui-form-label">分类</label>
+                    <div class="layui-input-block">
+                        <select name="sort" lay-verify="required">
+                            <option value=""></option>
+                            <option value="1">闲聊聚餐</option>
+                            <option value="2">公益活动</option>
+                            <option value="3">校友聚会</option>
+                            <option value="4">旅游度假</option>
+                            <option value="5">其它</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-inline">
+                    <button class="pear-btn pear-btn-md pear-btn-primary" lay-submit lay-filter="activity-query">
+                        <i class="layui-icon layui-icon-search"></i>
+                        查询
+                    </button>
+                    <button type="reset" class="pear-btn pear-btn-md">
+                        <i class="layui-icon layui-icon-refresh"></i>
+                        重置
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="layui-card">
+    <div class="layui-card-body">
+        <table id="activity-table" lay-filter="activity-table"></table>
+    </div>
+</div>
+
+<script type="text/html" id="activity-toolbar">
+    <button class="pear-btn pear-btn-primary pear-btn-md" lay-event="add">
+        <i class="layui-icon layui-icon-add-1"></i>
+        新增
+    </button>
+    <button class="pear-btn pear-btn-danger pear-btn-md" lay-event="batchRemove">
+        <i class="layui-icon layui-icon-delete"></i>
+        删除
+    </button>
+</script>
+
+<script type="text/html" id="activity-bar">
+    <button class="pear-btn pear-btn-primary pear-btn-sm" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>
+    </button>
+    <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="layui-icon layui-icon-delete"></i>
+    </button>
+</script>
+
+<script type="text/html" id="activity-state">
+    <input type="checkbox" name="state" value="{{d.id}}" lay-skin="switch" lay-text="通过|未通过" lay-filter="activity-state"
+           {{ d.state=== 1 ? 'checked' : 'disabled'}}/>
+</script>
+
+<script type="text/html" id="activity-createTime">
+    {{layui.util.toDateString(d.createTime, 'yyyy-MM-dd')}}
+</script>
+
+<script type="text/html" id="activity-cover">
+    <img src="{{d.cover}}" alt="cover" style="height: 45px;">
+</script>
+
+<script th:src="@{/pear/component/layui/layui.js}"></script>
+<script th:src="@{/pear/component/pear/pear.js}"></script>
+<script>
+    layui.use(['table', 'form', 'jquery', 'common'], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let $ = layui.jquery;
+        let common = layui.common;
+
+        let MODULE_PATH = "/alumni/admin/activity";
+
+        let cols = [
+            [{
+                type: 'checkbox'
+            },
+                {
+                    title: 'ID',
+                    field: 'id',
+                    align: 'center',
+                    width: 143
+                },
+                {
+                    title: '标题',
+                    field: 'title',
+                    align: 'left',
+                    width: 400
+                },
+                {
+                    title: '分类',
+                    field: 'sort',
+                    align: 'center',
+                    width: 200,
+                },
+                {
+                    title: '封面',
+                    field: 'cover',
+                    align: 'center',
+                    width: 200,
+                    templet: '#activity-cover'
+                },
+                {
+                    title: '状态',
+                    field: 'cover',
+                    align: 'center',
+                    width: 200,
+                    templet: '#activity-state'
+                },
+                {
+                    title: '注册时间',
+                    field: 'createTime',
+                    align: 'center',
+                    width: 200,
+                    templet: '#activity-createTime'
+                },
+                {
+                    title: '操作',
+                    toolbar: '#activity-bar',
+                    align: 'center',
+                    width: 200
+                }
+            ]
+        ]
+
+        table.render({
+            elem: '#activity-table',
+            url: '/alumni/admin/activity/all',
+            page: true,
+            cols: cols,
+            skin: 'line',
+            toolbar: '#activity-toolbar',
+            defaultToolbar: [{
+                title: '刷新',
+                layEvent: 'refresh',
+                icon: 'layui-icon-refresh',
+            }, 'filter', 'print', 'exports']
+        });
+
+        table.on('tool(activity-table)', function (obj) {
+            if (obj.event === 'remove') {
+                window.remove(obj);
+            } else if (obj.event === 'edit') {
+                window.edit(obj);
+            }
+        });
+
+        table.on('toolbar(activity-table)', function (obj) {
+            if (obj.event === 'add') {
+                window.add();
+            } else if (obj.event === 'refresh') {
+                window.refresh();
+            } else if (obj.event === 'batchRemove') {
+                window.batchRemove(obj);
+            }
+        });
+
+        form.on('submit(activity-query)', function (data) {
+            table.reload('activity-table', {
+                where: data.field
+            })
+            return false;
+        });
+
+        window.add = function () {
+            layer.open({
+                type: 2,
+                title: '新增',
+                shade: 0.1,
+                area: [common.isModile() ? '100%' : '1400px', common.isModile() ? '100%' : '700px'],
+                content: MODULE_PATH + '/add'
+            });
+        }
+
+        window.edit = function (obj) {
+            layer.open({
+                type: 2,
+                title: '修改',
+                shade: 0.1,
+                area: ['1400px', '700px'],
+                content: MODULE_PATH + '/edit/' + obj.data['id']
+            });
+        }
+
+        window.remove = function (obj) {
+            layer.confirm('确定要删除该活动', {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "/remove/" + obj.data['id'],
+                    dataType: 'json',
+                    type: 'delete',
+                    success: function (result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function () {
+                                obj.del();
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.batchRemove = function (obj) {
+
+            var checkIds = common.checkField(obj, 'activityId');
+
+            if (checkIds === "") {
+                layer.msg("未选中数据", {
+                    icon: 3,
+                    time: 1000
+                });
+                return false;
+            }
+
+            layer.confirm('确定要删除这些活动', {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                layer.close(index);
+                let loading = layer.load();
+                $.ajax({
+                    url: MODULE_PATH + "batchRemove/" + checkIds,
+                    dataType: 'json',
+                    type: 'delete',
+                    success: function (result) {
+                        layer.close(loading);
+                        if (result.code === 0) {
+                            layer.msg(result.msg, {
+                                icon: 1,
+                                time: 1000
+                            }, function () {
+                                table.reload('activity-table');
+                            });
+                        } else {
+                            layer.msg(result.msg, {
+                                icon: 2,
+                                time: 1000
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
+        window.refresh = function (param) {
+            table.reload('activity-table');
+        }
+    })
+</script>
+<script>
+
+</script>
+</body>
+</html>

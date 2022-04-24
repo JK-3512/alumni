@@ -80,7 +80,4 @@ public class LikeService {
         String targetLikeKey = RedisKeyUtil.getTargetLikeKey(targetType, targetId);
         redisTemplate.delete(targetLikeKey);
     }
-
-
-
 }

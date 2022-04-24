@@ -8,6 +8,7 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -57,6 +58,18 @@ public class AlumniUtil {
 //                map.put(key, map.get(key));
 //            }
 //        }
+        return json.toJSONString();
+    }
+
+    /**
+     * 将服务端返回的消息封装成 JSON 格式的字符串(管理员端专属)
+     */
+    public static String getAdminJSONString(int code, String msg,int count, List list) {
+        JSONObject json = new JSONObject();
+        json.put("code", code);
+        json.put("msg", msg);
+        json.put("count", count);
+        json.put("data", list);
         return json.toJSONString();
     }
 

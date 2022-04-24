@@ -18,6 +18,11 @@ public class Post implements Serializable {
     private Integer id;
 
     private String sort;
+
+    /**
+     * 标题
+     */
+    private String title;
     /**
      * 内容
      */

@@ -13,9 +13,10 @@
 
 body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif; overflow-x: hidden;}
 .w1000{max-width: 1000px!important; margin:0 auto;}
+.n1000{max-width: 1400px!important; margin:0 auto;}
 .header{height: 120px; line-height: 120px; position: relative; font-size: 16px;}
 .header .logo,.header .welcome-text,.header .nav,.header .nav-right{position: absolute; top: 0;}
-.header .logo{left: 30px;}
+.header .logo{left: 60px;}
 .header .logo span{display: none;}
 .header .logo img{height: 50px;}
 .header .nav{left: 250px;}
@@ -37,10 +38,10 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .content{padding:25px 0 160px 0;}
 .content .cont .title a{font-size: 16px; color: #000!important;}
 .content .cont .title .layui-breadcrumb span{position: relative; top: -1px; margin:0 16px;}
-.content .cont .title a.active,.content .cont .title a:hover{color: #ff7f21!important;}
+/*.content .cont .title a.active,.content .cont .title a:hover{color: #ff7f21!important;}*/
 .content .cont .list-item .layui-fluid{padding:0;}
 .content .cont .list-item .item{margin-bottom: 80px; overflow: hidden;}
-.content .cont .list-item .item .img img{width: 100%;}
+.content .cont .list-item .item .img img{width: 400px; height: 200px;}
 .content .cont .list-item .item .item-cont{padding-left: 100px;}
 .content .cont .list-item .item .item-cont .go-icon{width: 33px; height: 11px; background: url(../img/jiantou.png) center center no-repeat; display: block; padding:10px 0; margin-top: 16px;}
 .content .cont .list-item .item .item-cont h3{font-size: 24px; margin:20px 0;}
@@ -101,7 +102,8 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 /* .whisper-content{padding:40px 0 100px 0;} */
 .whisper-content .item-box{background: #f9f9f9; margin-bottom: 20px;}
 .whisper-content .cont{max-width: 800px; margin:0 auto;}
-.whisper-content .cont .item-box .item{padding:50px 46px 20px 54px;}
+.whisper-content .cont .item-box .item{padding:23px 80px;}
+.whisper-content .cont .item-box .item h2{margin: 20px 0;}
 .whisper-content .cont .whisper-list .whisper-title{height: 20px; line-height: 20px; margin-bottom: 20px;}
 .whisper-content .cont .whisper-list .whisper-title i{position: relative; top: 1px; margin-right: 5px;}
 .whisper-content .cont .whisper-list .whisper-title span{margin-right:15px; color: #ff7f21;}
@@ -144,7 +146,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 
 /*details*/
 
-.details-content .article-cont .cover{float: none; width: 800px;margin-bottom: 50px;}
+.details-content .article-cont .cover{float: none; width: 500px;margin-bottom: 50px;}
 .details-content .article-cont .title{text-align: center; margin-bottom: 0;}
 .details-content .article-cont .title h1{ margin-bottom: 36px;}
 .details-content .article-cont .title p{padding:0;}
@@ -167,8 +169,8 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 
 
 /*album*/
-.album-content .img-info{margin-top: 66px; overflow: hidden; font-size: 16px; margin-bottom: 126px;cursor:pointer}
-.album-content .img-info img{float: left; padding-right: 60px;}
+.album-content .img-info{overflow: hidden; font-size: 16px; margin-bottom: 126px;cursor:pointer}
+.album-content .img-info img{width: 700px; height: 400px; float: left; padding-right: 60px;}
 .album-content .img-info .title{line-height: 30px; margin-top: 124px; padding-left: 20px;}
 .album-content .img-info .title .data{color: #ff7f21;}
 .album-content .img-info .title .data span{padding-left: 35px;}
@@ -177,7 +179,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .album-content .img-list .layui-laypage{margin: 50px 0;}
 .album-content .img-list .space>*{padding: 55px;}
 .album-content .img-list .layui-col-space80{padding: 40px;}
-.album-content .img-list .item img{width: 100%;}
+.album-content .img-list .item img{width: 230px; height: 140px;}
 .album-content .img-list .cont-text{padding-left: 10px;}
 .album-content .img-list .cont-text .data{line-height: 55px; color: #ff7f21;}
 .album-content .img-list .cont-text .briefly{line-height: 24px; margin-top: 16px;display: -webkit-box;overflow: hidden;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
@@ -187,6 +189,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 /*about*/
 .about-content{background: white;}
 .about-content .user-info, .about-content .user-view{margin-bottom: 30px;padding: 30px; background: #f9f9f9;}
+.about-content .user-info, .about-content .user-details{margin-bottom: 30px;padding: 30px; background: #f9f9f9;}
 .navigation{margin-bottom: 30px;padding: 15px; background: #f9f9f9;}
 .about-content .setting{margin-bottom: 30px;height: 800px;position: relative;}
 .about-content .setting .sidebar{display:inline-block; width: 230px;position: absolute;left: 0;padding: 8px; background: #f9f9f9;}
@@ -198,11 +201,13 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .about-content .user-info img{width: 120px; height: 120px;margin-right: 20px;display:inline-block;vertical-align: middle;border-radius: 50%;}
 .about-content .user-info .username{display:inline-block;}
 .about-content .user-info a{margin-top: 20px;}
+.about-content .user-info h1{margin-bottom: 20px;}
+.about-content .user-info p span{color: #72777b;}
 .about-content .user-view .user .name{margin: 0 4px;font-weight: 500;font-size: 13px;color: #17181a;}
 .about-content .user-view .user .dynamic{color: #86909c;font-size: 13px;}
 .about-content .user-view .user .time{float: right;}
 .about-content .user-view .entry{padding: 12px 20px 0; position: relative;}
-.about-content .user-view .entry .layui-breadcrumb{display: block;}
+.about-content .user-view .entry .layui-breadcrumb{display: inline-block;}
 .about-content .user-view .entry .layui-breadcrumb a{display: inline;}
 .about-content .user-view .entry .dropdown i{cursor: pointer; position: absolute; right: -5px; bottom: 10px;}
 .about-content .user-view .entry .dropdown{position: relative;display: inline-block;width: 16px; height: 16px;}
@@ -215,6 +220,7 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .about-content .user-view .entry .entry-content img{width: 120px;height: 80px;margin-left: 24px;border-radius: 2px;}
 .about-content .user-view .entry .entry-content .content-main .title-row{font-weight: 700;font-size: 16px;line-height: 24px;color: #1d2129;margin-bottom: 8px;}
 .about-content .user-view .entry .entry-content .content-main .abstract{margin-bottom: 10px;color: #86909c;font-size: 13px;line-height: 22px;display: -webkit-box;overflow: hidden;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
+.about-content .user-details p span:first-child{display: inline-block; width: 100px; font-size: 17px;margin: 10px 20px;font-weight: 700;line-height: 30px;}
 /* .about-content .item{padding-bottom: 100px;}
 .about-content .item h3{font-size: 24px; color: #3f2863; line-height: 100px;}
 .about-content .item.info .cont{overflow: hidden;}
