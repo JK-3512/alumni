@@ -19,7 +19,7 @@
                 <div class="layui-form-item layui-inline">
                     <label class="layui-form-label">分类</label>
                     <div class="layui-input-block">
-                        <select name="sort" lay-verify="required">
+                        <select name="sort">
                             <option value=""></option>
                             <option value="1">校友资讯</option>
                             <option value="2">校友风采</option>
@@ -173,8 +173,9 @@
 
         form.on('submit(news-query)', function(data) {
             table.reload('news-table', {
+                url: '/alumni/admin/news/search',
                 where: data.field
-            })
+            });
             return false;
         });
 

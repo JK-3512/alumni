@@ -64,62 +64,71 @@ public class NewsController {
         return i > 0 ? AlumniUtil.getJSONString(0, "删除成功") : AlumniUtil.getJSONString(1, "删除失败");
     }
 
-    @GetMapping("/audit")
-    public String getAuditPage(){
-        return "/admin/news/audit";
-    }
-
-    @GetMapping("/audit/list")
+    @GetMapping("/search")
     @ResponseBody
-    public String auditList(
-            @RequestParam(value = "page", defaultValue = "1") Integer page,
-            @RequestParam(value = "limit", defaultValue = "10") Integer limit){
-        List<News> newsList = newsService.queryAuditByPage(page, limit);
+    public String editNews(@RequestParam("title") String title, @RequestParam("sort") Integer sort,
+                           @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+        List<News> newsList = newsService.searchNews(title, sort);
         return AlumniUtil.getAdminJSONString(0,"成功",newsList.size(), newsList);
     }
 
-    @GetMapping("/audit/details/{id}")
-    public String getDetailPage(Model model, @PathVariable("id") Integer id){
-        News news = newsService.selectById(id);
-        model.addAttribute("news", news);
-        return "/admin/news/details";
-    }
 
-    @PostMapping("/audit/pass/{id}")
-    @ResponseBody
-    public String passNews(@PathVariable("id") Integer id){
-        int i = newsService.updateState(id, 1);
-        return i > 0 ? AlumniUtil.getJSONString(0, "审核成功") : AlumniUtil.getJSONString(1, "审核失败");
-    }
-
-    @PostMapping("/audit/noPass/{id}")
-    @ResponseBody
-    public String noPassNews(@PathVariable("id") Integer id){
-        int i = newsService.updateState(id, 2);
-        return i > 0 ? AlumniUtil.getJSONString(0, "审核成功") : AlumniUtil.getJSONString(1, "审核失败");
-    }
-
-    @PostMapping("/audit/batchPass/{ids}")
-    @ResponseBody
-    public String batchPassNews(@PathVariable("ids") List<Integer> ids){
-        try {
-            newsService.updateStateList(ids, 1);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return AlumniUtil.getJSONString(1, "审核失败");
-        }
-        return AlumniUtil.getJSONString(0, "审核成功");
-    }
-
-    @PostMapping("/audit/batchNoPass/{ids}")
-    @ResponseBody
-    public String batchNoPassNews(@PathVariable("ids") List<Integer> ids){
-        try {
-            newsService.updateStateList(ids, 2);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return AlumniUtil.getJSONString(1, "审核失败");
-        }
-        return AlumniUtil.getJSONString(0, "审核成功");
-    }
+//    @GetMapping("/audit")
+//    public String getAuditPage(){
+//        return "/admin/news/audit";
+//    }
+//
+//    @GetMapping("/audit/list")
+//    @ResponseBody
+//    public String auditList(
+//            @RequestParam(value = "page", defaultValue = "1") Integer page,
+//            @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+//        List<News> newsList = newsService.queryAuditByPage(page, limit);
+//        return AlumniUtil.getAdminJSONString(0,"成功",newsList.size(), newsList);
+//    }
+//
+//    @GetMapping("/audit/details/{id}")
+//    public String getDetailPage(Model model, @PathVariable("id") Integer id){
+//        News news = newsService.selectById(id);
+//        model.addAttribute("news", news);
+//        return "/admin/news/details";
+//    }
+//
+//    @PostMapping("/audit/pass/{id}")
+//    @ResponseBody
+//    public String passNews(@PathVariable("id") Integer id){
+//        int i = newsService.updateState(id, 1);
+//        return i > 0 ? AlumniUtil.getJSONString(0, "审核成功") : AlumniUtil.getJSONString(1, "审核失败");
+//    }
+//
+//    @PostMapping("/audit/noPass/{id}")
+//    @ResponseBody
+//    public String noPassNews(@PathVariable("id") Integer id){
+//        int i = newsService.updateState(id, 2);
+//        return i > 0 ? AlumniUtil.getJSONString(0, "审核成功") : AlumniUtil.getJSONString(1, "审核失败");
+//    }
+//
+//    @PostMapping("/audit/batchPass/{ids}")
+//    @ResponseBody
+//    public String batchPassNews(@PathVariable("ids") List<Integer> ids){
+//        try {
+//            newsService.updateStateList(ids, 1);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return AlumniUtil.getJSONString(1, "审核失败");
+//        }
+//        return AlumniUtil.getJSONString(0, "审核成功");
+//    }
+//
+//    @PostMapping("/audit/batchNoPass/{ids}")
+//    @ResponseBody
+//    public String batchNoPassNews(@PathVariable("ids") List<Integer> ids){
+//        try {
+//            newsService.updateStateList(ids, 2);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return AlumniUtil.getJSONString(1, "审核失败");
+//        }
+//        return AlumniUtil.getJSONString(0, "审核成功");
+//    }
 }

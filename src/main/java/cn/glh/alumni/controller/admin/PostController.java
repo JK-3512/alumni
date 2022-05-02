@@ -1,5 +1,6 @@
 package cn.glh.alumni.controller.admin;
 
+import cn.glh.alumni.entity.Activity;
 import cn.glh.alumni.entity.Post;
 import cn.glh.alumni.service.PostService;
 import cn.glh.alumni.util.AlumniUtil;
@@ -121,5 +122,13 @@ public class PostController {
             return AlumniUtil.getJSONString(1, "审核失败");
         }
         return AlumniUtil.getJSONString(0, "审核成功");
+    }
+
+    @GetMapping("/search")
+    @ResponseBody
+    public String editPost(@RequestParam("title") String title, @RequestParam("sort") Integer sort,
+                               @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+        List<Post> postList = postService.searchPost(title, sort);
+        return AlumniUtil.getAdminJSONString(0,"成功",postList.size(), postList);
     }
 }

@@ -322,4 +322,26 @@ public class LoginService {
         String redisKey = RedisKeyUtil.getUserKey(userId);
         redisTemplate.delete(redisKey);
     }
+
+    /**
+     * 管理员修改密码
+     * @param userName
+     * @param oldPwd
+     * @param pwd
+     * @return
+     */
+    public int upwd(String userName, String oldPwd, String pwd) {
+        User user = userDao.selectByName(userName);
+        //用户名或原密码不正确
+        if (user == null || user.getPwd().equals(oldPwd + user.getSalt())){
+            return 0;
+        }
+        pwd = AlumniUtil.md5(pwd + user.getSalt());
+        int i = userDao.updatePwd(user.getId(), pwd);
+        //修改密码成功后清除掉原用户的缓存信息
+        if (i > 0){
+            clearCache(user.getId());
+        }
+        return i;
+    }
 }

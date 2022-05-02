@@ -30,59 +30,108 @@
 
     <!--查询单个-->
     <select id="selectById" parameterType="integer" resultType="cn.glh.alumni.entity.Activity">
-        select
-        id, sort, cover, title, contact, close_date, number_limit, content, create_time, state, user_id,
-        start_date, end_date, province, city, county, address from t_activity
+        select id,
+               sort,
+               cover,
+               title,
+               contact,
+               close_date,
+               number_limit,
+               content,
+               create_time,
+               state,
+               user_id,
+               start_date,
+               end_date,
+               province,
+               city,
+               county,
+               address
+        from t_activity
         where id = #{id}
-    </select>
-
-    <!-- 查询全部 -->
-    <select id="selectAll" resultMap="ActivityMap">
-        select
-        id, sort, cover, title, contact, close_date, number_limit, content, create_time, state, user_id,
-        start_date, end_date, province, city, county, address from t_activity
     </select>
 
     <!--获取本次活动参与人及参与时间-->
     <select id="getEnrollUser" parameterType="integer" resultMap="EnrollMap">
-        select
-        user_id, enroll_time from t_activity_enroll
+        select user_id,
+               enroll_time
+        from t_activity_enroll
         where activity_id = #{id}
     </select>
     <!--查找是否存在重复报名的情况-->
     <select id="findEnrollUser" parameterType="integer" resultType="cn.glh.alumni.entity.ActivityEnroll">
-        select
-        user_id, enroll_time from t_activity_enroll
-        where activity_id = #{activityId} and user_id = #{userId}
+        select user_id,
+               enroll_time
+        from t_activity_enroll
+        where activity_id = #{activityId}
+          and user_id = #{userId}
     </select>
 
     <!--找出所有活动-->
     <select id="findAllActivity" resultType="cn.glh.alumni.entity.Activity">
-        select
-        id, sort, cover, title, content, start_date, close_date, province, city, county from t_activity
+        select id,
+               sort,
+               cover,
+               title,
+               content,
+               start_date,
+               close_date,
+               province,
+               city,
+               county
+        from t_activity
+        where state != 0
         limit #{offset}, #{rows}
     </select>
 
     <!--根据分类找出所属活动-->
     <select id="findSortActivity" resultType="cn.glh.alumni.entity.Activity">
-        select
-        id, sort, cover, title, content, start_date, close_date, province, city, county from t_activity
-        where sort = #{sort}
+        select id,
+               sort,
+               cover,
+               title,
+               content,
+               start_date,
+               close_date,
+               province,
+               city,
+               county
+        from t_activity
+        where sort = #{sort} and state != 0
         limit #{offset}, #{rows}
     </select>
 
     <!---找出用户发布的活动-->
     <select id="findByUserId" resultMap="ActivityMap">
-        select
-            id, title, content, state, create_time, user_id from t_activity
+        select id,
+               title,
+               content,
+               state,
+               create_time,
+               user_id
+        from t_activity
         where user_id = #{userId}
     </select>
 
     <!--分页查询已审核活动-->
     <select id="queryByPage" parameterType="integer" resultType="cn.glh.alumni.entity.Activity">
-        select
-            id, sort, cover, title, contact, close_date, number_limit, content,
-            create_time, state, user_id, start_date, end_date, province, city, county, address
+        select id,
+               sort,
+               cover,
+               title,
+               contact,
+               close_date,
+               number_limit,
+               content,
+               create_time,
+               state,
+               user_id,
+               start_date,
+               end_date,
+               province,
+               city,
+               county,
+               address
         from t_activity
         where state != 0
         limit #{offset}, #{rows}
@@ -90,9 +139,23 @@
 
     <!--分页查询未审核活动-->
     <select id="queryAuditByPage" resultType="cn.glh.alumni.entity.Activity">
-        select
-            id, sort, cover, title, contact, close_date, number_limit, content,
-            create_time, state, user_id, start_date, end_date, province, city, county, address
+        select id,
+               sort,
+               cover,
+               title,
+               contact,
+               close_date,
+               number_limit,
+               content,
+               create_time,
+               state,
+               user_id,
+               start_date,
+               end_date,
+               province,
+               city,
+               county,
+               address
         from t_activity
         where state = 0
         limit #{offset}, #{rows}
@@ -100,38 +163,51 @@
 
     <!--找出用户参加的所有活动-->
     <select id="findEnrollByUserId" parameterType="integer" resultType="integer">
-        select activity_id from t_activity_enroll where user_id = #{userId}
+        select activity_id
+        from t_activity_enroll
+        where user_id = #{userId}
     </select>
 
     <!--获取该类别总条码-->
     <select id="getCountBySort" parameterType="string" resultType="java.lang.Integer">
-        select count(*) from t_activity where sort = #{sort}
+        select count(*)
+        from t_activity
+        where sort = #{sort} and state != 0
     </select>
 
     <!--获取总条码-->
     <select id="getCount" resultType="java.lang.Integer">
-        select count(*) from t_activity
+        select count(*)
+        from t_activity where state != 0
     </select>
 
     <!--检索活动-->
     <select id="searchActivity" resultType="cn.glh.alumni.entity.Activity">
-        select id, sort, cover, title, content, start_date, province, city, county, close_date, state, user_id
-        from t_activity
-        where title like concat('%',#{search},'%')
+        select * from t_activity
+        <where>
+            <if test="title != null">
+                title like concat('%',#{title},'%')
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            and state != 0
+        </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insertActivity" keyProperty="id" useGeneratedKeys="true">
         insert into t_activity(sort, cover, title, contact, close_date, number_limit, content,
-        create_time, state, user_id, start_date, end_date, province, city, county, address)
-        values (#{sort}, #{cover}, #{title}, #{contact}, #{closeDate}, #{numberLimit}, #{content},#{createTime}, #{state},
+                               create_time, state, user_id, start_date, end_date, province, city, county, address)
+        values (#{sort}, #{cover}, #{title}, #{contact}, #{closeDate}, #{numberLimit}, #{content}, #{createTime},
+                #{state},
                 #{userId}, #{startDate}, #{endDate}, #{province}, #{city}, #{county}, #{address})
     </insert>
 
     <!--登记活动报名人-->
     <insert id="insertEnrollUser">
         insert into t_activity_enroll(activity_id, user_id, enroll_time)
-        values(#{activityId},#{userId},#{enrollTime})
+        values (#{activityId}, #{userId}, #{enrollTime})
     </insert>
 
     <!--通过主键修改数据-->
@@ -192,22 +268,31 @@
 
     <!--修改审核状态-->
     <update id="updateState">
-        update t_activity set state = #{state} where id = #{id}
+        update t_activity
+        set state = #{state}
+        where id = #{id}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from t_activity where id = #{id}
+        delete
+        from t_activity
+        where id = #{id}
     </delete>
 
     <!--清理活动报名表-->
     <delete id="deleteEnrollUser" parameterType="integer">
-        delete from t_activity_enroll where activity_id = #{activityId}
+        delete
+        from t_activity_enroll
+        where activity_id = #{activityId}
     </delete>
 
     <!--取消活动报名-->
     <delete id="cancelEnroll" parameterType="integer">
-        delete from t_activity_enroll where activity_id = #{activityId} and user_id = #{userId}
+        delete
+        from t_activity_enroll
+        where activity_id = #{activityId}
+          and user_id = #{userId}
     </delete>
 
 </mapper>

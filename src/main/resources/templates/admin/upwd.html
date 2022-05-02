@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+    <!-- 样 式 文 件 -->
+    <link rel="stylesheet" th:href="@{/pear/component/pear/css/pear.css}"/>
+    <link rel="stylesheet" th:href="@{/pear/admin/css/other/login.css}"/>
+</head>
+<!-- 代 码 结 构 -->
+<body th:style="'background-image: url(/alumni/pear/admin/images/background.svg);background-size: cover;'">
+<form class="layui-form" method="post" th:action="@{/admin/upwd}">
+    <div class="layui-form-item">
+        <img class="logo" th:src="@{/pear/admin/images/logo.png}"/>
+        <div class="title">修改密码</div>
+        <div class="desc">校友录后台管理系统</div>
+    </div>
+    <div class="layui-form-item">
+        <input type="text" placeholder="用户名" lay-verify="required" hover class="layui-input" name="userName"/>
+    </div>
+    <div class="layui-form-item">
+        <input type="password" placeholder="原密码" lay-verify="required" hover class="layui-input" name="oldPwd"/>
+    </div>
+    <div class="layui-form-item">
+        <input type="password" placeholder="新密码" lay-verify="required" hover class="layui-input" name="pwd"/>
+    </div>
+    <div class="layui-form-item">
+        <input type="password" placeholder="确认密码" hover class="layui-input" lay-verify="required|confirmPass"/>
+    </div>
+    <div class="layui-form-item">
+        <button class="pear-btn pear-btn-success login" id="submit" type="submit">提 交</button>
+    </div>
+    <div class="tips">
+        <p style="float: right;"><a th:href="@{/admin/login}" style="font-weight: bold;margin-left: 5px;">立即登录</a></p>
+    </div>
+</form>
+<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '[[@{/js/util/}]]'
+    }).use(['element'], function () {
+        element = layui.element;
+    });
+
+    layui.use(['form'], function () {
+        var form = layui.form;
+        // 校验两次密码是否一致
+        form.verify({
+            confirmPass(value) {
+                if ($('input[name=pwd]').val() !== value)
+                    return '两次密码输入不一致！';
+            }
+        });
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return true;
+        });
+    });
+
+</script>
+</body>
+</html>

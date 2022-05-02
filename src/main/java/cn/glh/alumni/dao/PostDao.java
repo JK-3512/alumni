@@ -108,9 +108,9 @@ public interface PostDao {
 
     /**
      * 帖子检索
-     * @param search 关键词
+     * @param title 关键词
      * @return
      */
-    List<Post> searchPost(@Param("search") String search);
+    List<Post> searchPost(@Param("title") String title, String sort);
 }
 

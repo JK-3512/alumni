@@ -1,5 +1,6 @@
 package cn.glh.alumni.controller.admin;
 
+import cn.glh.alumni.entity.Activity;
 import cn.glh.alumni.entity.Album;
 import cn.glh.alumni.service.AlbumService;
 import cn.glh.alumni.util.AlumniUtil;
@@ -120,5 +121,13 @@ public class AlbumController {
             return AlumniUtil.getJSONString(1, "审核失败");
         }
         return AlumniUtil.getJSONString(0, "审核成功");
+    }
+
+    @GetMapping("/search")
+    @ResponseBody
+    public String editAlbum(@RequestParam("title") String title, @RequestParam("sort") Integer sort,
+                               @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+        List<Album> albumList = albumService.searchAlbum(title, sort);
+        return AlumniUtil.getAdminJSONString(0,"成功",albumList.size(), albumList);
     }
 }

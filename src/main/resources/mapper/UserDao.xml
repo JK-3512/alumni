@@ -26,40 +26,146 @@
 
     <!--查询单个-->
     <select id="selectById" resultMap="UserMap">
-        select
-          id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        select id,
+               pwd,
+               user_name,
+               sex,
+               head_pic,
+               birthday,
+               major,
+               school_date,
+               education,
+               email,
+               phone,
+               state,
+               type,
+               activation_code,
+               create_time,
+               salt,
+               nick_name,
+               province,
+               city
+        from t_user
         where id = #{id}
     </select>
-    
+
     <!-- 查询全部 -->
     <select id="queryAll" resultMap="UserMap">
-        select
-        id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        select id,
+               pwd,
+               user_name,
+               sex,
+               head_pic,
+               birthday,
+               major,
+               school_date,
+               education,
+               email,
+               phone,
+               state,
+               type,
+               activation_code,
+               create_time,
+               salt,
+               nick_name,
+               province,
+               city
+        from t_user
     </select>
 
     <!--通过用户名查询-->
     <select id="selectByName" resultType="cn.glh.alumni.entity.User">
-        select
-            id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        select id,
+               pwd,
+               user_name,
+               sex,
+               head_pic,
+               birthday,
+               major,
+               school_date,
+               education,
+               email,
+               phone,
+               state,
+               type,
+               activation_code,
+               create_time,
+               salt,
+               nick_name,
+               province,
+               city
+        from t_user
         where user_name = #{userName}
     </select>
     <!--通过邮箱查询-->
     <select id="selectByEmail" resultType="cn.glh.alumni.entity.User">
-        select
-            id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        select id,
+               pwd,
+               user_name,
+               sex,
+               head_pic,
+               birthday,
+               major,
+               school_date,
+               education,
+               email,
+               phone,
+               state,
+               type,
+               activation_code,
+               create_time,
+               salt,
+               nick_name,
+               province,
+               city
+        from t_user
         where email = #{email}
     </select>
     <!--分页查询全部-->
     <select id="queryByPage" parameterType="integer" resultType="cn.glh.alumni.entity.User">
-        select
-            id, pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city        from t_user
+        select id,
+               pwd,
+               user_name,
+               sex,
+               head_pic,
+               birthday,
+               major,
+               school_date,
+               education,
+               email,
+               phone,
+               state,
+               type,
+               activation_code,
+               create_time,
+               salt,
+               nick_name,
+               province,
+               city
+        from t_user
         limit #{offset},#{rows}
+    </select>
+
+    <!--校友查询-->
+    <select id="searchUser" resultType="cn.glh.alumni.entity.User">
+        select * from t_user
+        <where>
+            <if test="userName != null">
+                user_name like concat('%',#{userName},'%')
+            </if>
+            <if test="email != null">
+                and email like concat('%',#{email},'%')
+            </if>
+        </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insertUser" keyProperty="id" useGeneratedKeys="true">
-        insert into t_user(pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state, type, activation_code, create_time, salt, nick_name, province, city)
-        values (#{pwd}, #{userName}, #{sex}, #{headPic}, #{birthday}, #{major}, #{schoolDate}, #{education}, #{email}, #{phone}, #{state}, #{type}, #{activationCode}, #{createTime}, #{salt}, #{nickName}, #{province}, #{city})
+        insert into t_user(pwd, user_name, sex, head_pic, birthday, major, school_date, education, email, phone, state,
+                           type, activation_code, create_time, salt, nick_name, province, city)
+        values (#{pwd}, #{userName}, #{sex}, #{headPic}, #{birthday}, #{major}, #{schoolDate}, #{education}, #{email},
+                #{phone}, #{state}, #{type}, #{activationCode}, #{createTime}, #{salt}, #{nickName}, #{province},
+                #{city})
     </insert>
 
     <!--通过主键修改数据-->
@@ -126,16 +232,22 @@
 
     <!--更新用户状态-->
     <update id="updateStatus">
-        update t_user set state = #{state} where id = #{id}
+        update t_user
+        set state = #{state}
+        where id = #{id}
     </update>
     <!--更新用户密码-->
     <update id="updatePwd">
-        update t_user set pwd = #{pwd} where id = #{id}
+        update t_user
+        set pwd = #{pwd}
+        where id = #{id}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from t_user where id = #{id}
+        delete
+        from t_user
+        where id = #{id}
     </delete>
 
 </mapper>

@@ -1,49 +1,10 @@
 [
   {
-    "id": 1,
-    "title": "工作空间",
-    "icon": "layui-icon layui-icon-component",
-    "type": 0,
-    "href": "",
-    "children": [
-      {
-        "id": 11,
-        "title": "首页",
-        "icon": "layui-icon layui-icon-console",
-        "type": 1,
-        "href": "/alumni/admin/console"
-      },
-      {
-        "id": 12,
-        "title": "数据分析",
-        "icon": "layui-icon layui-icon-console",
-        "type": 1,
-        "href": ""
-      }
-    ]
-  },
-  {
     "id": 2,
     "title": "资讯管理",
     "icon": "layui-icon layui-icon-component",
-    "type": 0,
-    "href": "",
-    "children": [
-      {
-        "id": 21,
-        "title": "审核资讯",
-        "icon": "layui-icon layui-icon-console",
-        "type": 1,
-        "href": "/alumni/admin/news/audit"
-      },
-      {
-        "id": 22,
-        "title": "资讯列表",
-        "icon": "layui-icon layui-icon-console",
-        "type": 1,
-        "href": "/alumni/admin/news/list"
-      }
-    ]
+    "type": 1,
+    "href": "/alumni/admin/news/list"
   },
   {
     "id": 3,

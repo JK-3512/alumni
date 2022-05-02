@@ -177,6 +177,7 @@
 
         form.on('submit(activity-query)', function (data) {
             table.reload('activity-table', {
+                url: '/alumni/admin/activity/search',
                 where: data.field
             })
             return false;

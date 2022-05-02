@@ -1,6 +1,7 @@
 package cn.glh.alumni.controller.admin;
 
 import cn.glh.alumni.entity.Activity;
+import cn.glh.alumni.entity.News;
 import cn.glh.alumni.service.ActivityService;
 import cn.glh.alumni.util.AlumniUtil;
 import org.springframework.stereotype.Controller;
@@ -125,5 +126,13 @@ public class ActivityController {
             return AlumniUtil.getJSONString(1, "审核失败");
         }
         return AlumniUtil.getJSONString(0, "审核成功");
+    }
+
+    @GetMapping("/search")
+    @ResponseBody
+    public String editActivity(@RequestParam("title") String title, @RequestParam("sort") Integer sort,
+                           @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+        List<Activity> activityList = activityService.searchActivity(title, sort);
+        return AlumniUtil.getAdminJSONString(0,"成功",activityList.size(), activityList);
     }
 }

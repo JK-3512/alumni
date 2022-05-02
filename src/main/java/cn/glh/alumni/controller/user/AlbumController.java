@@ -247,7 +247,7 @@ public class AlbumController {
     public String searchAlbum(Model model, @RequestParam("search") String search){
         Album newAlbum = albumService.getNewAlbum();
         model.addAttribute("newAlbum", newAlbum);
-        List<Album> albumList = albumService.searchAlbum(search);
+        List<Album> albumList = albumService.searchAlbum(search, null);
         model.addAttribute("albumList", albumList);
         model.addAttribute("search", search);
         model.addAttribute("count", albumList.size());

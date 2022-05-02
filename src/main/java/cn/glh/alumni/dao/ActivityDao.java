@@ -25,13 +25,6 @@ public interface ActivityDao {
     Activity selectById(Integer id);
 
     /**
-     * 查询全部
-     *
-     * @return 对象列表
-     */
-    List<Activity> selectAll();
-
-    /**
      * 新增数据
      *
      * @param activity 实例对象
@@ -160,6 +153,6 @@ public interface ActivityDao {
      * @param search 关键词
      * @return
      */
-    List<Activity> searchActivity(@Param("search") String search);
+    List<Activity> searchActivity(@Param("title") String title, @Param("sort") String sort);
 }
 

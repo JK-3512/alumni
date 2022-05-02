@@ -137,6 +137,6 @@ public interface AlbumDao {
      * @param search 关键词
      * @return
      */
-    List<Album> searchAlbum(@Param("search") String search);
+    List<Album> searchAlbum(@Param("title") String title, @Param("sort") String sort);
 }
 

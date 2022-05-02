@@ -142,4 +142,8 @@ public class UserService {
         String content = templateEngine.process("/user/mail/activation", context);
         mailClient.sendMail(user.getEmail(),"激活宁理校友网账号", content);
     }
+
+    public List<User> searchUser(String userName, String email) {
+        return userDao.searchUser(userName, email);
+    }
 }

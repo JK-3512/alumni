@@ -19,7 +19,7 @@
                 <div class="layui-form-item layui-inline">
                     <label class="layui-form-label">分类</label>
                     <div class="layui-input-block">
-                        <select name="sort" lay-verify="required">
+                        <select name="sort">
                             <option value=""></option>
                             <option value="1">同学时光</option>
                             <option value="2">校园追忆</option>
@@ -178,6 +178,7 @@
 
         form.on('submit(album-query)', function (data) {
             table.reload('album-table', {
+                url: '/alumni/admin/album/search',
                 where: data.field
             })
             return false;

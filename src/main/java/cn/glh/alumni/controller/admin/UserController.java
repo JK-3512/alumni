@@ -81,5 +81,13 @@ public class UserController {
         return AlumniUtil.getJSONString(0,"删除成功");
     }
 
+    @GetMapping("/search")
+    @ResponseBody
+    public String searchUser(@RequestParam("userName") String userName, @RequestParam("email") String email,
+                               @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "limit", defaultValue = "10") Integer limit){
+        List<User> userList = userService.searchUser(userName, email);
+        return AlumniUtil.getAdminJSONString(0,"成功",userList.size(), userList);
+    }
+
 
 }

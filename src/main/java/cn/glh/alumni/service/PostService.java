@@ -218,10 +218,13 @@ public class PostService {
 
     /**
      * 帖子检索
-     * @param search 关键词
+     * @param title 关键词
      * @return
      */
-    public List<Post> searchPost(String search) {
-        return postDao.searchPost(search);
+    public List<Post> searchPost(String title, Integer sort) {
+        if (sort == null){
+            return postDao.searchPost(title, null);
+        }
+        return postDao.searchPost(title, PostEnum.fromCode(sort).getPostType());
     }
 }

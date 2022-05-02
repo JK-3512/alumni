@@ -23,6 +23,7 @@
     <select id="findAllAlbum" resultMap="AlbumMap">
         select
         id, sort, title, content, create_time, state, user_id        from t_album
+        where state != 0
         limit #{offset}, #{rows}
     </select>
 
@@ -33,7 +34,7 @@
 
     <!--相册列表-->
     <select id="findAlbumBySort" parameterType="string" resultType="cn.glh.alumni.entity.Album">
-        select id, sort, title, content, create_time, state, user_id from t_album where sort = #{sort}
+        select id, sort, title, content, create_time, state, user_id from t_album where sort = #{sort} and state != 0
         limit #{offset}, #{rows}
     </select>
 
@@ -62,25 +63,33 @@
     <select id="getNewAlbum" resultType="cn.glh.alumni.entity.Album">
         SELECT *, ABS(NOW() - create_time )  AS diffTime
         FROM t_album
+        where state != 0
         ORDER BY diffTime
         LIMIT 0, 1
     </select>
 
     <!--获取该类别总条码-->
     <select id="getCountBySort" resultType="java.lang.Integer">
-        select count(*) from t_album where sort = #{sort}
+        select count(*) from t_album where sort = #{sort} and state != 0
     </select>
 
     <!--获取总条码-->
     <select id="getCount" resultType="java.lang.Integer">
-        select count(*) from t_album
+        select count(*) from t_album where state != 0
     </select>
 
     <!--相册检索-->
     <select id="searchAlbum" resultType="cn.glh.alumni.entity.Album">
-        select id, title, create_time, state
-        from t_album
-        where title like concat('%',#{search},'%')
+        select * from t_album
+        <where>
+            <if test="title != null">
+                title like concat('%',#{title},'%')
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            and state != 0
+        </where>
     </select>
 
     <!--新增所有列-->

@@ -58,7 +58,7 @@ public class NewsService {
         news.setSort(NewsEnum.fromCode(Integer.valueOf(news.getSort())).getNewsType());
         news.setAdminId(hostHolder.getUser().getId());
         news.setCreateTime(new Date());
-        news.setState(0);
+        news.setState(1);
         return newsDao.insertNews(news);
     }
 
@@ -109,9 +109,9 @@ public class NewsService {
      * @param limit 每页最大记录数
      * @return 新闻集合
      */
-    public List<News> queryAuditByPage(Integer page, Integer limit) {
-        return newsDao.queryAuditByPage((page - 1) * limit ,limit);
-    }
+//    public List<News> queryAuditByPage(Integer page, Integer limit) {
+//        return newsDao.queryAuditByPage((page - 1) * limit ,limit);
+//    }
 
     /**
      * 修改资讯审核状态
@@ -119,16 +119,16 @@ public class NewsService {
      * @param state 0.未审核 1.审核通过 2.审核不通过
      * @return 影响行数
      */
-    public int updateState(Integer id, Integer state){
-        return newsDao.updateState(id, state);
-    }
-
-    @Transactional(rollbackFor = Exception.class)
-    public void updateStateList(List<Integer> ids, Integer state){
-        for (Integer id : ids) {
-            this.updateState(id, state);
-        }
-    }
+//    public int updateState(Integer id, Integer state){
+//        return newsDao.updateState(id, state);
+//    }
+//
+//    @Transactional(rollbackFor = Exception.class)
+//    public void updateStateList(List<Integer> ids, Integer state){
+//        for (Integer id : ids) {
+//            this.updateState(id, state);
+//        }
+//    }
 
     /**
      * 进入到资讯列表页面
@@ -188,10 +188,13 @@ public class NewsService {
 
     /**
      * 资讯检索
-     * @param search 关键词
+     * @param title 关键词
      * @return
      */
-    public List<News> searchNews(String search) {
-        return newsDao.searchNews(search);
+    public List<News> searchNews(String title, Integer sort) {
+        if (sort == null){
+            return newsDao.searchNews(title, null);
+        }
+        return newsDao.searchNews(title, NewsEnum.fromCode(sort).getNewsType());
     }
 }

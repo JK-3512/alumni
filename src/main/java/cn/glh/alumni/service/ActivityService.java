@@ -314,7 +314,10 @@ public class ActivityService {
      * @param search 关键词
      * @return
      */
-    public List<Activity> searchActivity(String search) {
-        return activityDao.searchActivity(search);
+    public List<Activity> searchActivity(String title, Integer sort) {
+        if (sort == null){
+            return activityDao.searchActivity(title, null);
+        }
+        return activityDao.searchActivity(title, ActivityEnum.fromCode(sort).getActivitySort());
     }
 }

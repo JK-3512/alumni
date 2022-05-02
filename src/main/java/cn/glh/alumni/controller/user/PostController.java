@@ -291,7 +291,7 @@ public class PostController {
 
     @GetMapping("/search")
     public String searchPost(Model model, @RequestParam("search") String search){
-        List<Post> postList = postService.searchPost(search);
+        List<Post> postList = postService.searchPost(search, null);
         List<Map<String, Object>> postVoList = this.getPostList(postList);
         //所有帖子的全部内容
         model.addAttribute("posts", postVoList);

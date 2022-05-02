@@ -150,7 +150,7 @@ public class NewsController {
     @GetMapping("/search")
     public String searchNews(Model model, @RequestParam("search") String search){
         List<News> coverList = newsService.getCoverList();
-        List<News> newsList = newsService.searchNews(search);
+        List<News> newsList = newsService.searchNews(search, null);
         model.addAttribute("coverList", coverList);
         model.addAttribute("newsList", newsList);
         //关键词回显

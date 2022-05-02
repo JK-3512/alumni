@@ -286,7 +286,7 @@ public class ActivityController {
 
     @GetMapping("/search")
     public String searchActivity(Model model, @RequestParam("search") String search){
-        List<Activity> activityList = activityService.searchActivity(search);
+        List<Activity> activityList = activityService.searchActivity(search, null);
         model.addAttribute("activityList", activityList);
         model.addAttribute("search", search);
         model.addAttribute("count", activityList.size());

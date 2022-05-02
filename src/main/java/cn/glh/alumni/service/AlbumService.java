@@ -295,11 +295,16 @@ public class AlbumService {
 
     /**
      * 相册检索
-     * @param search 关键词
+     * @param title 关键词
      * @return
      */
-    public List<Album> searchAlbum(String search) {
-        List<Album> albumList = albumDao.searchAlbum(search);
+    public List<Album> searchAlbum(String title, Integer sort) {
+        List<Album> albumList = null;
+        if (sort == null){
+            albumList = albumDao.searchAlbum(title, null);
+        }else {
+            albumList = albumDao.searchAlbum(title, AlbumEnum.fromCode(sort).getAlbumSort());
+        }
         for (Album album : albumList) {
             album.setAlbumPicList(albumDao.getAlbumPicList(album.getId()));
         }

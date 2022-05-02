@@ -16,7 +16,7 @@ menu:
   ## 是否开启多系统菜单模式
   control: false
   ## 默认选中的菜单项
-  select: "11"
+  select: "2"
   ## 是否开启异步菜单，false 时 data 属性设置为菜单数据，false 时为 json 文件或后端接口
   async: true
 ## 视图内容配置
@@ -31,8 +31,8 @@ tab:
   tabMax: "30"
   ## 首页
   index:
-    id: "11" ## 标识 ID , 建议与菜单项中的 ID 一致
-    href: "/alumni/admin/console" ## 页面地址
+    id: "2" ## 标识 ID , 建议与菜单项中的 ID 一致
+    href: "/alumni/admin/news/list" ## 页面地址
     title: "首页" ## 标题
 ## 主题配置
 theme: 
@@ -55,19 +55,19 @@ colors:
 - id: "5"
   color: "#3963bc"
 ## 主题面板的链接列表
-links: 
-- icon: "layui-icon layui-icon-website"
-  title: "官方网站"
-  href: "http://www.pearadmin.com"
-- icon: "layui-icon layui-icon-read"
-  title: "开发文档"
-  href: "http://www.pearadmin.com/doc/"
-- icon: "layui-icon layui-icon-fonts-code"
-  title: "开源地址"
-  href: "https://gitee.com/pear-admin/Pear-Admin-Layui/"
-- icon: "layui-icon layui-icon-survey"
-  title: "问答社区"
-  href: "http://forum.pearadmin.com/"
+#links:
+#- icon: "layui-icon layui-icon-website"
+#  title: "官方网站"
+#  href: "http://www.pearadmin.com"
+#- icon: "layui-icon layui-icon-read"
+#  title: "开发文档"
+#  href: "http://www.pearadmin.com/doc/"
+#- icon: "layui-icon layui-icon-fonts-code"
+#  title: "开源地址"
+#  href: "https://gitee.com/pear-admin/Pear-Admin-Layui/"
+#- icon: "layui-icon layui-icon-survey"
+#  title: "问答社区"
+#  href: "http://forum.pearadmin.com/"
 ## 其他配置
 other: 
   ## 主页动画时长
@@ -77,4 +77,4 @@ other:
 ## 头部配置
 header:
   ## 站内消息，数据来源，通过 false 设置关闭
-  message: "/alumni/pear/admin/data/message.json"
+#  message: "/alumni/pear/admin/data/message.json"

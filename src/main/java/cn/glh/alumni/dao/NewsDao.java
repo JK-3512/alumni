@@ -69,7 +69,7 @@ public interface NewsDao {
      * @param rows 返回记录行的最大数目
      * @return 对象列表
      */
-    List<News> queryAuditByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
+//    List<News> queryAuditByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 修改资讯审核状态
@@ -77,7 +77,7 @@ public interface NewsDao {
      * @param state 0.未审核 1.审核通过 2.审核不通过
      * @return 影响行数
      */
-    int updateState(@Param("id") Integer id, @Param("state") Integer state);
+//    int updateState(@Param("id") Integer id, @Param("state") Integer state);
 
     /**
      * 找出所有资讯
@@ -116,6 +116,6 @@ public interface NewsDao {
      * @param search 关键词
      * @return
      */
-    List<News> searchNews(@Param("search") String search);
+    List<News> searchNews(@Param("title") String title, @Param("sort") String sort);
 }
 

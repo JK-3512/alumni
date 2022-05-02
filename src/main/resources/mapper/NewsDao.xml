@@ -33,17 +33,18 @@
         limit #{offset},#{rows}
     </select>
     <!--分页查询未审核-->
-    <select id="queryAuditByPage" parameterType="integer" resultType="cn.glh.alumni.entity.News">
-        select
-            id, sort, title, cover, content, create_time, state, admin_id        from t_news
-        where state = 0
-        limit #{offset},#{rows}
-    </select>
+<!--    <select id="queryAuditByPage" parameterType="integer" resultType="cn.glh.alumni.entity.News">-->
+<!--        select-->
+<!--            id, sort, title, cover, content, create_time, state, admin_id        from t_news-->
+<!--        where state = 0-->
+<!--        limit #{offset},#{rows}-->
+<!--    </select>-->
 
     <!--找出所有活动-->
     <select id="findAllNews" resultType="cn.glh.alumni.entity.News">
         select id, sort, title, cover, content, create_time, state, admin_id
         from t_news
+        where state != 0
         limit #{offset}, #{rows}
     </select>
 
@@ -51,7 +52,7 @@
     <select id="findSortNews" resultType="cn.glh.alumni.entity.News">
         select id, sort, title, cover, content, create_time, state, admin_id
         from t_news
-        where sort = #{sort}
+        where sort = #{sort} and state != 0
         limit #{offset}, #{rows}
     </select>
 
@@ -59,6 +60,7 @@
     <select id="getCoverList" resultType="cn.glh.alumni.entity.News">
         SELECT id, title, cover, ABS(NOW() - create_time )  AS diffTime
         FROM t_news
+        where state != 0
         ORDER BY diffTime
         LIMIT 0, 2
     </select>
@@ -66,18 +68,26 @@
     <!--获取总条码-->
     <select id="getCount" resultType="java.lang.Integer">
         select count(*) from t_news
+        where state != 0
     </select>
 
     <!--获取该类别总条码-->
     <select id="getCountBySort" resultType="java.lang.Integer">
-        select count(*) from t_news where sort = #{sort}
+        select count(*) from t_news where sort = #{sort} and state != 0
     </select>
 
     <!--资讯检索-->
     <select id="searchNews" resultType="cn.glh.alumni.entity.News">
-        select id, sort, cover, title, content
-        from t_news
-        where title like concat('%',#{search},'%')
+        select * from t_news
+        <where>
+            <if test="title != null">
+                title like concat('%',#{title},'%')
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            and state != 0
+        </where>
     </select>
 
     <!--新增所有列-->
@@ -114,9 +124,9 @@
         </set>
         where id = #{id}
     </update>
-    <update id="updateState">
-        update t_news set state = #{state} where id = #{id}
-    </update>
+<!--    <update id="updateState">-->
+<!--        update t_news set state = #{state} where id = #{id}-->
+<!--    </update>-->
 
     <!--通过主键删除-->
     <delete id="deleteById">

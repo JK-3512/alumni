@@ -54,6 +54,7 @@ public class LoginController {
 
     /**
      * 进入注册界面
+     *
      * @return
      */
     @GetMapping("/user/register")
@@ -63,6 +64,7 @@ public class LoginController {
 
     /**
      * 进入登录界面
+     *
      * @return
      */
     @GetMapping("/user/login")
@@ -75,8 +77,21 @@ public class LoginController {
         return "/admin/login";
     }
 
+    @GetMapping("/admin/loginInfo")
+    @ResponseBody
+    public String getLoginInfo() {
+        User user = hostHolder.getUser();
+        Map<String, Object> map = new HashMap<>();
+        if (user != null) {
+            map.put("nickName", user.getNickName());
+            map.put("headPic", user.getHeadPic());
+        }
+        return user != null ? AlumniUtil.getJSONString(0, "已登录", map) : AlumniUtil.getJSONString(1, "未登录", null);
+    }
+
     /**
      * 进入重置密码界面
+     *
      * @return
      */
     @GetMapping("/user/resetPwd")
@@ -84,16 +99,29 @@ public class LoginController {
         return "/user/system/reset-pwd";
     }
 
+    @GetMapping("/admin/upwd")
+    public String getUpwdPage() {
+        return "/admin/upwd";
+    }
+
+    @PostMapping("/admin/upwd")
+    public String upwd(Model model, @RequestParam("userName") String userName,
+                       @RequestParam("oldPwd") String oldPwd, @RequestParam("pwd") String pwd) {
+        int i = loginService.upwd(userName, oldPwd, pwd);
+        return i > 0 ? "/admin/login" : "/admin/upwd";
+    }
+
     @GetMapping("/admin/index")
     public String getAdminIndexPage() {
-        return hostHolder.getUser().getType() == 1 ? "/admin/index" :"/admin/login" ;
+        return hostHolder.getUser().getType() == 1 ? "/admin/index" : "/admin/login";
     }
 
     /**
      * 用户登录
-     * @param userName 用户名
-     * @param pwd 密码
-     * @param code 验证码
+     *
+     * @param userName     用户名
+     * @param pwd          密码
+     * @param code         验证码
      * @param model
      * @param kaptchaOwner 从 cookie 中取出的 kaptchaOwner
      * @param response
@@ -145,6 +173,7 @@ public class LoginController {
 
     /**
      * 用户登出
+     *
      * @param ticket 设置凭证状态为无效
      * @return
      */
@@ -157,6 +186,7 @@ public class LoginController {
 
     /**
      * 管理员登出
+     *
      * @param ticket 设置凭证状态为无效
      * @return
      */
@@ -169,6 +199,7 @@ public class LoginController {
 
     /**
      * 注册用户
+     *
      * @param model
      * @param user
      * @return
@@ -189,10 +220,10 @@ public class LoginController {
 
     /**
      * 激活用户
+     *
      * @param model
-     * @param code 激活码
-     * @return
-     * http://localhost:8080/alumni/user/activation/用户id/激活码
+     * @param code  激活码
+     * @return http://localhost:8080/alumni/user/activation/用户id/激活码
      */
     @GetMapping("/user/activation/{userId}/{code}")
     public String activation(Model model, @PathVariable("userId") int userId,
@@ -201,12 +232,10 @@ public class LoginController {
         if (result == AlumniConstant.ACTIVATION_SUCCESS) {
             model.addAttribute("msg", "激活成功, 您的账号已经可以正常使用!");
             model.addAttribute("target", "/user/login");
-        }
-        else if (result == AlumniConstant.ACTIVATION_REPEAT) {
+        } else if (result == AlumniConstant.ACTIVATION_REPEAT) {
             model.addAttribute("msg", "无效的操作, 您的账号已被激活过!");
             model.addAttribute("target", "/user/news/sort/0");
-        }
-        else {
+        } else {
             model.addAttribute("msg", "激活失败, 您提供的激活码不正确!");
             model.addAttribute("target", "/user/news/sort/0");
         }
@@ -225,14 +254,14 @@ public class LoginController {
         // 检查图片验证码
         String kaptchaCheckRst = kaptchaController.checkKaptchaCode(kaptchaOwner, kaptcha);
         if (StringUtils.isNotBlank(kaptchaCheckRst)) {
-            model.addAttribute("msg",kaptchaCheckRst);
+            model.addAttribute("msg", kaptchaCheckRst);
             model.addAttribute("target", "/user/resetPwd");
             return "/user/system/operate-result";
         }
         // 检查邮件验证码
         String emailVerifyCodeCheckRst = checkRedisResetPwdEmailCode(userName, emailVerifyCode);
         if (StringUtils.isNotBlank(emailVerifyCodeCheckRst)) {
-            model.addAttribute("msg",emailVerifyCodeCheckRst);
+            model.addAttribute("msg", emailVerifyCodeCheckRst);
             model.addAttribute("target", "/user/resetPwd");
             return "/user/system/operate-result";
         }
@@ -240,7 +269,7 @@ public class LoginController {
         Map<String, Object> stringObjectMap = loginService.doResetPwd(userName, pwd);
         String userNameMsg = (String) stringObjectMap.get("errMsg");
         if (StringUtils.isBlank(userNameMsg)) {
-            model.addAttribute("msg",userNameMsg);
+            model.addAttribute("msg", userNameMsg);
             model.addAttribute("target", "/user/login");
         }
         return "/user/system/operate-result";
@@ -250,8 +279,8 @@ public class LoginController {
      * 发送邮件验证码(用于重置密码)
      *
      * @param kaptchaOwner 从 cookie 中取出的 kaptchaOwner
-     * @param kaptcha 用户输入的图片验证码
-     * @param userName 用户输入的需要找回的账号
+     * @param kaptcha      用户输入的图片验证码
+     * @param userName     用户输入的需要找回的账号
      */
     @PostMapping("/user/sendEmailCodeForResetPwd")
     @ResponseBody
@@ -277,7 +306,7 @@ public class LoginController {
     /**
      * 检查 邮件 验证码
      *
-     * @param userName 用户名
+     * @param userName  用户名
      * @param checkCode 用户输入的图片验证码
      * @return 验证成功 返回"", 失败则返回原因
      */

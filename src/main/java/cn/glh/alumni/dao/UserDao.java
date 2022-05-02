@@ -2,6 +2,7 @@ package cn.glh.alumni.dao;
 
 import cn.glh.alumni.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public interface UserDao {
      * @param rows 返回记录行的最大数目
      * @return 对象列表
      */
-    List<User> queryByPage(Integer offset, Integer rows);
+    List<User> queryByPage(@Param("offset") Integer offset, @Param("rows") Integer rows);
 
     /**
      * 新增数据
@@ -82,7 +83,7 @@ public interface UserDao {
      * @param state 0：未激活，1：已激活
      * @return 影响行数
      */
-    int updateStatus(Integer id, Integer state);
+    int updateStatus(@Param("id") Integer id, @Param("state") Integer state);
 
     /**
      * 重置密码
@@ -90,6 +91,14 @@ public interface UserDao {
      * @param pwd 新密码
      * @return 影响行数
      */
-    int updatePwd(Integer id, String pwd);
+    int updatePwd(@Param("id") Integer id, @Param("pwd") String pwd);
+
+    /**
+     * 校友查询
+     * @param userName
+     * @param email
+     * @return
+     */
+    List<User> searchUser(@Param("userName") String userName, @Param("email") String email);
 }
 
